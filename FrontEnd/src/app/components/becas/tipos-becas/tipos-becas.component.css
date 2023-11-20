@@ -10,12 +10,12 @@ body {
   
   .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.60);
   }
   
 
   .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.30);
     transition: all 0.3s ease-in-out;
     /* Agregar margen interno para que el contenido no toque los bordes de la tarjeta */
     padding: 2rem; 
@@ -35,6 +35,26 @@ body {
   .col-md-6 {
     padding-right: 0.5rem; /* Espaciado entre tarjetas, ajusta según necesidad */
     padding-left: 0.5rem; /* Espaciado entre tarjetas, ajusta según necesidad */
+  }
+  
+  .custom-button {
+    background-color: #f58220; /* Color de fondo naranja */
+    border: none; /* Sin borde */
+    border-radius: 20px; /* Bordes redondeados */
+    color: white; /* Color de texto blanco */
+    padding: 10px 60px; /* Relleno dentro del botón */
+    font-size: 24px; /* Tamaño de la fuente */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Sombra ligera para el botón */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-weight: bold; /* Fuente en negrita */
+    letter-spacing: 1px; /* Espacio entre letras */
+    transition: background-color 0.3s; /* Transición suave al cambiar de color */
+    width: 60%;
+  }
+  
+  .custom-button:hover {
+    background-color: #e57115; /* Color de fondo más oscuro al pasar el mouse */
+    cursor: pointer; /* Cambiar el cursor a una mano al pasar el mouse */
   }
   
   /* Asegurarse de que las tarjetas ocupen todo el espacio horizontal en pantallas pequeñas */
