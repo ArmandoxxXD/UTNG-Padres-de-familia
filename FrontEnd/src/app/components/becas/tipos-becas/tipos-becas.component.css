@@ -1,0 +1,49 @@
+body {
+    background-color: #f2f2f2;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  h1 {
+    color: #f58220; /* Un color naranja similar al de la imagen */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    /* Agregar margen interno para que el contenido no toque los bordes de la tarjeta */
+    padding: 2rem; 
+    text-align: center;
+  }
+  
+  /* Hacer que las tarjetas sean más grandes */
+  .card-body {
+    padding: 2rem; /* Ajusta este valor para aumentar el espacio dentro de la tarjeta */
+  }
+  
+  .row {
+    margin-right: 0; /* Asegurarse de que no haya margen derecho extra */
+    margin-left: 0; /* Asegurarse de que no haya margen izquierdo extra */
+  }
+  
+  .col-md-6 {
+    padding-right: 0.5rem; /* Espaciado entre tarjetas, ajusta según necesidad */
+    padding-left: 0.5rem; /* Espaciado entre tarjetas, ajusta según necesidad */
+  }
+  
+  /* Asegurarse de que las tarjetas ocupen todo el espacio horizontal en pantallas pequeñas */
+  @media (max-width: 767px) {
+    .col-md-6 {
+      padding-right: 15px; /* Restaurar el espaciado en pantallas pequeñas */
+      padding-left: 15px;  /* Restaurar el espaciado en pantallas pequeñas */
+    }
+  }
+  
+
+  
