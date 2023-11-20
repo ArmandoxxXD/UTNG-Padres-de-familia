@@ -199,37 +199,63 @@ body {
   }
   @media screen and (max-width: 768px) {
     .container {
-        width: 100%;
-    }
-
-    .cost-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .campus-info {
-        flex-direction: column;
-    }
-
-    .campus-detalles, .separator {
-        margin-bottom: 20px;
-        width: 100%;
-    }
-
-    .separator {
-        display: none;
-    }
-
-    .container-r {
-        flex-direction: column;
-    }
-}
-@media screen and (max-width: 480px) {
-  h1, h2, h3, p {
-      font-size: smaller;
-  }
-
-  .requisitos-container, .number-box {
       width: 100%;
+      padding: 20px 10px; /* Reduced side padding for smaller screens */
+    }
+  
+    .container-r, .campus-info {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .req, .requisitos-container, .number-box {
+      width: 100%; /* Set the width to 100% to ensure it expands the full container width */
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+  
+    .requisitos-container {
+      margin-bottom: 20px; /* Add some space between the list and the next element */
+    }
+  
+    .number-box {
+     
+      margin-bottom: 10px;
+    }
+  
+    .campus-detalles, .separator {
+      width: auto; /* Adjust the width to be auto so it fills the space as needed */
+      margin-bottom: 20px;
+    }
+  
+    .separator {
+      display: none; /* Hide the separator on smaller screens */
+    }
+    
+    /* Additional styles to ensure text and other elements scale down */
+    h1, h2, h3, p, a {
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
   }
-}
+  
+  @media screen and (max-width: 480px) {
+    h1, h2, h3, p {
+      font-size: smaller;
+    }
+  
+    .cost-block, .requisitos-container, .number-box {
+      width: 100%; /* Debería ser 100% para usar todo el ancho disponible */
+      margin-bottom: 15px; /* Agrega margen inferior para separar los elementos */
+    }
+  
+    /* Ajustar tamaños de fuente para pantallas más pequeñas si es necesario */
+    .cost-block h3 {
+      font-size: 1em; /* Ejemplo de ajuste de tamaño de fuente */
+    }
+  
+    .number-box {
+      align-self: flex-start; /* Alinea los números a la izquierda */
+    }
+    
+    /* Otras reglas de estilo que puedas necesitar para mejorar la responsividad */
+  }
+  
