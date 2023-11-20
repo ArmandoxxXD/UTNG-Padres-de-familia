@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno');
+
+.title {
+    text-align: center;
+    font-family: Italianno;
+    margin: 12px;
+}
+
+.title h1 {
+    font-size: 58px;
+    color: #00259A;
+}
+
+.card-body .subtitle {
+    font-size: 30px;
+    font-family: Italianno;
+}
+
+
+.text-ins {
+    text-align: justify;
+    font-family: Nunito;
+}
+
+.hr-inst {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    height: 2px;
+    background: #00259A;
+    color: #00259A;
+    opacity: 100 !important;
+}
+
+
+
+.right {
+    text-align: right;
+}
+
+
+@media (max-width: 1199px) {
+    .subtitle-left {
+        padding-left: 5%;
+    }
+
+    .text-ins-left {
+        padding-left: 5%;
+    }
+
+    .text-ins-right {
+        padding-right: 5%;
+    }
+
+    .right {
+        position: relative;
+        left: -20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .subtitle-left {
+        padding-left: 12%;
+    }
+
+    .text-ins-left {
+        padding-left: 12%;
+    }
+
+    .text-ins-right {
+        padding-right: 12%;
+    }
+
+    .right {
+        position: relative;
+        left: -59px;
+    }
+}
+
+@media (max-width: 767px) {
+    .responsive-image {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .subtitle-left {
+        padding-left: 0%;
+    }
+
+    .text-ins-left {
+        padding-left: 0%;
+    }
+
+    .text-ins-right {
+        padding-right: 0%;
+    }
+    .hr-inst {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        height: 2px;
+        background: #00259A;
+        color: #00259A;
+        opacity: 100 !important;
+    }
+
+    .right {
+        position: static;
+    }
+}
