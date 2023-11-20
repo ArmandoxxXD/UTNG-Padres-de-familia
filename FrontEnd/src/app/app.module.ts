@@ -11,6 +11,8 @@ import { VerBecasInternasComponent } from './components/becas/ver-becas-internas
 import { VerBecasExternasComponent } from './components/becas/ver-becas-externas/ver-becas-externas.component';
 import { InscripcionesComponent } from './components/inscripciones/inscripciones.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { InstalacionesComponent } from './components/instalaciones/instalaciones.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     VerBecasInternasComponent,
     VerBecasExternasComponent,
     InscripcionesComponent,
-    ContactoComponent
+    ContactoComponent,
+    InstalacionesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
