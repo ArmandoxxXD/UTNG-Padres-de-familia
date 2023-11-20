@@ -6,7 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inscripciones.component.css']
 })
 export class InscripcionesComponent implements OnInit {
-
+  requisitos = [
+    '1.- CURP',
+    '2.- Comprobante de pago',
+    '3.- Carta laboral en caso de elegir la modalidad semiescolarizada'
+  ];
   constructor() { }
 
   ngOnInit(): void {
