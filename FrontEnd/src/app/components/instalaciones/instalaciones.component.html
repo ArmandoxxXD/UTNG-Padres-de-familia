@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container">
     <div class="title">
         <h1>Instalaciones</h1>
@@ -12,8 +13,8 @@
                 </div>
                 <div class="col-md-10">
                     <div class="card-body">
-                        <h5 class="subtitle subtitle-left card-title">{{location.title}}</h5>
-                        <p class="card-text text-ins text-ins-left">{{location.description}}</p>
+                        <h5 class="subtitle  card-title" [class.subtitle-left]="(i + 1) % 2 !== 0" [class.subtitle-right]="(i + 1) % 2 === 0">{{location.title}}</h5>
+                        <p class="card-text text-ins" [class.text-ins-left]="(i + 1) % 2 !== 0" [class.text-ins-right]="(i + 1) % 2 === 0">{{location.description}}</p>
                     </div>
                 </div>
                 <div class="col-md-2 col-12 right" *ngIf="(i + 1) % 2 === 0">
@@ -34,3 +35,4 @@
         <hr class="hr-inst" *ngIf="locations.length !== (i + 1)">
     </div>
 </div>
+<app-footer></app-footer>
