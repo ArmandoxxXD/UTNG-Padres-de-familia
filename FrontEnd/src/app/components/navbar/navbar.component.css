@@ -127,7 +127,6 @@
 
 .active::before {
     background-color: rgba(0, 0, 0, 0.699);
-    cursor: pointer;
 }
 
 .header__opciones__elementos div a {
@@ -149,6 +148,10 @@
 }
 
 .option {
+    text-decoration: none;
+}
+
+a {
     text-decoration: none;
 }
 
