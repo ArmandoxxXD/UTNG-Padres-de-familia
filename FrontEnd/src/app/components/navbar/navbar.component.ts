@@ -28,21 +28,27 @@ export class NavbarComponent implements OnInit {
       const clasesDelElemento = claseDelObjeto?.classList;
   
       const arrayDeClases = Array.from(Object(clasesDelElemento));
-
       
-      console.log(arrayDeClases)
-      if(String(arrayDeClases[1]) == "animation_close"){
+
+      if(String(arrayDeClases[2]) == "animation_close"){
+        navbar?.classList.add("nabvar_abierto")
+        navbar?.classList.remove("nabvar_cerrado")
         this.limpiar_Nabvar_close(navbar, options);
+
         void navbar?.offsetWidth;
         this.abrir_Nabvar(navbar, options);
-      } else if (String(arrayDeClases[1]) == "animation_open") {
+      } else if (String(arrayDeClases[2]) == "animation_open") {
+        navbar?.classList.add("nabvar_cerrado")
+        navbar?.classList.remove("nabvar_abierto")
         this.limpiar_Nabvar_open(navbar, options);
+
         void navbar?.offsetWidth;
         this.cerrar_Nabvar(navbar, options);
       } else {
+        navbar?.classList.add("nabvar_abierto")
+        navbar?.classList.remove("nabvar_cerrado")
         this.abrir_Nabvar(navbar, options);
       }
-
       console.log(arrayDeClases)
 
     })
