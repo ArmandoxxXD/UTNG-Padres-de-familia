@@ -2,10 +2,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .home__carousel {
-    height: 50vh;
+    margin-top: 12.5vh;
+    height: 45vh;
     width: 75vw;
     background-color: yellowgreen;
+}
+
+.home__carreras {
+    height: 40.5vh;
+    width: 70vw;
+    background-color: blueviolet;
+}
+
+.home__carreras_titulo {
+    text-align: center;
+    color: #00259A;
+    letter-spacing: 20%;
+    background-color: rgb(163, 145, 23);
 }
