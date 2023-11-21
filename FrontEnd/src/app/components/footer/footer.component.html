@@ -21,10 +21,19 @@
                 <button type="button" style="position: relative; left: -15px;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                ...
+                <input type="text" class="form-control" placeholder="Nombre">
+                <br />
+                <input type="email" class="form-control" placeholder="Correo electrónico">
+                <br />
+                <select class="form-select" aria-label="Default select example">
+                    <option selected disabled hidden>Tema</option>
+                    <option *ngFor="let tema of temas; let i = index" [value]="i + 1">{{ tema }}</option>
+                </select>
+                <br />
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6">Descripcion</textarea>
             </div>
             <div class="modal-footer" style="justify-content: center;">
-                <button type="button" class="btn btn-submit">Save changes</button>
+                <button type="button" class="btn btn-submit" data-bs-dismiss="modal">Save changes</button>
             </div>
         </div>
     </div>
