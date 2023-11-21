@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="title">
+        <h1>Instalaciones</h1>
+    </div>
+    <div class="h-100 w-100" *ngFor="let location of locations; let i=index">
+        <div class="card-inst mb-3" *ngIf="locations.length !== (i + 1)">
+            <div class="row g-0">
+                <div class="col-md-2 col-12" *ngIf="(i + 1) % 2 !== 0">
+                    <img src="{{location.src}}" 
+                        style="border: solid 4px #e57a08; box-shadow: 4px 5px 0px #94949478;" 
+                    alt="..." width="175" height="175" class="responsive-image">
+                </div>
+                <div class="col-md-10">
+                    <div class="card-body">
+                        <h5 class="subtitle subtitle-left card-title">{{location.title}}</h5>
+                        <p class="card-text text-ins text-ins-left">{{location.description}}</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-12 right" *ngIf="(i + 1) % 2 === 0">
+                    <img src="{{location.src}}" 
+                        style="border: solid 4px #e57a08; box-shadow: -4px 5px 0px #94949478;" 
+                    alt="..." width="175" height="175" class="responsive-image">
+                </div>
+            </div>
+        </div>
+
+        <div class="card-inst mb-3" *ngIf="locations.length === (i + 1)">
+            <img src="{{location.src}}" height="175" class="card-img-top" style="border: solid 4px #e57a08; box-shadow: 4px 5px 0px #94949478; margin-bottom: 20px;" alt="...">
+            <div class="card-body">
+                <h5 class="subtitle card-title">{{location.title}}</h5>
+                <p class="card-text text-ins">{{location.description}}</p>
+            </div>
+        </div>
+        <hr class="hr-inst" *ngIf="locations.length !== (i + 1)">
+    </div>
+</div>
