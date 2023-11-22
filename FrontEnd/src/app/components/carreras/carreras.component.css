@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@300;400;700&family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:ital,wght@1,300&display=swap');
+
+/* 
+font-family: 'Koh Santepheap', serif;
+font-family: 'Nunito', sans-serif;
+font-family: 'Roboto', sans-serif; 
+*/
+
+
+.carreras {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.carreras__body {
+    height: 92.55vh;
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+/* Buscador */
+
+.carreras__buscador {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 4vh;
+    width: 100%;
+}
+
+.carreras__buscador_buscador {
+    width: 100%;
+}
+
+.carreras__buscador_input {
+    width: 100%;
+    border-radius: 100px !important;
+    border: 1px solid black;
+}
+
+.search_button {
+    border: 0px;
+    height: 100%;
+    margin-right: 2px;
+    border-radius: 100px 0px 0px 100px;
+    position: absolute;
+}
+
+/* Migas de pan */
+
+.carreras__migas_de_pan {
+    height: 10%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carreras__migas_de_pan__miga {
+    width: 15vw;
+    height: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carreras__migas_de_pan_miga__acomodar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vw;
+    height: 50%;
+    overflow:initial;
+}
+
+.carreras__migas_de_pan_miga__img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0px;
+}
+
+.carreras__migas_de_pan_miga__texto {
+    position: absolute;
+    color: white;
+    font-size: 1vw;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+/* Filtros */
+.carreras_filtros {
+    margin: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.carreras_filtros__imagen {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carreras_filtros__imagen_list {
+    font-size: 1.7vw;
+}
+
+.carreras_filtros__botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+
+.carreras_filtro {
+    width: 100%;
+    height: 100%;
+    margin: 0 0.5vw 0 0.5vw;
+    width: auto;
+    font-weight: 700;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    padding: 0.2vw 2vw 0.2vw 2vw;
+    letter-spacing: 3px;
+}
+
+.filtro {
+    border-radius: 15px;
+}
+
+.filtro:hover {
+    margin: 0 0.8vw 0 0.8vw;
+    transition: 0.2s;
+    transform: scale(1.08);
+}
+
+/* carreras */
+.carreras_carreras {
+    width: 100%;
+    height: 100%;
+}
+
+.home__carreras_carreras {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.carrera {
+    cursor: pointer;
+    margin: 0.5em 0.5em 0 0.5em;
+}
+
+.carrera:hover {
+    transition: 0.5s;
+    transform: scale(1.02);
+}
+
+.carrera_RH {
+    width: 14vw;
+    height: 28vh;
+    border-radius: 25px;
+    border: solid #E57A08 0.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrera_PI {
+    width: 14vw;
+    height: 28vh;
+    border-radius: 25px;
+    border: solid #AAAAAA 0.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrera_TI {
+    width: 14vw;
+    height: 28vh;
+    border-radius: 25px;
+    border: solid #00259A 0.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#carrera_capital {
+    background-image: url("/assets/carreras/carrera/capital.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carrera_capital {
+    background-image: url("/assets/carreras/carrera/capital.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carrera_contaduria {
+    background-image: url("/assets/carreras/carrera/contaduria.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carrera_energias {
+    background-image: url("/assets/carreras/carrera/energia_renovable.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carrera_ingenieria_desarrollo {
+    background-image: url("/assets/carreras/carrera/ingenieria_desarrollo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carrera_desarrollo {
+    background-image: url("/assets/carreras/carrera/desarrollo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carrera_mecatronica {
+    background-image: url("/assets/carreras/carrera/mecatronica.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carrera_entornos {
+    background-image: url("/assets/carreras/carrera/entornos.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#electricidad {
+    background-image: url("/assets/carreras/carrera/electrica.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#produccion {
+    background-image: url("/assets/carreras/carrera/produccion.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#turismo {
+    background-image: url("/assets/carreras/carrera/turismo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carrera_RH__div_titulo {
+    width: 100%;
+    height: 20%;
+    margin-top: 40%;
+    background-color: rgba(229, 122, 8, 0.767);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrera_PI__div_titulo {
+    width: 100%;
+    height: 20%;
+    margin-top: 40%;
+    background-color: #aaaaaaf1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrera_TI__div_titulo {
+    width: 100%;
+    height: 20%;
+    margin-top: 40%;
+    background-color: #00249aad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrera__titulo {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    font-weight: 700;
+}
+
+.carrera__suma {
+    font-size: 10em;
+    color: white;
+}
+
+.mas_carreras {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #E57A08;
+}
+
+.margen {
+    margin-top: 7vh;
+}
+
+.contaduria {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 900px) {
+    .carrera_RH {
+        width: 20vw;
+        height: 15vh;
+    }
+    
+    .carrera_PI {
+        width: 20vw;
+        height: 15vh;
+    }
+    
+    .carrera_TI {
+        width: 20vw;
+        height: 15vh;
+    }
+}

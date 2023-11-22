@@ -11,6 +11,7 @@ import { VerBecasInternasComponent } from './components/becas/ver-becas-internas
 import { VerBecasExternasComponent } from './components/becas/ver-becas-externas/ver-becas-externas.component';
 import { InscripcionesComponent } from './components/inscripciones/inscripciones.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { CarrerasComponent } from './components/carreras/carreras.component';
 import { InstalacionesComponent } from './components/instalaciones/instalaciones.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     VerBecasExternasComponent,
     InscripcionesComponent,
     ContactoComponent,
+    CarrerasComponent,
     InstalacionesComponent
   ],
   imports: [
