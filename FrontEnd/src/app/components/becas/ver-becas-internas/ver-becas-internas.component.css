@@ -14,7 +14,7 @@ body {
   }
   
 h1 {
-    color: #f58220; /* Un color naranja similar al de la imagen */
+    color: #f58220;
 }
 
 
@@ -30,18 +30,22 @@ h1 {
     font-weight: bold; /* Fuente en negrita */
     letter-spacing: 1px; /* Espacio entre letras */
     transition: background-color 0.3s; /* Transición suave al cambiar de color */
-    width: 60%;
+    width: 100%;
+    cursor: text;
   }
   
-.custom-button:hover {
-    background-color: #e57115; /* Color de fondo más oscuro al pasar el mouse */
-    cursor: pointer; /* Cambiar el cursor a una mano al pasar el mouse */
-  }
-
 .card {
-    margin-bottom: 2rem; /* Aumenta el margen inferior para las tarjetas */
     border: none; /* Sin bordes para la tarjeta */
     text-align: justify;
+  }
+
+  .card-link{
+    text-decoration: none;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); 
+    transition: background-color 0.5s, transform 0.5s; 
   }
   
   .card-header {
