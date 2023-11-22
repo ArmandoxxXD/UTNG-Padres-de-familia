@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
     const elemento_2 = document.getElementById("becas");
     const elemento_3 = document.getElementById("carreras");
     const elemento_4 = document.getElementById("instalaciones");
-    const elemento_5 = document.getElementById("acerca");
+    const elemento_5 = document.getElementById("inscripciones");
 
 
     menu?.addEventListener('click', () => {
@@ -69,7 +69,7 @@ export class NavbarComponent implements OnInit {
       case "/instalaciones":
         elemento_4?.classList.add('active');
         break;
-      case "/acerca":
+      case "/inscripciones":
         elemento_5?.classList.add('active');
         break;
     }
@@ -95,8 +95,8 @@ export class NavbarComponent implements OnInit {
       case "instalaciones":
         this.router.navigate(['instalaciones'])
         break;
-      case "acerca":
-        this.router.navigate(['acerca'])
+      case "inscripciones":
+        this.router.navigate(['inscripciones'])
         break;
     }
   }
@@ -106,7 +106,7 @@ export class NavbarComponent implements OnInit {
     var elemento_2 = document.getElementById("becas");
     var elemento_3 = document.getElementById("carreras");
     var elemento_4 = document.getElementById("instalaciones");
-    var elemento_5 = document.getElementById("acerca");
+    var elemento_5 = document.getElementById("inscripciones");
 
     elemento_1?.classList.remove('active');
     elemento_2?.classList.remove('active');
