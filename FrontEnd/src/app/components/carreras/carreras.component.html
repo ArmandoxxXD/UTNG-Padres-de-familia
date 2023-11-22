@@ -1,0 +1,188 @@
+<div class="carreras">
+    <div class="carreras__body">
+        <div class="carreras__buscador">
+            <div class="carreras__buscador_buscador input-group mb-3">
+                <button class="btn btn-outline-secondary search_button" type="button" id="button-addon1"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" class="form-control carreras__buscador_input" placeholder=""
+                    aria-label="Example text with button addon" aria-describedby="button-addon1">
+            </div>
+        </div>
+        <div class="carreras__migas_de_pan mt-2">
+            <div class="carreras__migas_de_pan__miga" style="left: 1.5vw;">
+                <div class="carreras__migas_de_pan_miga__acomodar">
+                    <img class="carreras__migas_de_pan_miga__img" src="/assets/carreras/migas/miga_verde.png"
+                        alt="miga_carreras">
+                    <h5 class="carreras__migas_de_pan_miga__texto">Carreras</h5>
+                </div>
+            </div>
+
+            <div class="carreras__migas_de_pan__miga">
+                <div class="carreras__migas_de_pan__miga">
+                    <img class="carreras__migas_de_pan_miga__img" src="/assets/carreras/migas/miga_naranja.png"
+                        alt="miga_carreras">
+                    <h5 class="carreras__migas_de_pan_miga__texto text-center">Seleccionar <br> Carrera</h5>
+                </div>
+            </div>
+
+            <div class="carreras__migas_de_pan__miga">
+                <div class="carreras__migas_de_pan__miga" style="right: 1.5vw;">
+                    <img class="carreras__migas_de_pan_miga__img" src="/assets/carreras/migas/miga_verde.png"
+                        alt="miga_carreras">
+                    <h5 class="carreras__migas_de_pan_miga__texto">Requisitos</h5>
+                </div>
+            </div>
+
+            <div class="carreras__migas_de_pan__miga">
+                <div class="carreras__migas_de_pan__miga" style="right: 3vw;">
+                    <img class="carreras__migas_de_pan_miga__img" src="/assets/carreras/migas/miga_verde.png"
+                        alt="miga_carreras">
+                    <h5 class="carreras__migas_de_pan_miga__texto">Inscripción</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="carreras_filtros mt-4">
+
+            <div class="carreras_filtros__imagen">
+                <i class="fa-solid fa-list carreras_filtros__imagen_list"></i>
+            </div>
+
+            <div class="carreras_filtros__botones">
+                <button class="carreras_filtro filtro"
+                    style="background-color: #00A887; font-size: 0.8vw; border: #056250 solid 2px;"> Todas </button>
+                <button (click)="this.RH = false" class="carreras_filtro filtro"
+                    style="background-color: #E57A08; font-size: 0.85vw; border: #7D4100 solid 2px;"> Negocios y
+                    Administración </button>
+                <button class="carreras_filtro filtro"
+                    style="background-color: #00259A; font-size: 0.85vw; border: #000F3C solid 2px;"> Tecnología e
+                    Informática </button>
+                <button class="carreras_filtro filtro"
+                    style="background-color: #A9A9A9; font-size: 0.7vw; border: #555453 solid 2px;"> Ingeniería y
+                    Tecnología de la Producción </button>
+            </div>
+        </div>
+
+        <div class="carreras_carreras mb-5">
+            <div class="home__carreras_carreras">
+                <div class="carrera carrera_RH" id="carrera_capital">
+                    <div class="carrera_RH__div_titulo">
+                        <h5 class="carrera__titulo" style="font-size: 0.8vw; margin-top: 1vh;">Administración <br> Área
+                            Capital Humano</h5>
+                    </div>
+                </div>
+                <div class="carrera carrera_RH" id="carrera_contaduria" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    <div class="carrera_RH__div_titulo">
+                        <h5 class="carrera__titulo" style="font-size: 1.2vw; margin-top: 1vh;">Contaduria</h5>
+                    </div>
+                </div>
+                <div class="carrera carrera_TI" id="carrera_desarrollo" *ngIf="this.RH">
+                    <div class="carrera_TI__div_titulo">
+                        <h5 class="carrera__titulo" style="font-size: 0.8vw; margin-top: 1vh;">Desarrollo de Software
+                            Multiplataforma</h5>
+                    </div>
+                </div>
+                <div class="carrera carrera_PI" id="carrera_energias" *ngIf="this.RH">
+                    <div class="carrera_PI__div_titulo">
+                        <h5 class="carrera__titulo" style="font-size: 0.8vw; margin-top: 1vh;">Energias Renovables <br>
+                            Área Calidad y Ahorro de Energía</h5>
+                    </div>
+                </div>
+                <div class="carrera carrera_TI" id="carrera_ingenieria_desarrollo" *ngIf="this.RH">
+                    <div class="carrera_TI__div_titulo">
+                        <h5 class="carrera__titulo" style="font-size: 0.8vw; margin-top: 1vh;">Ingeniería en Desarrollo
+                            y <br> Gestión de Software</h5>
+                    </div>
+                </div>
+
+
+
+                <div class="carrera carrera_RH" id="carrera_entornos">
+                    <div class="carrera_RH__div_titulo">
+                        <h5 class="carrera__titulo" style="font-size: 0.8vw; margin-top: 1vh;">Ingeniería en Entornos
+                            <br> Virtuales y Negocios Digitales
+                        </h5>
+                    </div>
+                </div>
+                <div class="carrera carrera_TI" id="carrera_mecatronica" *ngIf="this.RH">
+                    <div class="carrera_TI__div_titulo">
+                        <h5 class="carrera__titulo" style="font-size: 1vw; margin-top: 1vh;">Ingeniería en Mecatrónica
+                        </h5>
+                    </div>
+                </div>
+                <div class="carrera carrera_TI" id="electricidad" *ngIf="this.RH">
+                    <div class="carrera_TI__div_titulo">
+                        <h5 class="carrera__titulo" style="font-size: 0.8vw; margin-top: 1vh;">Mecatrónica Área
+                            Instalaciones Eléctricas Eficientes</h5>
+                    </div>
+                </div>
+                <div class="carrera carrera_PI" id="produccion" *ngIf="this.RH">
+                    <div class="carrera_PI__div_titulo">
+                        <h5 class="carrera__titulo" style="font-size: 0.8vw; margin-top: 1vh;">Ingeniería en Tecnologías
+                            <br> de la Producción
+                        </h5>
+                    </div>
+                </div>
+                <div class="carrera carrera_RH" id="turismo">
+                    <div class="carrera_RH__div_titulo">
+                        <h5 class="carrera__titulo" style="font-size: 1.2vw; margin-top: 1vh;">Turismo</h5>
+                    </div>
+                </div>
+
+                <div class="carrera carrera_RH mas_carreras" style="border: solid #C56500 0.2vw;" *ngIf="!this.RH">
+                    <div class="margen">
+                        <i class="carrera__suma fa-solid fa-plus fa-2xl"></i>
+                    </div>
+                    <div class="mt-5">
+                        <h5 class="carrera__titulo" style="font-size: 0.8vw; margin-top: 1vh;">Mas Carreras proximamente
+                        </h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Contaduria</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page">PERFIL DE INGRESO</a>
+                    </li>
+                    <li style="cursor: pointer;" class="nav-item">
+                        <a class="nav-link">COMPETENCIAS ESPECÍFICIAS ADQUIRIDAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">OCUPACIONES PROFESIONALES</a>
+                    </li>
+                    <li style="cursor: pointer;" class="nav-item">
+                        <a class="nav-link disabled" tabindex="-1" aria-disabled="true">MAPA CURRICULAR</a>
+                    </li>
+                </ul>
+
+                <div class="contaduria">
+                    <div>
+                        <img style="width: 80%; height: 80%;" src="/assets/carreras/carrera/contaduria-Logo.jpg" alt="ContaduriaLogo">
+                    </div>
+                    <div class="mt-5">
+                        <p>El aspirante deberá de ser egresado en educación media superior, preferentemente de las áreas de Administración, Contabilidad, Humanidades o áreas afines.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
