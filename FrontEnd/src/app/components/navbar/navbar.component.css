@@ -1,0 +1,273 @@
+
+.header {
+    height: 4.5em;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #00259A;
+    width: 100%;
+    z-index: 100;
+}
+
+.header__logo {
+    margin-left: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+#header__logo__img {
+    width: 100%;
+    max-width: 15em;
+    height: auto;
+    -webkit-user-drag: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+#header__navegador__lupa {
+    color: white;
+    font-size: 1.1em;
+    margin-right: 1em;
+}
+
+#header__navegador__lupa:hover {
+    cursor: pointer;
+}
+
+.header__opciones {
+    height: 100%;
+    width: 50em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.header__derecha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+    max-height: 4.5em;
+    height: 100%;
+}
+
+.header__opciones__elementos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 4.5em;
+    width: 90%;
+    height: 100%;
+}
+
+.header__opciones__elementos div a {
+    font-weight: 500;
+    font-size: clamp(0.5em, 1vw, 1em);
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.header__opciones__elementos > div {
+    margin: 0 1vw 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    width: auto;
+}
+
+.header__opciones__elementos__animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 80%;
+    width: 150%;
+    text-align: center;
+}
+
+.header__opciones__elementos__animation::before {
+    content: "";
+    position: absolute;
+    width: 140%;
+    height: 100%;
+    z-index: 0;
+}
+
+.margin_instalaciones::before {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    z-index: 0;
+}
+
+.margin_acerca::before {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    z-index: 0;
+}
+
+.header__opciones__elementos__animation:hover::before {
+    background-color: rgba(0, 0, 0, 0.699);
+    cursor: pointer;
+}
+
+.option:hover && a {
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+.active::before {
+    background-color: rgba(0, 0, 0, 0.699);
+}
+
+.header__opciones__elementos div a {
+    cursor: pointer;
+}
+
+.line::before {
+    content: "";
+    width: 2px;
+    height: 80%;
+    background-color: white;
+}
+
+.icon-select {
+    display: none;
+    position: absolute;
+    right: 3vw;
+    font-size: 2em;
+}
+
+.option {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 750px) {
+    .header__derecha{
+        width: 100vw;
+    }
+
+    .header__opciones {
+        position: fixed;
+        background-color: #00A887;
+        width: 100vw;
+        height: 0%;
+        top: 4.5em;
+        left: 0;
+        right: 0;
+    }
+
+    .header__opciones__elementos {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        flex-direction: column;
+        min-height: 55vh;
+        width: 20em;
+    }
+
+    .header__opciones__elementos__animation {
+        font-size: 2.5em;
+    }
+    
+    .line {
+        display: none;
+        visibility: hidden;
+    }
+
+    .icon-select {
+        display: block;
+        cursor: pointer;
+    }
+
+    .animation_close {
+        animation: cerrar 1s ease forwards;
+        animation-delay: 0.5s;
+    }
+
+    .font_close {
+        animation: cerrar_font 0.2s ease forwards;
+    }
+    
+    .animation_open {
+        animation: abrir 1s ease forwards;
+    }
+
+    .font_open {
+        animation: abrir_font 2.5s ease forwards;
+    }
+
+    .nabvar_abierto {
+        opacity: 0;
+        height: 0%;;
+    }
+
+    .nabvar_cerrado {
+        opacity: 1;
+        height: 90%
+    }
+}
+
+@keyframes abrir {
+    0% { 
+        height: 0%;
+        opacity: 0;
+    }
+    80% { 
+        opacity: 1;
+    }
+    100% { 
+        height: 90%;
+        opacity: 1;
+    }
+
+}
+
+@keyframes abrir_font {
+    0% { 
+        opacity: 0;
+    }
+    100% { 
+        opacity: 1;
+    }
+}
+
+@keyframes cerrar {
+    0% { 
+        height: 90%;
+        opacity: 1;
+    }
+    80% { 
+        opacity: 1;
+    }
+    100% { 
+        height: 0%;
+        opacity: 0;
+    }
+}
+
+@keyframes cerrar_font {
+    0% { 
+        opacity: 1;
+    }
+    100% { 
+        opacity: 0;
+    }
+}
+
+/* titulos 78px  */
+

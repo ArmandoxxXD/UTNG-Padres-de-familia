@@ -1,0 +1,78 @@
+.tipos-becas {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body {
+  background-color: #f2f2f2;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  color: #f58220;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.60);
+}
+
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.30);
+  transition: all 0.3s ease-in-out;
+  /* Agregar margen interno para que el contenido no toque los bordes de la tarjeta */
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Hacer que las tarjetas sean más grandes */
+.card-body {
+  padding: 2rem;
+  /* Ajusta este valor para aumentar el espacio dentro de la tarjeta */
+}
+
+.row {
+  margin-right: 0;
+  /* Asegurarse de que no haya margen derecho extra */
+  margin-left: 0;
+  /* Asegurarse de que no haya margen izquierdo extra */
+}
+
+.col-md-6 {
+  padding-right: 0.5rem;
+  /* Espaciado entre tarjetas, ajusta según necesidad */
+  padding-left: 0.5rem;
+  /* Espaciado entre tarjetas, ajusta según necesidad */
+}
+
+.custom-button {
+  background-color: #f58220;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  padding: 10px 60px;
+  font-size: 24px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background-color 0.3s;
+  width: 100%;
+  cursor: text;
+}
+
+
+/* Asegurarse de que las tarjetas ocupen todo el espacio horizontal en pantallas pequeñas */
+@media (max-width: 767px) {
+  .col-md-6 {
+    padding-right: 15px;
+    /* Restaurar el espaciado en pantallas pequeñas */
+    padding-left: 15px;
+    /* Restaurar el espaciado en pantallas pequeñas */
+  }
+}
