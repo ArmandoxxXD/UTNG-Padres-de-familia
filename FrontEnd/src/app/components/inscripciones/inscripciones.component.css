@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Italianno:wght@400&display=swap');
 
+.incripciones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 body {
   font-family: 'Nunito', sans-serif;
   background-color: #EEEEEE;
@@ -8,9 +15,12 @@ body {
 }
 
 .container {
+  margin-top: 80px !important;
   width: 90%;
   margin: 20px auto;
   padding: 20px;
+
+  margin-bottom: 130px !important;
 }
 
   .header {
