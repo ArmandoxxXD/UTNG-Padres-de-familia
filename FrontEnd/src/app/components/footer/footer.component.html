@@ -1,1 +1,40 @@
-<p>footer works!</p>
+<div class="footer">
+    <div class="d-flex footer-body">
+        <div class="col-2 w-25"></div>
+        <div class="col-8 w-50" style="text-align: center;">
+            <h4>©UTNG 2023</h4>
+        </div>
+        <div class="col-2 w-25" style="text-align: right;">
+            <button class="btn btn-help" data-bs-toggle="modal" data-bs-target="#exampleModal">Solicitar Ayuda</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="text-align: center;">
+                <div class="col-12"><h1 class="modal-title fs-5" id="exampleModalLabel">Solicitar Ayuda</h1></div>
+                <button type="button" style="position: relative; left: -15px;" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="form-control" placeholder="Nombre">
+                <br />
+                <input type="email" class="form-control" placeholder="Correo electrónico">
+                <br />
+                <select class="form-select" aria-label="Default select example">
+                    <option selected disabled hidden>Tema</option>
+                    <option *ngFor="let tema of temas; let i = index" [value]="i + 1">{{ tema }}</option>
+                </select>
+                <br />
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="Descripción"></textarea>
+            </div>
+            <div class="modal-footer" style="justify-content: center;">
+                <button type="button" class="btn btn-submit" data-bs-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
