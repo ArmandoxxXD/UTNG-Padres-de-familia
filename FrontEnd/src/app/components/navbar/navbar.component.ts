@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     const menu = document.getElementById("menu__burguer");
@@ -81,6 +82,23 @@ export class NavbarComponent implements OnInit {
     var elemento = document.getElementById(path);
 
     elemento?.classList.add('active');
+    switch (path) {
+      case "home":
+        this.router.navigate(['home'])
+        break;
+      case "becas":
+        this.router.navigate(['tipos-becas'])
+        break;
+      case "carreras":
+        this.router.navigate(['carreras'])
+        break;
+      case "instalaciones":
+        this.router.navigate(['instalaciones'])
+        break;
+      case "acerca":
+        this.router.navigate(['acerca'])
+        break;
+    }
   }
 
   eliminarActivarGeneral() {

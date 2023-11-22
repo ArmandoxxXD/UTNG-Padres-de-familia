@@ -1,16 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Italianno');
 
-.title {
-    text-align: center;
-    font-family: Italianno;
-    margin: 12px;
+.instalaciones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.title h1 {
-    font-size: 58px;
-    color: #00259A;
+.title {
+    margin-top: 80px !important;
+    text-align: center;
+    margin: 12px;
+    background-color: #f58220; /* Color de fondo naranja */
+    margin-bottom: 80px !important;
+    border: none; /* Sin borde */
+    border-radius: 20px; /* Bordes redondeados */
+    color: white; /* Color de texto blanco */
+    padding: 10px 60px; /* Relleno dentro del botón */
+    font-size: 24px !important; /* Tamaño de la fuente */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Sombra ligera para el botón */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-weight: bold; /* Fuente en negrita */
+    letter-spacing: 1px; /* Espacio entre letras */
 }
+
+.title-text {
+    background-color: #f58220; /* Color de fondo naranja */
+    border: none; /* Sin borde */
+    border-radius: 20px; /* Bordes redondeados */
+    color: white; /* Color de texto blanco */
+    padding: 10px 60px; /* Relleno dentro del botón */
+    font-size: 24px; /* Tamaño de la fuente */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Sombra ligera para el botón */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-weight: bold; /* Fuente en negrita */
+    letter-spacing: 1px; /* Espacio entre letras */
+    transition: background-color 0.3s; /* Transición suave al cambiar de color */
+    width: 60%;
+}
+
 
 .card-body .subtitle {
     font-size: 30px;
