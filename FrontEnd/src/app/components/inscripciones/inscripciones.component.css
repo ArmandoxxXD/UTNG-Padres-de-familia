@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno:wght@400&display=swap');
+
+.incripciones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #EEEEEE;
+  color: white;
+}
+
+.container {
+  margin-top: 80px !important;
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+
+  margin-bottom: 130px !important;
+}
+
+  .header {
+    color: #000;
+    text-align: center;
+    margin-bottom: 30px;
+ 
+  }
+  .header h1 {
+    color: #000;
+    font-weight: 800;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3.20px; 
+    word-wrap: break-word;
+  }
+  .header-p p{
+    color: black;
+    font-size: 16px;
+    font-family: Nunito;
+    font-weight: 700;
+    word-wrap: break-word
+  }
+ 
+  .cost-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+  .cost-block {
+    background: #00259A;
+    border-radius: 10px;
+    padding: 5px;
+    height: 50px;
+    width: 150px;
+    text-align: center;
+   
+  }
+  .cost-block h3 {
+    color: white;
+    font-size: 12px;
+    font-family: Nunito;
+    font-style: italic;
+    font-weight: 800;
+    letter-spacing: 2.40px;
+    word-wrap: break-word
+    
+    
+  }
+  .cost-block p {
+    color: white;
+    font-size: 12px;
+    font-family: Nunito;
+    font-style: italic;
+    font-weight: 800;
+    letter-spacing: 2.40px;
+    word-wrap: break-word
+  }
+  .info {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .requirements, .instructions {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+  }
+  .requirements div, .instructions div {
+    flex: 1;
+    margin-right: 10px;
+  }
+  .requirements div:last-child, .instructions div:last-child {
+    margin-right: 0;
+  }
+  .step {
+    background-color: #ffcc00;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  .footer {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  
+  .contact-info {
+
+   text-align: center;
+   margin-bottom: 40px;
+  }
+  #M-info{
+    color: #00259A;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  
+  .campus-info {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+   
+  }
+  
+  .campus-detalles {
+    color: #000; /* Asume un color de texto oscuro */
+    text-decoration: none;
+  }
+  
+  .separator {
+    height: 50px;
+    width: 1px;
+    background-color: #333; /* Asume un color para el separador */
+    margin: 0 50px;
+  }
+  
+  a {
+    color: #000; /* Asume un color azul para los enlaces */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  span {
+    font-size: 0.9em;
+    color: #666; /* Asume un color de texto más claro para los números de teléfono */
+  }
+  .container-r{
+    display: flex;
+    align-items: flex-start; /* Ajusta según tus necesidades */
+  
+  }
+  
+  .req {
+    margin-left: 13px ;
+  }
+  
+  .requisitos-container {
+    width: 445px;
+    height: 150px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background: #D9D9D9;
+    border-radius: 10px; 
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+  }
+  
+  .title-r {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: black;
+  }
+  .text-r{
+    color: black;
+    text-align: justify;
+    font-size: 15px;
+    font-weight: bold;
+    word-wrap: break-word
+  }
+  
+  .requisitos-list {
+    color: black;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .number-box {
+    background-color: #E57A08;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 150px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 100%;
+      padding: 20px 10px; /* Reduced side padding for smaller screens */
+    }
+  
+    .container-r, .campus-info {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .req, .requisitos-container, .number-box {
+      width: 100%; /* Set the width to 100% to ensure it expands the full container width */
+      box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+  
+    .requisitos-container {
+      margin-bottom: 20px; /* Add some space between the list and the next element */
+    }
+  
+    .number-box {
+     
+      margin-bottom: 10px;
+    }
+  
+    .campus-detalles, .separator {
+      width: auto; /* Adjust the width to be auto so it fills the space as needed */
+      margin-bottom: 20px;
+    }
+  
+    .separator {
+      display: none; /* Hide the separator on smaller screens */
+    }
+    
+    /* Additional styles to ensure text and other elements scale down */
+    h1, h2, h3, p, a {
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    h1, h2, h3, p {
+      font-size: smaller;
+    }
+  
+    .cost-block, .requisitos-container, .number-box {
+      width: 100%; /* Debería ser 100% para usar todo el ancho disponible */
+      margin-bottom: 15px; /* Agrega margen inferior para separar los elementos */
+    }
+  
+    /* Ajustar tamaños de fuente para pantallas más pequeñas si es necesario */
+    .cost-block h3 {
+      font-size: 1em; /* Ejemplo de ajuste de tamaño de fuente */
+    }
+  
+    .number-box {
+      align-self: flex-start; /* Alinea los números a la izquierda */
+    }
+    
+    /* Otras reglas de estilo que puedas necesitar para mejorar la responsividad */
+  }
+  

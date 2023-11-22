@@ -7,6 +7,8 @@ import { VerBecasExternasComponent } from './components/becas/ver-becas-externas
 import { InscripcionesComponent } from './components/inscripciones/inscripciones.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { CarrerasComponent } from './components/carreras/carreras.component';
+import { InstalacionesComponent } from './components/instalaciones/instalaciones.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,6 +19,7 @@ const routes: Routes = [
   { path: 'inscripciones', component: InscripcionesComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'carreras', component: CarrerasComponent },
+  { path: 'instalaciones', component: InstalacionesComponent },
   { path: '**', redirectTo: 'home' }
 ];
 

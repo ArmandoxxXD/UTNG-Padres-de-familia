@@ -103,7 +103,6 @@
     }
   },
   "defaultProject": "FrontEnd",
-  "cli": {
-    "analytics": "565288c2-3a9c-457a-85c1-6bd926f07503"
-  }
+  "cli": {===
+    "analytics": "06ebd419-0b99-4710-98f1-848885d12ed9"
 }

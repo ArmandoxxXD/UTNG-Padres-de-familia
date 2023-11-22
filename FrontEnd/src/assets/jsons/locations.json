@@ -1,0 +1,22 @@
+[
+    {
+        "src": "https://kuali.com.mx/portal/wp-content/uploads/2015/10/resized/JC_2862-e1446042138808-615x300@2x.jpg",
+        "title": "Cafeteria Sr Masoco:",
+        "description": "¿Te gustaría disfrutar de un rico café y un delicioso bocadillo mientras estudias o charlas con tus amigos? Entonces no te pierdas la Cafetería Sr Masoco, el nuevo espacio gastronómico de la UTNG. Aquí encontrarás una variedad de opciones para todos los gustos y presupuestos, desde sándwiches y ensaladas hasta postres y bebidas. Además, la Cafetería Sr Masoco cuenta con un ambiente acogedor y moderno, ideal para relajarte y pasar un buen rato. Ven y comprueba por ti mismo por qué la Cafetería Sr Masoco es el lugar favorito de muchos estudiantes y profesores de la UTNG. Te esperamos con una sonrisa y el mejor servicio."
+    },
+    {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/5/50/El_%C3%A1guila_de_la_renovaci%C3%B3n_de_Miguel_Peraza_Men%C3%A9ndez%2C_UTNG.jpg",
+        "title": "El Águila de la Renovación:",
+        "description": "El Águila de la Renovación es el símbolo de la Universidad Tecnológica del Norte de Guanajuato (UTNG), una institución educativa que busca formar profesionales innovadores, competitivos y comprometidos con el desarrollo social y económico de la región. El águila representa la visión, el liderazgo, la fuerza y la libertad que caracterizan a los egresados de la UTNG, así como su capacidad de adaptarse y renovarse ante los retos del mundo actual. El águila también simboliza el espíritu de la UTNG, que se basa en los valores de la excelencia, la responsabilidad, la honestidad, el respeto y la solidaridad."
+    },
+    {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Edificios_de_la_Universidad_Tecnol%C3%B3gica_del_Norte_de_Guanajuato_%28UTNG%29.jpg/800px-Edificios_de_la_Universidad_Tecnol%C3%B3gica_del_Norte_de_Guanajuato_%28UTNG%29.jpg",
+        "title": "Rectoría",
+        "description": "La rectoría es el órgano de gobierno de la Universidad Tecnológica del Norte de Guanajuato (UTNG). Su función principal es dirigir y coordinar las actividades académicas, administrativas y financieras de la institución. La rectoría está integrada por el rector o rectora, que es la máxima autoridad de la UTNG, y por los directores o directoras de las diferentes áreas y divisiones."
+    },
+    {
+        "src": "assets/imgs/gmnasio.png",
+        "title": "Gimnasio auditorio",
+        "description": "El gimnasio auditorio de la UTNG es un espacio multifuncional que se utiliza tanto para actividades deportivas como académicas y culturales. Cuenta con una capacidad para 800 personas, un escenario, una pantalla gigante, equipo de sonido, iluminación y ventilación. El gimnasio auditorio es el lugar donde se realizan eventos como graduaciones, conferencias, conciertos, exposiciones, torneos y competencias. Es un espacio que fomenta la convivencia, el aprendizaje y el desarrollo integral de los estudiantes y la comunidad universitaria."
+    }
+]
