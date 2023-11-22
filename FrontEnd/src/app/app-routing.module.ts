@@ -6,15 +6,17 @@ import { VerBecasInternasComponent } from './components/becas/ver-becas-internas
 import { VerBecasExternasComponent } from './components/becas/ver-becas-externas/ver-becas-externas.component';
 import { InscripcionesComponent } from './components/inscripciones/inscripciones.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { CarrerasComponent } from './carreras/carreras.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent }, 
-  { path: 'tipos-becas', component: TiposBecasComponent },
-  { path: 'becas-internas', component: VerBecasInternasComponent },
-  { path: 'becas-externas', component: VerBecasExternasComponent },
+  { path: 'becas/tipos-becas', component: TiposBecasComponent },
+  { path: 'becas/becas-internas', component: VerBecasInternasComponent },
+  { path: 'becas/becas-externas', component: VerBecasExternasComponent },
   { path: 'inscripciones', component: InscripcionesComponent },
   { path: 'contacto', component: ContactoComponent },
+  { path: 'carreras', component: CarrerasComponent},
   { path: '**', redirectTo: 'home' }
 ];
 

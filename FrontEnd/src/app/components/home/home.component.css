@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+
+/* .soloParaocuparEspacio {
+    height: 50em;
+    width: 100%;
+    background-color: red;
+} */
+
 .home {
     display: flex;
     align-items: center;
@@ -6,21 +14,144 @@
 }
 
 .home__carousel {
-    margin-top: 12.5vh;
+    margin-top: 8.5em;
     height: 45vh;
-    width: 75vw;
-    background-color: yellowgreen;
+    width: 90vw;
 }
 
 .home__carreras {
     height: 40.5vh;
-    width: 70vw;
-    background-color: blueviolet;
+    width: 80vw;
 }
 
 .home__carreras_titulo {
     text-align: center;
     color: #00259A;
-    letter-spacing: 20%;
-    background-color: rgb(163, 145, 23);
+    letter-spacing: 0.3vw;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+
+.home__carreras_carreras {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.home__carousel_img {
+    height: 40.5vh;
+    width: 90vw;
+    left: 0;
+    right: 0;
+}
+
+.carrera {
+    cursor: pointer;
+}
+
+.carrera:hover {
+    transition: 0.5s;
+    transform: scale(1.02);
+}
+
+.carrera_RH {
+    width: 14Vw;
+    height: 28vh;
+    background-color: whitesmoke;
+    border-radius: 10%;
+    border: solid #E57A08 0.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrera_PI {
+    width: 14Vw;
+    height: 28vh;
+    background-color: whitesmoke;
+    border-radius: 10%;
+    border: solid #AAAAAA 0.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrera_TI {
+    width: 14Vw;
+    height: 28vh;
+    background-color: whitesmoke;
+    border-radius: 10%;
+    border: solid #00259A 0.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#carrera_contaduria {
+    background-image: url("/assets/home/carreras/contaduria.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carrera_energias {
+    background-image: url("/assets/home/carreras/energia_renovable.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carrera_desarrollo {
+    background-image: url("/assets/home/carreras/desarrollo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carrera_mecatronica {
+    background-image: url("/assets/home/carreras/mecatronica.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#carrera_entornos {
+    background-image: url("/assets/home/carreras/entornos.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carrera_RH__div_titulo {
+    width: 100%;
+    height: 20%;
+    margin-top: 40%;
+    background-color: rgba(229, 122, 8, 0.767);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrera_PI__div_titulo {
+    width: 100%;
+    height: 20%;
+    margin-top: 40%;
+    background-color: #aaaaaaf1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrera_TI__div_titulo {
+    width: 100%;
+    height: 20%;
+    margin-top: 40%;
+    background-color: #00249aad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrera__titulo {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-align: center;
 }
