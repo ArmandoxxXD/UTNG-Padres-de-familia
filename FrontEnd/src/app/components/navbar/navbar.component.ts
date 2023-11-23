@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     const menu = document.getElementById("menu__burguer");
@@ -19,7 +20,7 @@ export class NavbarComponent implements OnInit {
     const elemento_2 = document.getElementById("becas");
     const elemento_3 = document.getElementById("carreras");
     const elemento_4 = document.getElementById("instalaciones");
-    const elemento_5 = document.getElementById("acerca");
+    const elemento_5 = document.getElementById("inscripciones");
 
 
     menu?.addEventListener('click', () => {
@@ -68,7 +69,7 @@ export class NavbarComponent implements OnInit {
       case "/instalaciones":
         elemento_4?.classList.add('active');
         break;
-      case "/acerca":
+      case "/inscripciones":
         elemento_5?.classList.add('active');
         break;
     }
@@ -81,6 +82,23 @@ export class NavbarComponent implements OnInit {
     var elemento = document.getElementById(path);
 
     elemento?.classList.add('active');
+    switch (path) {
+      case "home":
+        this.router.navigate(['home'])
+        break;
+      case "becas":
+        this.router.navigate(['becas/tipos-becas'])
+        break;
+      case "carreras":
+        this.router.navigate(['carreras'])
+        break;
+      case "instalaciones":
+        this.router.navigate(['instalaciones'])
+        break;
+      case "inscripciones":
+        this.router.navigate(['inscripciones'])
+        break;
+    }
   }
 
   eliminarActivarGeneral() {
@@ -88,7 +106,7 @@ export class NavbarComponent implements OnInit {
     var elemento_2 = document.getElementById("becas");
     var elemento_3 = document.getElementById("carreras");
     var elemento_4 = document.getElementById("instalaciones");
-    var elemento_5 = document.getElementById("acerca");
+    var elemento_5 = document.getElementById("inscripciones");
 
     elemento_1?.classList.remove('active');
     elemento_2?.classList.remove('active');
