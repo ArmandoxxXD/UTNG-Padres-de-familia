@@ -87,7 +87,7 @@ export class NavbarComponent implements OnInit {
         this.router.navigate(['home'])
         break;
       case "becas":
-        this.router.navigate(['tipos-becas'])
+        this.router.navigate(['becas/tipos-becas'])
         break;
       case "carreras":
         this.router.navigate(['carreras'])
