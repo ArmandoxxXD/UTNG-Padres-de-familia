@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
+import { Expression } from '@angular/compiler';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +9,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  
+  form: FormGroup = new FormGroup({
+    email: new FormControl('', Validators.email),
+    temaValue: new FormControl(1)
+  })
   constructor() { }
 
 
@@ -26,4 +31,7 @@ export class FooterComponent implements OnInit {
   ]
 
 
+  test(event: any) {
+    console.log(event)
+  }
 }
