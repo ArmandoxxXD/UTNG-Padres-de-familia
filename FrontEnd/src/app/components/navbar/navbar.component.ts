@@ -156,6 +156,7 @@ export class NavbarComponent implements OnInit {
 
   TemaOscuro() {
     document.querySelector('body')?.setAttribute("data-bs-theme", "dark");
+    document.body.classList.remove('light-mode');
     document.body.classList.add('dark-mode');
     document.querySelector('#icon')?.setAttribute("class", "fa-solid fa-sun");
     this.theme = 'dark';
@@ -165,6 +166,7 @@ export class NavbarComponent implements OnInit {
   TemaClaro() {
     document.querySelector('body')?.setAttribute("data-bs-theme", "light");
     document.body.classList.remove('dark-mode');
+    document.body.classList.add('light-mode');
     document.querySelector('#icon')?.setAttribute("class", "fa-solid fa-moon");
     this.theme = 'light';
     this.modoOscuroService.setModoOscuro(false);

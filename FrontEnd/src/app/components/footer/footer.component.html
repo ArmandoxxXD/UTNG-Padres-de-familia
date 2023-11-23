@@ -30,7 +30,7 @@
                         <option *ngFor="let tema of temas; let i = index" [value]="i + 1">{{ tema }}</option>
                     </select>
                     <br />
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="Descripción" [disabled]="form.get('temaValue')?.value != 7"></textarea>
+                    <textarea  [class.oscuro]="esModoOscuro" class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="Descripción" [disabled]="form.get('temaValue')?.value != 7"></textarea>
                 </form>
             </div>
             <div class="modal-footer" style="justify-content: center;">
