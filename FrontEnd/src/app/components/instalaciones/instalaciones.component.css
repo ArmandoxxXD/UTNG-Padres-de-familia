@@ -147,11 +147,13 @@
 
 @media (max-width: 767px) {
     .responsive-image-left {
-        border-bottom-right-radius: 0%; border-bottom-left-radius: 0%;
+        border-bottom-right-radius: 0% !important; border-bottom-left-radius: 0% !important;
+        border-top-right-radius: var(--bs-card-inner-border-radius);
     }
 
     .responsive-image-right {
-        border-top-right-radius: 0%; border-top-left-radius: 0%;
+        border-top-right-radius: 0% !important; border-top-left-radius: 0% !important;
+        border-bottom-left-radius: var(--bs-card-inner-border-radius);
     }
     .subtitle-left {
         padding-left: 0%;
