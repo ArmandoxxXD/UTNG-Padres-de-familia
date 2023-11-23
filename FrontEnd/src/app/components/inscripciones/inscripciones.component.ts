@@ -16,4 +16,15 @@ export class InscripcionesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  mostrarCostos: boolean = false;
+  mostrarRequisitos: boolean = false;
+
+  toggleCostos(): void {
+    this.mostrarCostos = !this.mostrarCostos;
+  }
+
+  toggleRequisitos(): void {
+    this.mostrarRequisitos = !this.mostrarRequisitos;
+  }
+
 }
