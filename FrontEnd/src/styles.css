@@ -1,4 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-body{
-    background-color: #EEEEEE;
+.oscuro{
+    background-color: #444 !important;  /* Color de fondo del botón en modo oscuro */
+    color: #eee !important; /* Color del texto del botón en modo oscuro */
+    border: #555; /* Borde del botón en modo oscuro */
 }

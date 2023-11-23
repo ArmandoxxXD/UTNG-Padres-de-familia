@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private modoOscuroService: ModoOscuroService) { }
 
   ngOnInit(): void {
     const menu = document.getElementById("menu__burguer");
@@ -148,6 +149,29 @@ export class NavbarComponent implements OnInit {
     for (let i = 0; i < options.length; i++) {
       options[i].classList.add('font_open');
     }
+  }
+
+
+  public theme: "light" | "dark" = "light";
+
+  TemaOscuro() {
+    document.querySelector('body')?.setAttribute("data-bs-theme", "dark");
+    document.body.classList.add('dark-mode');
+    document.querySelector('#icon')?.setAttribute("class", "fa-solid fa-sun");
+    this.theme = 'dark';
+    this.modoOscuroService.setModoOscuro(true);
+  }
+  
+  TemaClaro() {
+    document.querySelector('body')?.setAttribute("data-bs-theme", "light");
+    document.body.classList.remove('dark-mode');
+    document.querySelector('#icon')?.setAttribute("class", "fa-solid fa-moon");
+    this.theme = 'light';
+    this.modoOscuroService.setModoOscuro(false);
+  }
+  
+  CambiarTema() {
+    document.querySelector('body')?.getAttribute("data-bs-theme") === 'light' ? this.TemaOscuro() :this.TemaClaro();
   }
 
 }
