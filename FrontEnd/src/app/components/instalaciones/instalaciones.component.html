@@ -3,37 +3,60 @@
         <div class="title">
             Instalaciones
         </div>
-        <div class="h-100 w-100" *ngFor="let location of locations; let i=index">
-            <div class="card-inst mb-3" *ngIf="locations.length !== (i + 1)">
-                <div class="row g-0">
+        <div class="h-100 w-100" *ngFor="let location of locations; let i=index" >
+            <div class="card mb-3" *ngIf="locations.length !== (i + 1)"
+                style="border: none; min-height: 208px !important;" [class.oscuro]="esModoOscuro">
+                <div class="row g-0" style="min-height: 208px !important;">
                     <div class="col-md-2 col-12" *ngIf="(i + 1) % 2 !== 0">
-                        <img src="{{location.src}}" 
-                            style="border: solid 4px #e57a08; box-shadow: 4px 5px 0px #94949478;" 
-                        alt="..." width="175" height="175" class="responsive-image">
+                        <img src="{{location.src}}" (click)="openImageModal(location)" data-bs-toggle="modal" data-bs-target="#imageModal" alt="..."
+                            width="179" class="card-img h-100 responsive-image-left button-img">
                     </div>
                     <div class="col-md-10">
+                        <div [class.card-header-left]="(i + 1) % 2 !== 0" [class.card-header-right]="(i + 1) % 2 === 0">
+                            <h5 class="subtitle  card-title" [class.subtitle-left]="(i + 1) % 2 !== 0"
+                                [class.subtitle-right]="(i + 1) % 2 === 0">{{location.title}}</h5>
+                        </div>
                         <div class="card-body">
-                            <h5 class="subtitle  card-title" [class.subtitle-left]="(i + 1) % 2 !== 0" [class.subtitle-right]="(i + 1) % 2 === 0">{{location.title}}</h5>
-                            <p class="card-text text-ins" [class.text-ins-left]="(i + 1) % 2 !== 0" [class.text-ins-right]="(i + 1) % 2 === 0">{{location.description}}</p>
+
+                            <div class="h-100 w-100">
+                                <p class="card-text text-ins" [class.text-ins-left]="(i + 1) % 2 !== 0"
+                                    [class.text-ins-right]="(i + 1) % 2 === 0">{{location.description}}</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-2 col-12 right" *ngIf="(i + 1) % 2 === 0">
-                        <img src="{{location.src}}" 
-                            style="border: solid 4px #e57a08; box-shadow: -4px 5px 0px #94949478;" 
-                        alt="..." width="175" height="175" class="responsive-image">
+                        <img src="{{location.src}}" (click)="openImageModal(location)" data-bs-toggle="modal" data-bs-target="#imageModal" alt="..."
+                            width="179" class="card-img h-100 responsive-image-right button-img">
                     </div>
                 </div>
             </div>
-    
-            <div class="card-inst mb-3" *ngIf="locations.length === (i + 1)">
-                <img src="{{location.src}}" height="175" class="card-img-top" style="border: solid 4px #e57a08; box-shadow: 4px 5px 0px #94949478; margin-bottom: 20px;" alt="...">
-                <div class="card-body">
+
+            <div class="card mb-3" *ngIf="locations.length === (i + 1)"  [class.oscuro]="esModoOscuro">
+                <div class="card-header">
                     <h5 class="subtitle card-title">{{location.title}}</h5>
+                </div>
+                <div class="card-body">
                     <p class="card-text text-ins">{{location.description}}</p>
                 </div>
+                <img src="{{location.src}}" (click)="openImageModal(location)" data-bs-toggle="modal" data-bs-target="#imageModal" height="179"
+                    class="card-img-bottom button-img" alt="...">
             </div>
             <hr class="hr-inst" *ngIf="locations.length !== (i + 1)">
         </div>
     </div>
 </div>
 <app-footer></app-footer>
+
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="text-align: center;">
+                <div class="col-12"><h1 class="modal-title fs-5" id="exampleModalLabel">{{selectedLocation?.title}}</h1></div>
+                <button type="button" style="position: relative; left: -36px;" class="btn" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark fa-xl"></i></button>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                <img src="{{selectedLocation?.src}}" alt="" class="modal-img img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
