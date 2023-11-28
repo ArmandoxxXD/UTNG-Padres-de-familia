@@ -15,6 +15,7 @@ import { CarrerasComponent } from './components/carreras/carreras.component';
 import { InstalacionesComponent } from './components/instalaciones/instalaciones.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TecladoComponent } from './components/teclado/teclado.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     InscripcionesComponent,
     ContactoComponent,
     CarrerasComponent,
-    InstalacionesComponent
+    InstalacionesComponent,
+    TecladoComponent
   ],
   imports: [
     BrowserModule,
