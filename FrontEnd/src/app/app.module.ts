@@ -14,6 +14,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { CarrerasComponent } from './components/carreras/carreras.component';
 import { InstalacionesComponent } from './components/instalaciones/instalaciones.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NieveComponent } from './efectos/nieve/nieve.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     InscripcionesComponent,
     ContactoComponent,
     CarrerasComponent,
-    InstalacionesComponent
+    InstalacionesComponent,
+    NieveComponent
   ],
   imports: [
     BrowserModule,
