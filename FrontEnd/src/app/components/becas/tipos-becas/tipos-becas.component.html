@@ -11,7 +11,7 @@
   
     <div class="row">
       <div class="col-lg-6 mb-4">
-        <div class="card h-100">
+        <div class="card h-100"  [class.oscuro]="esModoOscuro">
           <div class="card-body" routerLink="/becas/becas-externas">
             <h2 class="card-title">Externas</h2>
             <p class="card-text">Becas proporcionadas por la entidad federal o estatal.</p>
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="col-lg-6 mb-4">
-        <div class="card h-100">
+        <div class="card h-100"  [class.oscuro]="esModoOscuro">
           <div class="card-body" routerLink="/becas/becas-internas">
             <h2 class="card-title">Internas</h2>
             <p class="card-text">Becas proporcionadas por la universidad tecnológica del norte de guanajuato.</p>
