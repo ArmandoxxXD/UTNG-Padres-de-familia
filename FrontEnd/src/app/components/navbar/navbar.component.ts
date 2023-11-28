@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
+// Declaraciones para evitar errores de compilación
+declare var webkitSpeechRecognition: any;
+declare var SpeechRecognition: any;
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
+  templateUrl: './navbar.component.html', 
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router) { }
+export class NavbarComponent implements OnInit {
+  @ViewChild('voiceButton') voiceButton!: ElementRef;
+
+  constructor(private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     const menu = document.getElementById("menu__burguer");
@@ -148,6 +155,59 @@ export class NavbarComponent implements OnInit {
     for (let i = 0; i < options.length; i++) {
       options[i].classList.add('font_open');
     }
+  }
+
+  listenToVoice() {
+    const recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+    recognition.lang = 'es-ES';
+
+    recognition.onresult = (event: any) => {
+        const command = event.results[0][0].transcript.toLowerCase();
+        this.handleVoiceCommand(command);
+    };
+
+    recognition.onerror = (event: any) => {
+        console.error('Error en el reconocimiento de voz', event.error);
+        this.toastr.error('Error en el reconocimiento de voz', 'Error');
+    };
+
+    recognition.onend = () => {
+        // This is triggered when the speech recognition ends without a command
+        console.log('Fin del reconocimiento de voz sin comando');
+        recognition.start();
+        this.toastr.error('Comando no reconocido', 'Error');
+       
+    };
+    recognition.start();
+  
+}
+
+handleVoiceCommand(command: string) {
+    if (command.includes('inscripciones')) {
+        window.location.href = '/inscripciones';
+    } else if (command.includes('home')) {
+        window.location.href = '/home';
+    } else if (command.includes('tipos becas')) {
+        window.location.href = '/becas/tipos-becas';
+    } else if (command.includes('becas internas')) {
+        window.location.href = '/becas/becas-internas';
+    } else if (command.includes('becas externas')) {
+        window.location.href = '/becas/becas-externas';
+    } else if (command.includes('contacto')) {
+        window.location.href = '/contacto';
+    } else if (command.includes('carreras')) {
+        window.location.href = '/carreras';
+    } else if (command.includes('instalaciones')) {
+        window.location.href = '/instalaciones';
+    } else {
+        console.log('Comando no reconocido');
+        // No need to display the toast here since it will be handled in onend
+    }
+}
+
+
+  test(event: any) {
+    console.log(event);
   }
 
 }
