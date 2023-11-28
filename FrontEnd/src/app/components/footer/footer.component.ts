@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; 
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,11 +8,18 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  
-  constructor() { }
+  form: FormGroup = new FormGroup({
+    email: new FormControl('', Validators.email),
+    temaValue: new FormControl(1)
+  })
+  esModoOscuro: boolean = false;
+  constructor(private modoOscuroService:ModoOscuroService) { }
 
 
   ngOnInit(): void {
+    this.modoOscuroService.esModoOscuro$.subscribe((modoOscuro) => {
+      this.esModoOscuro = modoOscuro;
+    });
   }
 
     
@@ -26,4 +34,7 @@ export class FooterComponent implements OnInit {
   ]
 
 
+  test(event: any) {
+    console.log(event)
+  }
 }

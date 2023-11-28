@@ -15,6 +15,8 @@ import { CarrerasComponent } from './components/carreras/carreras.component';
 import { InstalacionesComponent } from './components/instalaciones/instalaciones.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NieveComponent } from './efectos/nieve/nieve.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { NieveComponent } from './efectos/nieve/nieve.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

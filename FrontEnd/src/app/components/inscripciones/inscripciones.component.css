@@ -13,8 +13,16 @@ body {
   color: white;
 }
 
+.titulo-ins{
+  font-style: italic;
+  margin-top: 20px;
+  font-size: 36px;
+  color: #FF8200;
+  text-shadow: 0px 2px 2px #00109e;
+}
+
 .container {
-  margin-top: 80px !important;
+  margin-top: 14px !important;
   width: 90%;
   margin: 20px auto;
   padding: 20px;
@@ -175,7 +183,7 @@ body {
   }
   
   .title-r {
-    font-weight: bold;
+
     margin-bottom: 15px;
     color: black;
   }
@@ -183,9 +191,10 @@ body {
     color: black;
     text-align: justify;
     font-size: 15px;
-    font-weight: bold;
+  
     word-wrap: break-word
   }
+  
   
   .requisitos-list {
     color: black;
@@ -267,4 +276,87 @@ body {
     
     /* Otras reglas de estilo que puedas necesitar para mejorar la responsividad */
   }
-  
+  /* Estilos generales */
+.inscripciones {
+  font-family: 'Arial', sans-serif; /* Cambia esto por la fuente que se muestra en la imagen */
+  color: #333; /* Ajusta este valor al color del texto que se muestra en la imagen */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Ajusta esto al ancho del contenedor que prefieras */
+  margin: 0 auto; /* Centra el contenedor */
+}
+
+.card {
+  border: 1px solid #ddd; /* Borde sutil para la tarjeta */
+  margin-bottom: 20px; /* Espacio entre las tarjetas */
+}
+
+.card-header {
+  padding: .75rem 1.25rem; /* Espaciado interno para el encabezado */
+  background-color: #f7f7f7; /* Color de fondo para el encabezado */
+  border-bottom: 1px solid #ddd; /* Borde para separar del cuerpo de la tarjeta */
+}
+
+
+.btn.btn-primary{
+  width: 100%; /* Hace que el botón abarque toda la anchura del encabezado de la tarjeta */
+  text-align: left; /* Alinea el texto a la izquierda */
+  background-color: transparent; /* Fondo transparente para el botón */
+  color: #0056b3; /* Color del texto para el botón */
+  padding: .75rem 1.25rem; /* Espaciado interno para el botón */
+  border: none; /* Sin borde para el botón */
+  text-decoration: none; /* Sin subrayado para el botón */
+}
+
+/* Botones */
+.btn.btn-primary {
+  background-color: transparent; /* Fondo transparente */
+  color: #0056b3; /* Color de texto que destaque */
+  padding: 5px 10px; /* Espaciado interno */
+  text-decoration: underline; /* Subrayado para indicar interactividad */
+  cursor: pointer; /* Cursor en forma de mano al pasar el ratón */
+  border: none;
+  display: inline-block;
+  margin-right: 5px; /* Separación entre elementos */
+}
+
+
+/* Sección de costos e información de contacto */
+.header {
+  background-color: #e9ecef; /* Ajusta al color de fondo de la cabecera */
+  padding: 10px;
+  border-bottom: 2px solid #007bff; /* Ajusta al color del borde de la cabecera */
+}
+
+.header h1, .header h2 {
+  margin: 0;
+  padding: 0;
+  color: #0056b3; /* Ajusta al color del texto de la cabecera */
+}
+
+.cost-section, .contact-info {
+  padding: 15px;
+}
+
+.cost-block, .campus-info {
+  margin-bottom: 15px;
+}
+
+/* Detalles de contacto */
+.campus-detalles {
+  margin-bottom: 10px;
+}
+
+.separator {
+  border-left: 2px solid #ddd; /* Ajusta al color del separador */
+  height: 100px;
+}
+
+/* Estilo de los íconos */
+.fa-square-whatsapp {
+  color: #25D366; /* Color del logo de WhatsApp */
+}
+
+/* Ajusta los colores y tamaños según el diseño de tu imagen */
