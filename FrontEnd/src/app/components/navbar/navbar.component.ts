@@ -172,8 +172,6 @@ export class NavbarComponent implements OnInit {
     };
 
     recognition.onend = () => {
-        // This is triggered when the speech recognition ends without a command
-        console.log('Fin del reconocimiento de voz sin comando');
         recognition.start();
         this.toastr.error('Comando no reconocido', 'Error');
        
