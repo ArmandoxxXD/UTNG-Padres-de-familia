@@ -14,8 +14,16 @@ body {
   color: white;
 }
 
+.titulo-ins{
+  font-style: italic;
+  margin-top: 20px;
+  font-size: 36px;
+  color: #FF8200;
+  text-shadow: 0px 2px 2px #00109e;
+}
+
 .container {
-  margin-top: 80px !important;
+  margin-top: 14px !important;
   width: 90%;
   margin: 20px auto;
   padding: 20px;
@@ -187,6 +195,7 @@ body {
   
     word-wrap: break-word
   }
+  
   
   .requisitos-list {
     color: black;
