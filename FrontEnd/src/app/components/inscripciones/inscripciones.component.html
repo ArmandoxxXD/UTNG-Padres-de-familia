@@ -9,10 +9,17 @@
         <p>Haga clic en el botón para ver más detalles</p>
 
         <p>
-          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCostos"
-            aria-expanded="false" aria-controls="collapseCostos">
-            Costos de inscripción (Fechas, Precios...)  <i class="fas fa-chevron-down"></i>
-          </button>
+<!-- Botón de Costos -->
+<button class="btn btn-primary" type="button" 
+  data-bs-toggle="collapse" data-bs-target="#collapseCostos"
+  [attr.aria-expanded]="isCollapseCostosExpanded.toString()"
+  (click)="isCollapseCostosExpanded = !isCollapseCostosExpanded"
+  aria-controls="collapseCostos">
+  Costos de inscripción (Fechas, Precios...)  
+  <i class="fas" [ngClass]="{'fa-chevron-down': !isCollapseCostosExpanded, 'fa-chevron-up': isCollapseCostosExpanded}"></i>
+</button>
+
+
         </p>
       </div>
       <div class="card-body">
@@ -65,10 +72,14 @@
         <p>Haga clic en el botón para ver más detalles</p>
 
         <p>
-          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRequisitos"
-            aria-expanded="false" aria-controls="collapseRequisitos">
-            Requisitos de inscripción (Fichas, Documentación...) <i class="fas fa-chevron-down"></i>
-          </button>
+          <button class="btn btn-primary" type="button" 
+          data-bs-toggle="collapse" data-bs-target="#collapseRequisitos"
+          [attr.aria-expanded]="isCollapseRequisitosExpanded.toString()"
+          (click)="isCollapseRequisitosExpanded = !isCollapseRequisitosExpanded"
+          aria-controls="collapseRequisitos">
+          Requisitos de inscripción (Fichas, Documentación...) 
+          <i class="fas" [ngClass]="{'fa-chevron-down': !isCollapseRequisitosExpanded, 'fa-chevron-up': isCollapseRequisitosExpanded}"></i>
+        </button>
         </p>
       </div>
       <div class="card-body">
