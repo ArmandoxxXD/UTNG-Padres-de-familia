@@ -1,8 +1,7 @@
-
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 
-import {LecturaService} from 'src/app/services/lectura.service'
+import {LecturaService} from 'src/app/services/lectura.service' 
 
 @Component({
   selector: 'app-inscripciones',
