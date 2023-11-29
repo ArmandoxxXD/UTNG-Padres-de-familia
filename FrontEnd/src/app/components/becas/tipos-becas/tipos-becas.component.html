@@ -1,30 +1,60 @@
 <div class="tipos-becas">
-  <div class="container-fluid my-5">
-    <div class="row">
-      <div class="col-12">
-        <div class="text-center mb-3">
-          <button class="custom-button">Becas</button>
+  <div class="row">
+    <!-- Tarjeta para becas externas -->
+    <div class="col-lg-6 mb-4">
+      <div class="card h-100" [class.oscuro]="esModoOscuro">
+        <button class="btn btn-info btn-sm position-absolute top-0 end-0 m-2" data-bs-toggle="modal" data-bs-target="#modalBecasExternas">
+          <i class="fas fa-question"></i>
+        </button>
+        <div class="card-body" routerLink="/becas/becas-externas">
+          <h2 class="card-title">Externas</h2>
+          <p class="card-text">Becas proporcionadas por la entidad federal o estatal.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Tarjeta para becas internas -->
+    <div class="col-lg-6 mb-4">
+      <div class="card h-100" [class.oscuro]="esModoOscuro">
+        <button class="btn btn-info btn-sm position-absolute top-0 end-0 m-2" data-bs-toggle="modal" data-bs-target="#modalBecasInternas">
+          <i class="fas fa-question"></i>
+        </button>
+        <div class="card-body" routerLink="/becas/becas-internas">
+          <h2 class="card-title">Internas</h2>
+          <p class="card-text">Becas proporcionadas por la universidad tecnológica del norte de guanajuato.</p>
         </div>
       </div>
     </div>
   </div>
-  
-    <div class="row">
-      <div class="col-lg-6 mb-4">
-        <div class="card h-100"  [class.oscuro]="esModoOscuro">
-          <div class="card-body" routerLink="/becas/becas-externas">
-            <h2 class="card-title">Externas</h2>
-            <p class="card-text">Becas proporcionadas por la entidad federal o estatal.</p>
-          </div>
-        </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalBecasExternas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel" >Becas Externas</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="col-lg-6 mb-4">
-        <div class="card h-100"  [class.oscuro]="esModoOscuro">
-          <div class="card-body" routerLink="/becas/becas-internas">
-            <h2 class="card-title">Internas</h2>
-            <p class="card-text">Becas proporcionadas por la universidad tecnológica del norte de guanajuato.</p>
-          </div>
-        </div>
+      <div class="modal-body">
+        Las becas externas son otorgadas por entidades fuera de la institución educativa, como organizaciones gubernamentales, empresas privadas o fundaciones. Estas becas pueden usarse en cualquier institución y cubren una variedad de gastos educativos. Su elegibilidad puede basarse en méritos académicos, intereses de estudio, o contribuciones comunitarias.
       </div>
     </div>
+  </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalBecasInternas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Becas Internas</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Una beca interna es proporcionada por la misma institución educativa en la que el estudiante está matriculado. Se enfoca en apoyar a los estudiantes en aspectos como matrícula, libros, y alojamiento, y generalmente se basa en mérito académico, necesidad económica, o talento en áreas específicas
+      </div>
+    </div>
+  </div>
+</div>
+
+
