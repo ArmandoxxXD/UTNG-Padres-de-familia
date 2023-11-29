@@ -232,6 +232,9 @@ export class NavbarComponent implements OnInit {
 
   @ViewChild('listenButton', { static: false })
   listenButtonRef!: ElementRef;
+  
+  @ViewChild('speakButton', { static: false })
+  speakButtonRef!: ElementRef;
 
   @HostListener('document:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
@@ -248,6 +251,11 @@ export class NavbarComponent implements OnInit {
 
     if ((event.altKey || event.metaKey) && (event.key === 'm')) {
       const listenButton: HTMLInputElement = this.listenButtonRef.nativeElement;
+      listenButton.click();
+    }
+
+    if ((event.altKey || event.metaKey) && (event.key === 'm')) {
+      const listenButton: HTMLInputElement = this.speakButtonRef.nativeElement;
       listenButton.click();
     }
   }
