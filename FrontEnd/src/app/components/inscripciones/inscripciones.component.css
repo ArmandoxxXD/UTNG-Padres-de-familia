@@ -21,6 +21,15 @@ body {
   text-shadow: 0px 2px 2px #00109e;
 }
 
+#title-costos{
+  color: #0056b3;
+  font-weight: 800;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 3.20px; 
+  word-wrap: break-word;
+
+}
 .container {
   margin-top: 14px !important;
   width: 90%;
@@ -39,17 +48,19 @@ body {
   .header h1 {
     color: #000;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     letter-spacing: 3.20px; 
     word-wrap: break-word;
+    
   }
   .header-p p{
     color: black;
     font-size: 16px;
     font-family: Nunito;
     font-weight: 700;
-    word-wrap: break-word
+    word-wrap: break-word;
+    margin-top: 10px;
   }
  
   .cost-section {
@@ -177,7 +188,7 @@ body {
     padding-top: 12px;
     padding-left: 12px;
     padding-right: 12px;
-    background: #D9D9D9;
+    background: #000;
     border-radius: 10px; 
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
@@ -197,14 +208,22 @@ body {
   .title-r {
 
     margin-bottom: 15px;
-    color: black;
+    color:white;
+    position: relative;
+    word-wrap: break-word;
+    font-weight: bold;
+    z-index: 999;
+   
   }
   .text-r{
-    color: black;
+    color: white;
     text-align: justify;
     font-size: 15px;
-  
-    word-wrap: break-word
+    position: relative;
+    word-wrap: break-word;
+
+    
+    z-index: 999;
   }
   
   
@@ -360,11 +379,11 @@ body {
 }
 
 .cost-section, .contact-info {
-  padding: 15px;
+  padding: 5px;
 }
 
 .cost-block, .campus-info {
-  margin-bottom: 15px;
+  margin-bottom: 2px;
 }
 
 /* Detalles de contacto */
@@ -384,15 +403,21 @@ body {
 
 /* Ajusta los colores y tamaños según el diseño de tu imagen */
 
-.e-card {
-  margin: 100px auto;
+.requisitos-container {
+  height: 150px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background: #D9D9D9;
+  border-radius: 10px; 
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
   background: transparent;
-  box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.45);
+  box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
   position: relative;
-  width: 240px;
-  height: 330px;
-  border-radius: 16px;
   overflow: hidden;
+ 
 }
 
 .wave {
@@ -404,7 +429,7 @@ body {
   top: 0;
   margin-left: -50%;
   margin-top: -70%;
-  background: linear-gradient(744deg,#af40ff,#5b42f3 60%,#00ddeb);
+  background: linear-gradient(744deg, #2557a7, #4989D6 60%, #7FB2F0);
 }
 
 .icon {
@@ -472,3 +497,7 @@ body {
     transform: rotate(360deg);
   }
 }
+
+
+
+

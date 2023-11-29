@@ -26,7 +26,7 @@
       <div class="card-body">
         <div class="collapse" id="collapseCostos">
           <div class="header">
-            <h1>Costos</h1>
+            <h1 class="title-costos">Costos</h1>
             <h1>Técnico Superior Universitario - Ingeniería - Licenciatura</h1>
             <div class="header-p">
               <p>Periodo de venta de fichas</p>
@@ -91,30 +91,41 @@
           <div class="container-r">
             <div class="req">
             </div>
-            <div class="requisitos-container">
+            <div class="requisitos-container playing">
               <div class="title-r">Requisitos de ficha:</div>
               <ol class="requisitos-list">
-                <li *ngFor="let requisito of requisitos">{{ requisito }}</li>
+                <li *ngFor="let requisito of requisitos" class="text-r">{{ requisito }}</li>
               </ol>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
             </div>
+        
             <div class="number-box">1</div>
-            <div class="req">
-            </div>
-            <div class="requisitos-container">
+            <div class="req"></div>
+        
+            <div class="requisitos-container playing">
               <p class="text-r">Envíe la documentación completa en formato PDF (no se aceptan fotos) al correo
-                electrónico
-                correspondiente según a el campus al que su hijo aspire.</p>
+                electrónico correspondiente según a el campus al que su hijo aspire.</p>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
             </div>
+        
             <div class="number-box">2</div>
-            <div class="req">
-            </div>
-            <div class="requisitos-container">
+            <div class="req"></div>
+        
+            <div class="requisitos-container playing">
               <p class="text-r">Recibirá dos correos electrónicos: uno confirmando la recepción de la documentación y
-                otro
-                solicitando el registro de datos en la página de CENEVAL, la institución que evaluará a los aspirantes.
+                otro solicitando el registro de datos en la página de CENEVAL, la institución que evaluará a los aspirantes.
               </p>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
             </div>
+        
             <div class="number-box">3</div>
+          </div>
           </div>
         </div>
       </div>
