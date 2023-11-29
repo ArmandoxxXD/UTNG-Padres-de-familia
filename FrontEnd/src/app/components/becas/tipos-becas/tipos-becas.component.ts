@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 
+
 @Component({
   selector: 'app-tipos-becas',
   templateUrl: './tipos-becas.component.html',
@@ -21,5 +22,7 @@ export class TiposBecasComponent implements OnInit {
     this.modoOscuroService.modoOscuro.subscribe((value: boolean) => {
     })
   }
+
+
 
 }
