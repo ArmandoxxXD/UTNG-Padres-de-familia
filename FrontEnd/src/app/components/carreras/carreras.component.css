@@ -15,6 +15,7 @@ font-family: 'Roboto', sans-serif;
     margin-bottom: 80px !important;
 }
 
+
 .carreras__body {
     height: 92.55vh;
     width: 80vw;
@@ -137,8 +138,22 @@ font-family: 'Roboto', sans-serif;
 }
 
 .btn-blue {
-    background-color: #006CF0;
+    background-color: #4989D6; 
     color: white;
+}
+
+
+/* boton */
+.ag-courses_item {
+    position: relative;
+}
+
+.negocios-click {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
 }
 
 
@@ -174,7 +189,9 @@ body {
 .ag-courses_item {
     -ms-flex-preferred-size: calc(33.33333% - 30px);
     flex-basis: calc(33.33333% - 30px);
-    border: 1px solid #0136FA;
+    /* border: 1px solid #0136FA; */
+
+    border: 1px solid #4989D6;
 
     margin: 0 15px 30px;
 
@@ -252,7 +269,8 @@ body {
 .ag-courses-item_bg {
     height: 128px;
     width: 128px;
-    background-color: #006CF0;
+    /* background-color: #006CF0; */
+    background-color: rgb(98, 149, 211);
 
     z-index: 1;
     position: absolute;
@@ -267,11 +285,13 @@ body {
 }
 
 .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
-    background-color: #3ecd5e;
+    /* background-color: #3ecd5e; */
+    background-color: rgb(98, 149, 211);
 }
 
 .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-    background-color: #e44002;
+    /* background-color: #e44002; */
+    background-color: rgb(98, 149, 211);
 }
 
 
@@ -333,55 +353,18 @@ body {
     background-size: 6%;
 }
 
-/* llamar la atención */
 
 
-/* Filtros */
-/* .carreras_filtros {
-    margin: 2.5em 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.carreras_filtros__imagen {
-    width: 10%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carreras_filtros__imagen_list {
-    font-size: 1.7vw;
-}
-
-.carreras_filtros__botones {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-}
-
-.carreras_filtro {
-    width: 100%;
-    height: 100%;
-    margin: 0 0.5vw 0 0.5vw;
-    width: auto;
-    font-weight: 700;
-    color: white;
-    font-family: 'Nunito', sans-serif;
-    padding: 0.2vw 2vw 0.2vw 2vw;
-    letter-spacing: 3px;
-}
-
-.filtro {
-    border-radius: 2vw;
-}
-
-.filtro:hover {
-    margin: 0 0.8vw 0 0.8vw;
-    transition: 0.2s;
-    transform: scale(1.08);
-} */
+.titulo-ins .typing-effect, .titulo-ins .end-typing {
+    margin-top: 20px;
+    font-size: 36px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid black; /* Cursor simulado */
+    font-family: 'Special Elite', monospace; /* Aplicar la fuente Special Elite */
+  }
+  
+  .titulo-ins .end-typing {
+    border-right: none; /* Cursor oculto después de la animación */
+  }
+  

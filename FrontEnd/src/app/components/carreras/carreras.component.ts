@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Modal} from "bootstrap";
+
+import {LecturaService} from 'src/app/services/lectura.service' 
+
 
 @Component({
   selector: 'app-carreras',
@@ -7,13 +11,68 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarrerasComponent implements OnInit {
 
-  RH: boolean = true;
   intervaloId: any;
+  carreras: any;
+  title: string = "Carreras";
+  typing: boolean = true;
 
-  constructor() { }
+  constructor(public lectura: LecturaService) { 
+  }
+
+  ngAfterViewInit() {
+    let currentLength = 0;
+    const fullText = this.title;
+    this.title = '';
+
+    const typingInterval = setInterval(() => {
+      this.title += fullText[currentLength];
+      currentLength++;
+
+      if (currentLength === fullText.length) {
+        clearInterval(typingInterval);
+        this.typing = false; // Oculta el cursor al finalizar
+      }
+    }, 150); // Velocidad de escritura (ms por carácter)
+  }
 
   ngOnInit(): void {
-    this.RH = true;
+    const btn_1 = document.getElementById("boton-negocios") as HTMLButtonElement;
+    const btn_2 = document.getElementById("boton-tic") as HTMLButtonElement;
+    const btn_3 = document.getElementById("boton-pi") as HTMLButtonElement;
+
+    const collapse_1 = document.getElementById("NegociosYAdministracion") as HTMLButtonElement;
+    const collapse_2 = document.getElementById("Tecnologia") as HTMLButtonElement;
+    const collapse_3 = document.getElementById("ProcesosIndustriales") as HTMLButtonElement;
+
+
+    const contaduria = document.getElementById('Contaduria') as HTMLInputElement
+    const contaduriaModal = document.getElementById('contaduria') as HTMLInputElement
+
+    var myModal = new Modal(contaduriaModal);
+
+    contaduria.addEventListener( "click", () => {
+      myModal.show();
+    })
+
+    contaduria.addEventListener( "click", () => {
+      collapse_2.classList.remove("show")
+      collapse_3.classList.remove("show")
+    })
+
+    btn_1.addEventListener( "click", () => {
+      collapse_2.classList.remove("show")
+      collapse_3.classList.remove("show")
+    })
+
+    btn_2.addEventListener( 'click', () => {
+      collapse_1.classList.remove("show")
+      collapse_3.classList.remove("show")
+    })
+
+    btn_3.addEventListener( 'click', () => {
+      collapse_1.classList.remove("show")
+      collapse_2.classList.remove("show")
+    })
 
     this.iniciarAnimacion();
   }
@@ -37,5 +96,6 @@ export class CarrerasComponent implements OnInit {
 
     this.iniciarAnimacion();
   }
+
 
 }

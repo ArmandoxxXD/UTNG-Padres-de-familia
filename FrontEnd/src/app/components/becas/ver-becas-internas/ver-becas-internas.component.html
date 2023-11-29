@@ -1,18 +1,23 @@
 <div class="becas-internas">
-  <div class="container-fluid my-5" >
-    
 
+  <div class="titulo-ins">
+    <h1 [class.typing-effect]="typing" [class.end-typing]="!typing">{{ title }}</h1>
+  </div>
+
+  <div class="container-fluid my-5" >
     <!-- Fila de Tarjetas -->
     <div class="row text-center" >
       <!-- Tarjeta 1 -->
       <div class="col-lg-6 mb-4 d-flex align-items-stretch" style="padding: 30px;" >
         <a href="https://siga.utng.edu.mx/" class="card-link"  target="_blank">
         <div class="card w-100 h-100 shadow">
-          <div class="card-header bg-blue text-white rounded-top">
+          <div class="card-header bg-blue text-white rounded-top" (mouseenter)="this.lectura.leerTexto('Beca Alimenticia')">
             APOYO ALIMENTICIO
-            <div class="badge badge-open">Convocatoria abierta</div>
+            <div class="badge badge-open" (mouseenter)="this.lectura.leerTexto('Convocatoria abierta')">Convocatoria abierta</div>
           </div>
-          <div class="card-body bg-light rounded-bottom">
+          <div class="card-body bg-light rounded-bottom" (mouseenter)="this.lectura.leerTexto('Consiste en la iniciativa de una comida al día en la Universidad a los alumnos de la
+          modalidad escolarizada, los interesados deberán estar inscritos a la institución. Requisitos: Ser alumno regular en el cuatrimestre. Solicitud debidamente llenada y firmada con visto bueno del director del área académica
+          correspondiente, con los siguientes documentos: Constancia de ingresos económicos familiares no mayor a un mes. Oficio de recomendación por parte del tutor académico describiendo la necesidad del apoyo')">
             <p class="text-justify">Consiste en la iniciativa de una comida al día en la Universidad a los alumnos de la
               modalidad escolarizada, los interesados deberán estar inscritos a la institución.</p>
             <h5 class="text-left">Requisitos:</h5>
@@ -33,11 +38,24 @@
       <div class="col-lg-6 mb-4 d-flex align-items-stretch"  style="padding: 30px;">
         <a href="https://siga.utng.edu.mx/" class="card-link"  target="_blank">
         <div class="card w-100 h-100 shadow">
-          <div class="card-header bg-blue text-white rounded-top">
+          <div class="card-header bg-blue text-white rounded-top" (mouseenter)="this.lectura.leerTexto('APOYO DEPORTIVO Y CULTURAL')">
             APOYO DEPORTIVO Y CULTURAL
-            <div class="badge badge-open">Convocatoria abierta</div>
+            <div class="badge badge-open" (mouseenter)="this.lectura.leerTexto('Convocatoria abierta')">Convocatoria abierta</div>
           </div>
-          <div class="card-body bg-light rounded-bottom">
+          <div class="card-body bg-light rounded-bottom" (mouseenter)="this.lectura.leerTexto('Consiste en la exención del 100% en el pago de la inscripción cuatrimestral para los
+          alumnos del primero al quinto cuatrimestre y del 50% para los alumnos del séptimo al onceavo cuatrimestre,
+          que sean seleccionados para representar a la Universidad en eventos deportivos o culturales oficiales.
+          Requisitos:
+          Ser alumno regular del cuatrimestre.
+          Registrar un promedio del cuatrimestre anterior igual o superior a 9.0 al momento de realizar la
+          solicitud.
+          No registrar asignaturas no acreditadas ni aprobadas en examen de recuperación global o taller
+                remedial del cuatrimestre anterior.
+                Oficio del instructor deportivo o cultural avalando la participación del solicitante en la actividad
+                correspondiente.
+                Solicitud debidamente llenada y firmada con visto bueno del director del área académica
+                correspondiente.
+          ')">
             <p class="text-justify">Consiste en la exención del 100% en el pago de la inscripción cuatrimestral para los
               alumnos del primero al quinto cuatrimestre y del 50% para los alumnos del séptimo al onceavo cuatrimestre,
               que sean seleccionados para representar a la Universidad en eventos deportivos o culturales oficiales.</p>
@@ -65,11 +83,25 @@
       <div class="col-lg-6 mb-4 d-flex align-items-stretch"  style="padding: 30px;">
         <a href="https://siga.utng.edu.mx/" class="card-link"  target="_blank">
         <div class="card w-100 h-100 shadow">
-          <div class="card-header bg-blue text-white rounded-top">
+          <div class="card-header bg-blue text-white rounded-top" (mouseenter)="this.lectura.leerTexto('APOYO POR NECESIDAD APREMIANTE')">
             APOYO POR NECESIDAD APREMIANTE
-            <div class="badge badge-close">Convocatoria Cerrada</div>
+            <div class="badge badge-close" (mouseenter)="this.lectura.leerTexto('Convocatoria cerrado')">Convocatoria Cerrada</div>
           </div>
-          <div class="card-body bg-light rounded-bottom">
+          <div class="card-body bg-light rounded-bottom" (mouseenter)="this.lectura.leerTexto('Consiste en la ministración mensual no reembolsable de una cantidad de dinero, a los
+          alumnos con promedio mínimo de ocho y necesidad económica extrema que ponga en riesgo la continuidad de
+          sus estudios en la Universidad.
+          Requisitos:
+          Ser alumno regular del cuatrimestre.
+          No contar con otro tipo de estímulo o apoyo económico.
+          Obtener un promedio mínimo de ocho en el cuatrimestre anterior sin adeudo de materias al momento de
+                realizar la solicitud.
+                Realizar una entrevista con el Subdirector de Servicios Escolares.
+                Solicitud debidamente llenada y firmada por el director del área académica correspondiente, con los
+                siguientes documentos:
+                Comprobante de ingresos económicos familiares.
+                Carta redactada por el alumno donde exponga las principales razones por las que solicita el apoyo
+                    por necesidad apremiante firmada por el solicitante y por el padre o jefe de familia.
+          ')">
             <p class="text-justify">Consiste en la ministración mensual no reembolsable de una cantidad de dinero, a los
               alumnos con promedio mínimo de ocho y necesidad económica extrema que ponga en riesgo la continuidad de
               sus estudios en la Universidad.</p>
@@ -94,15 +126,17 @@
       </a>
       </div>
       <!-- Tarjeta 4 -->
-      <div class="col-lg-6 mb-4 d-flex align-items-stretch"  style="padding: 30px;">
-        <a href="https://siga.utng.edu.mx/" class="card-link"  target="_blank">
+      <div class="col-lg-6 mb-4 d-flex align-items-stretch" style="padding: 30px;">
+        <a href="https://siga.utng.edu.mx/" class="card-link" target="_blank">
         <div class="card w-100 h-100 shadow">
-          <div class="card-header bg-blue text-white rounded-top">
+          <div class="card-header bg-blue text-white rounded-top" (mouseenter)="this.lectura.leerTexto('APOYO POR RENDIMIENTO ACADÉMICO')">
             APOYO POR RENDIMIENTO ACADÉMICO
-            <div class="badge badge-open">Convocatoria abierta</div>
+            <div class="badge badge-open" (mouseenter)="this.lectura.leerTexto('Convocatoria abierta')">Convocatoria abierta</div>
           </div>
           <div class="card-body bg-light rounded-bottom">
-            <p class="text-justify">Consiste en la exención de un porcentaje del pago de la inscripción cuatrimestral a
+            <p class="text-justify" (mouseenter)="this.lectura.leerTexto('Consiste en la exención de un porcentaje del pago de la inscripción cuatrimestral a
+            los alumnos de la Universidad y se establece conforme a los siguientes cuatrimestres, promedios y
+            porcentajes de exención:')" >Consiste en la exención de un porcentaje del pago de la inscripción cuatrimestral a
               los alumnos de la Universidad y se establece conforme a los siguientes cuatrimestres, promedios y
               porcentajes de exención:</p>
 
@@ -111,24 +145,24 @@
               <div class="col-md-6">
                 <table class="table">
                   <thead>
-                    <th>Nivel Técnico <br>Superior Universitario:</th>
+                    <th (mouseenter)="this.lectura.leerTexto('Nivel Técnico Superior Universitario')">Nivel Técnico <br>Superior Universitario:</th>
                     <tr>
-                      <th>Promedio obtenido</th>
-                      <th>Exención porcentual</th>
+                      <th (mouseenter)="this.lectura.leerTexto('Promedio obtenido')">Promedio obtenido</th>
+                      <th (mouseenter)="this.lectura.leerTexto('Exención porcentual')">Exención porcentual</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>9.6 - 10</td>
-                      <td>75%</td>
+                      <td (mouseenter)="this.lectura.leerTexto('9.6 - 10')">9.6 - 10</td>
+                      <td (mouseenter)="this.lectura.leerTexto('75%')">75%</td>
                     </tr>
                     <tr>
-                      <td>9.1 - 9.5</td>
-                      <td>50%</td>
+                      <td (mouseenter)="this.lectura.leerTexto('9.1 - 9.5')">9.1 - 9.5</td>
+                      <td (mouseenter)="this.lectura.leerTexto('50%')">50%</td>
                     </tr>
                     <tr>
-                      <td>8.6 - 9.0</td>
-                      <td>25%</td>
+                      <td (mouseenter)="this.lectura.leerTexto('8.6 - 9.0')">8.6 - 9.0</td>
+                      <td (mouseenter)="this.lectura.leerTexto('25%')">25%</td>
                     </tr>
                   </tbody>
                 </table>
@@ -136,20 +170,20 @@
               <div class="col-md-6">
                 <table class="table">
                   <thead>
-                    <th>Nivel Licenciatura <br>(Ingenierías):</th>
+                    <th (mouseenter)="this.lectura.leerTexto('Nivel Licenciatura (Ingenierías):')">Nivel Licenciatura <br>(Ingenierías):</th>
                     <tr>
-                      <th>Promedio obtenido</th>
-                      <th>Exención porcentual</th>
+                      <th (mouseenter)="this.lectura.leerTexto('Promedio obtenido')">Promedio obtenido</th>
+                      <th (mouseenter)="this.lectura.leerTexto('Exención porcentual')">Exención porcentual</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>9.6 - 10</td>
-                      <td>50%</td>
+                      <td (mouseenter)="this.lectura.leerTexto('9.6 - 10')">9.6 - 10</td>
+                      <td (mouseenter)="this.lectura.leerTexto('50%')">50%</td>
                     </tr>
                     <tr>
-                      <td>9.1 - 9.5</td>
-                      <td>25%</td>
+                      <td (mouseenter)="this.lectura.leerTexto('9.1 - 9.5')">9.1 - 9.5</td>
+                      <td (mouseenter)="this.lectura.leerTexto('25%')">25%</td>
                     </tr>
                     <!-- Agregar más filas si es necesario -->
                   </tbody>
@@ -157,14 +191,16 @@
               </div>
             </div>
 
-            <h5 class="text-left">Requisitos:</h5>
+            <h5 class="text-left" (mouseenter)="this.lectura.leerTexto('Requisitos:')">Requisitos:</h5>
             <ul class="requisitos-lista">
-              <li>Ser alumno regular del cuatrimestre.</li>
-              <li>Registrar un promedio del cuatrimestre anterior igual o superior a 8.6 para el nivel TSU y 9.1 para el
+              <li (mouseenter)="this.lectura.leerTexto('Ser alumno regular del cuatrimestre.')">Ser alumno regular del cuatrimestre.</li>
+              <li (mouseenter)="this.lectura.leerTexto('Registrar un promedio del cuatrimestre anterior igual o superior a 8.6 para el nivel TSU y 9.1 para el
+              nivel Licenciatura (ingenierías).')">Registrar un promedio del cuatrimestre anterior igual o superior a 8.6 para el nivel TSU y 9.1 para el
                 nivel Licenciatura (ingenierías).</li>
-              <li>No registrar asignaturas no acreditadas ni aprobadas en examen de recuperación global o taller
+              <li (mouseenter)="this.lectura.leerTexto('No registrar asignaturas no acreditadas ni aprobadas en examen de recuperación global o taller
+              remedial del cuatrimestre anterior.')">No registrar asignaturas no acreditadas ni aprobadas en examen de recuperación global o taller
                 remedial del cuatrimestre anterior.</li>
-              <li>Solicitud debidamente llenada y firmada por el director del área académica correspondiente.</li>
+              <li (mouseenter)="this.lectura.leerTexto('Solicitud debidamente llenada y firmada por el director del área académica correspondiente.')">Solicitud debidamente llenada y firmada por el director del área académica correspondiente.</li>
             </ul>
           </div>
         </div>

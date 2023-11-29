@@ -1,6 +1,18 @@
 <div class="carreras" style="padding-top: 100px; padding-bottom: 500px;">
     <div class="carreras__body">
-        <div class="carreras__migas_de_pan mt-3">
+        <div class="titulo-ins" (mouseenter)="this.lectura.leerTexto('Inscripciones')">
+            <h1 [class.typing-effect]="typing" [class.end-typing]="!typing" style="font-size: 3em;">{{ title }}</h1>
+        </div>
+
+        <div class="carreras__buscador">
+            <div class="carreras__buscador_buscador input-group mb-3">
+                <button class="btn btn-outline-secondary search_button" type="button" id="button-addon1"><i
+                        class="fa-solid fa-magnifying-glass"></i> </button>
+                <input type="text" class="form-control carreras__buscador_input" placeholder=""
+                    aria-label="Example text with button addon" aria-describedby="button-addon1">
+            </div>
+        </div>
+        <!-- <div class="carreras__migas_de_pan mt-4">
             <div class="carreras__migas_de_pan__miga" style="left: 1.5vw;">
                 <div class="carreras__migas_de_pan_miga__acomodar">
                     <img class="carreras__migas_de_pan_miga__img" src="/assets/carreras/migas/miga_verde.png"
@@ -32,10 +44,10 @@
                     <h5 class="carreras__migas_de_pan_miga__texto">Inscripción</h5>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="carrera__collapse__button mt-5">
-            <button class="btn btn-blue carrera__boton" id="boton-negocios" type="button" data-bs-toggle="collapse"
+            <button class="btn btn-blue carrera__boton" id="boton-negocios" type="button" data-bs-toggle="collapse" (mouseenter)="this.lectura.leerTexto('Negocios y Administración')"
                 data-bs-target="#NegociosYAdministracion" aria-expanded="false" aria-controls="NegociosYAdministracion">
                 Negocios y Administración
             </button>
@@ -46,7 +58,7 @@
 
             <div class="ag-courses_box">
 
-                <div class="ag-courses_item">
+                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Administración Area de Capital Humano.... Modalidad: Presencial')">
                     <app-nieve id="carrera-nieve"></app-nieve>
                     <a class="ag-courses-item_link">
                         <div class="ag-courses-item_bg"></div>
@@ -64,13 +76,15 @@
                     </a>
                 </div>
 
-                <div class="ag-courses_item">
+                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Contaduría.... Modalidad: Presencial')">
+                    <!-- <button type="button" class="btn btn-primary negocios-click" data-bs-toggle="modal" data-bs-target="#contaduria" data-bs-whatever="@mdo">Open modal for @mdo</button> -->
                     <app-nieve id="carrera-nieve"></app-nieve>
-                    <a class="ag-courses-item_link">
+
+                    <a class="ag-courses-item_link" id="Contaduria">
                         <div class="ag-courses-item_bg"></div>
 
-                        <div class="ag-courses-item_title">
-                            Contaduria
+                        <div class="ag-courses-item_title" >
+                            Contaduría
                         </div>
 
                         <div class="ag-courses-item_date-box">
@@ -82,7 +96,7 @@
                     </a>
                 </div>
 
-                <div class="ag-courses_item">
+                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Ingeniería en Entornos Virtuales y Negocios Digitales.... Modalidad: Presencial')">
                     <app-nieve id="carrera-nieve"></app-nieve>
                     <a class="ag-courses-item_link">
                         <div class="ag-courses-item_bg"></div>
@@ -100,7 +114,7 @@
                     </a>
                 </div>
 
-                <div class="ag-courses_item">
+                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Turismo.... Modalidad: Presencial')">
                     <app-nieve id="carrera-nieve"></app-nieve>
                     <a class="ag-courses-item_link">
                         <div class="ag-courses-item_bg"></div>
@@ -122,7 +136,7 @@
 
         </div>
 
-        <div class="carrera__collapse__button mt-5">
+        <div class="carrera__collapse__button mt-5" (mouseenter)="this.lectura.leerTexto('Tecnología e Informática')">
             <button class="btn btn-blue carrera__boton" id="boton-tic" type="button" data-bs-toggle="collapse"
                 data-bs-target="#Tecnologia" aria-expanded="false" aria-controls="Tecnologia">
                 Tecnología e Informática
@@ -134,7 +148,7 @@
 
             <div class="ag-courses_box">
 
-                <div class="ag-courses_item">
+                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Desarrollo de Software Multiplataforma.... Modalidad: Presencial')">
                     <app-nieve id="carrera-nieve"></app-nieve>
                     <a class="ag-courses-item_link">
                         <div class="ag-courses-item_bg"></div>
@@ -152,7 +166,7 @@
                     </a>
                 </div>
 
-                <div class="ag-courses_item">
+                <div class="ag-courses_item"  (mouseenter)="this.lectura.leerTexto('Ingeniería en Desarrollo y Gestión de Software.... Modalidad: Presencial')">
                     <app-nieve id="carrera-nieve"></app-nieve>
                     <a class="ag-courses-item_link">
                         <div class="ag-courses-item_bg"></div>
@@ -170,7 +184,7 @@
                     </a>
                 </div>
 
-                <div class="ag-courses_item">
+                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Ingeniería en Mecatrónica.... Modalidad: Presencial')">
                     <app-nieve id="carrera-nieve"></app-nieve>
                     <a class="ag-courses-item_link">
                         <div class="ag-courses-item_bg"></div>
@@ -188,7 +202,7 @@
                     </a>
                 </div>
 
-                <div class="ag-courses_item">
+                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Mecatrónica Área Instalaciones Eléctricas Eficientes.... Modalidad: Presencial')">
                     <app-nieve id="carrera-nieve"></app-nieve>
                     <a class="ag-courses-item_link">
                         <div class="ag-courses-item_bg"></div>
@@ -210,7 +224,7 @@
 
         </div>
 
-        <div class="carrera__collapse__button mt-5">
+        <div class="carrera__collapse__button mt-5" (mouseenter)="this.lectura.leerTexto('Ingeniería y Tecnología de la Producción')">
             <button class="btn btn-blue carrera__boton" id="boton-pi" type="button" data-bs-toggle="collapse"
                 data-bs-target="#ProcesosIndustriales" aria-expanded="false" aria-controls="ProcesosIndustriales">
                 Ingeniería y Tecnología de la Producción
@@ -222,7 +236,7 @@
 
             <div class="ag-courses_box">
 
-                <div class="ag-courses_item">
+                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Energias Renovables Área Calidad y Ahorro de Energía.... Modalidad: Presencial')">
                     <app-nieve id="carrera-nieve"></app-nieve>
                     <a class="ag-courses-item_link">
                         <div class="ag-courses-item_bg"></div>
@@ -240,7 +254,7 @@
                     </a>
                 </div>
 
-                <div class="ag-courses_item">
+                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Ingeniería en Tecnologías de la Producción.... Modalidad: Presencial')">
                     <app-nieve id="carrera-nieve"></app-nieve>
                     <a class="ag-courses-item_link">
                         <div class="ag-courses-item_bg"></div>
@@ -272,64 +286,41 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Contaduria</h5>
+                <h5 class="modal-title" id="exampleModalLabel" (mouseenter)="this.lectura.leerTexto('Contaduría')">Contaduria</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
 
                 <ul class="nav nav-tabs">
-                    <li class="nav-item">
+                    <li class="nav-item" style="cursor: pointer;" (mouseenter)="this.lectura.leerTexto('Perfil de ingreso')">
                         <a class="nav-link active" aria-current="page">PERFIL DE INGRESO</a>
                     </li>
-                    <li style="cursor: pointer;" class="nav-item">
+                    <li style="cursor: pointer;" class="nav-item" (mouseenter)="this.lectura.leerTexto('COMPETENCIAS ESPECÍFICIAS ADQUIRIDAS')">
                         <a class="nav-link">COMPETENCIAS ESPECÍFICIAS ADQUIRIDAS</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="cursor: pointer;" (mouseenter)="this.lectura.leerTexto('Ocupaciones profesionales')">
                         <a class="nav-link">OCUPACIONES PROFESIONALES</a>
                     </li>
-                    <li style="cursor: pointer;" class="nav-item">
+                    <li style="cursor: pointer;" (mouseenter)="this.lectura.leerTexto('Mapa curricular')">
                         <a class="nav-link disabled" tabindex="-1" aria-disabled="true">MAPA CURRICULAR</a>
                     </li>
                 </ul>
 
-                <div class="contaduria">
+                <div class="contaduria" style="display: flex; flex-direction: row-reverse;" >
                     <div>
                         <img style="width: 80%; height: 80%;" src="/assets/carreras/carrera/contaduria-Logo.jpg"
                             alt="ContaduriaLogo">
                     </div>
                     <div class="mt-5">
-                        <p>El aspirante deberá de ser egresado en educación media superior, preferentemente de las áreas
+                        <p  (mouseenter)="this.lectura.leerTexto('El aspirante deberá de ser egresado en educación media superior, preferentemente de las áreas
+                        de Administración, Contabilidad, Humanidades o áreas afines.')">El aspirante deberá de ser egresado en educación media superior, preferentemente de las áreas
                             de Administración, Contabilidad, Humanidades o áreas afines.</p>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (mouseenter)="this.lectura.leerTexto('Cerrar')">Cerrar</button>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-<!-- <div class="carreras_filtros mt-4">
-
-    <div class="carreras_filtros__imagen">
-        <i class="fa-solid fa-list carreras_filtros__imagen_list"></i>
-    </div>
-
-    <div class="carreras_filtros__botones">
-        <button class="carreras_filtro filtro"
-            style="background-color: #00A887; font-size: 0.8vw; border: #056250 solid 2px;"> Todas </button>
-        <button (click)="this.RH = false" class="carreras_filtro filtro"
-            style="background-color: #E57A08; font-size: 0.85vw; border: #7D4100 solid 2px;"> Negocios y
-            Administración </button>
-        <button class="carreras_filtro filtro"
-            style="background-color: #00259A; font-size: 0.85vw; border: #000F3C solid 2px;"> Tecnología e
-            Informática </button>
-        <button class="carreras_filtro filtro"
-            style="background-color: #A9A9A9; font-size: 0.7vw; border: #555453 solid 2px;"> Ingeniería y
-            Tecnología de la Producción </button>
-    </div>
-</div> -->

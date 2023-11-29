@@ -6,6 +6,7 @@ import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 declare var webkitSpeechRecognition: any;
 declare var SpeechRecognition: any;
 
+import {LecturaService} from 'src/app/services/lectura.service'
 
 @Component({
   selector: 'app-navbar',
@@ -16,13 +17,12 @@ declare var SpeechRecognition: any;
 export class NavbarComponent implements OnInit {
   @ViewChild('voiceButton') voiceButton!: ElementRef;
 
-
   private activeElement = 0;
   private recognition = new webkitSpeechRecognition();
   public isMicEnabled: boolean = false;
   public statusMic: 'error' | 'done' | 'default' = 'default';
 
-  constructor(private router: Router, private modoOscuroService: ModoOscuroService, private toastr: ToastrService) { 
+  constructor(private router: Router, private modoOscuroService: ModoOscuroService, private toastr: ToastrService, public lectura: LecturaService) { 
     this.recognition.lang = 'es-ES';
 
     this.recognition.onstart = (event: any) => {
@@ -53,6 +53,8 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.lectura.lectura)
+
     this.router.events.subscribe(() => {
       switch (this.router.url) {
         case '/home':
@@ -89,37 +91,6 @@ export class NavbarComponent implements OnInit {
     const elemento_4 = document.getElementById("instalaciones");
     const elemento_5 = document.getElementById("inscripciones");
 
-
-    menu?.addEventListener('click', () => {
-      const claseDelObjeto = document.getElementById("header_elements");
-
-      const clasesDelElemento = claseDelObjeto?.classList;
-
-      const arrayDeClases = Array.from(Object(clasesDelElemento));
-
-
-      if (String(arrayDeClases[2]) == "animation_close") {
-        navbar?.classList.add("nabvar_abierto")
-        navbar?.classList.remove("nabvar_cerrado")
-        this.limpiar_Nabvar_close(navbar, options);
-
-        void navbar?.offsetWidth;
-        this.abrir_Nabvar(navbar, options);
-      } else if (String(arrayDeClases[2]) == "animation_open") {
-        navbar?.classList.add("nabvar_cerrado")
-        navbar?.classList.remove("nabvar_abierto")
-        this.limpiar_Nabvar_open(navbar, options);
-
-        void navbar?.offsetWidth;
-        this.cerrar_Nabvar(navbar, options);
-      } else {
-        navbar?.classList.add("nabvar_abierto")
-        navbar?.classList.remove("nabvar_cerrado")
-        this.abrir_Nabvar(navbar, options);
-      }
-      console.log(arrayDeClases)
-
-    })
 
     const ubicacionActual = window.location.pathname;
 
@@ -182,40 +153,6 @@ export class NavbarComponent implements OnInit {
     elemento_5?.classList.remove('active');
   }
 
-  limpiar_Nabvar_open(navbar: any, options: any) {
-    //open
-    navbar?.classList.remove("animation_open");
-
-    for (let i = 0; i < options.length; i++) {
-      options[i].classList.remove('font_open');
-    }
-  }
-
-  limpiar_Nabvar_close(navbar: any, options: any) {
-    //close
-    navbar?.classList.remove("animation_close");
-
-    for (let i = 0; i < options.length; i++) {
-      options[i].classList.remove('font_close');
-    }
-  }
-
-  cerrar_Nabvar(navbar: any, options: any) {
-
-    navbar?.classList.add("animation_close");
-
-    for (let i = 0; i < options.length; i++) {
-      options[i].classList.add('font_close');
-    }
-  }
-
-  abrir_Nabvar(navbar: any, options: any) {
-    navbar?.classList.add("animation_open");
-
-    for (let i = 0; i < options.length; i++) {
-      options[i].classList.add('font_open');
-    }
-  }
 
   listenToVoice() {
     if(this.isMicEnabled) {
@@ -295,6 +232,9 @@ export class NavbarComponent implements OnInit {
 
   @ViewChild('listenButton', { static: false })
   listenButtonRef!: ElementRef;
+  
+  @ViewChild('speakButton', { static: false })
+  speakButtonRef!: ElementRef;
 
   @HostListener('document:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
@@ -313,7 +253,17 @@ export class NavbarComponent implements OnInit {
       const listenButton: HTMLInputElement = this.listenButtonRef.nativeElement;
       listenButton.click();
     }
+
+    if ((event.altKey || event.metaKey) && (event.key === 'm')) {
+      const listenButton: HTMLInputElement = this.speakButtonRef.nativeElement;
+      listenButton.click();
+    }
   }
 
 
+  activar() {
+    this.lectura.lectura = !this.lectura.lectura
+    console.log(this.lectura.lectura)
+  }
+  
 }

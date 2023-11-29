@@ -20,8 +20,6 @@ import { TecladoComponent } from './components/teclado/teclado.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

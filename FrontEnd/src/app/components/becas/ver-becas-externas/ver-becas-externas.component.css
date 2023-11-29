@@ -1,5 +1,5 @@
 .becas-externas {
-  padding-top: 60px;
+  padding-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,10 +11,6 @@ body {
   background-color: #f2f2f2;
   color: #333;
   font-family: 'Arial', sans-serif;
-}
-
-h1 {
-  color: #f58220;
 }
 
 
@@ -125,4 +121,17 @@ h5 {
 .table th, .table td {
   padding: 0.5rem;
   border-top: none;
+}
+
+.titulo-ins .typing-effect, .titulo-ins .end-typing {
+  margin-top: 0.625rem;
+  font-size: 2.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.125rem solid black; /* Cursor simulado */
+  font-family: 'Special Elite', monospace; /* Aplicar la fuente Special Elite */
+}
+
+.titulo-ins .end-typing {
+  border-right: none; /* Cursor oculto después de la animación */
 }

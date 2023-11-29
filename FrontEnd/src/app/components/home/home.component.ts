@@ -1,5 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 
+import {LecturaService} from 'src/app/services/lectura.service' 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,7 +17,7 @@ export class HomeComponent implements OnInit {
     { titulo: 'Ingeniería en Entornos Virtuales y Negocios Digitales', visible: false }
   ];
 
-  constructor() { }
+  constructor(public lectura: LecturaService) { }
 
   ngOnInit(): void {
   }

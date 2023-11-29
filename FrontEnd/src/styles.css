@@ -1,6 +1,6 @@
-
+/* En tu archivo personalizado de CSS */
 .oscuro{
-    background-color: #444 !important;  /* Color de fondo del botón en modo oscuro */
+    background-color: #777 !important;  /* Color de fondo del botón en modo oscuro */
     color: #eee !important; /* Color del texto del botón en modo oscuro */
     border: #555; /* Borde del botón en modo oscuro */
 }
