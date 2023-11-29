@@ -2,29 +2,112 @@
     
 
     <div class="header__logo">
-        <img id="header__logo__img" src="../../../assets/header/logo-UTNG.webp" alt="Logo UTNG">
+        <img id="header__logo__img" src="assets/header/logo-UTNG.webp" alt="Logo UTNG">
     </div>
     <div class="header__derecha">
+
         <div class="header__navegador">
-            <i id="icon" class="fa-solid fa-moon" style="color: white;"  [class.button-mode-background-light]="theme === 'light'" [class.button-mode-background-dark]="theme === 'dark'" (click)="CambiarTema()"></i>
+            <i class="btn-help fa-solid" #themeButton  [class.fa-moon]="theme === 'light'" [class.fa-sun]="theme === 'dark'" (click)="CambiarTema()"></i>
+        </div>
+        <div class="header__navegador">
+            <i class="btn-help fa-solid fa-keyboard" #keysButton data-bs-toggle="modal" data-bs-target="#keyBoardDocsModal"></i>
         </div>
         <div id="header_elements"  class="header__opciones nabvar_abierto">
             <div class="header__opciones__elementos">
+
+
+                <div id="home"  (click)="this.activarElemento('home')"  [class.active]="getActiveElement() == 0" class="header__opciones__elementos__animation option"> <a routerLink="home"> Home </a> </div>
                 <!-- ... tu código HTML existente ... -->
                 <button #voiceButton class="btn btn-help" (click)="listenToVoice()"><i class="fa-solid fa-microphone" style="color: #ffffff;"></i></button>
                 <!-- ... tu código HTML existente ... -->
-                <div id="home"  (click)="this.activarElemento('home')"  class="header__opciones__elementos__animation option"> <a routerLink="home"> Home </a> </div>
+
                 <div class="line"></div>
-                <div id="becas" (click)="this.activarElemento('becas')" class="header__opciones__elementos__animation option"> <a> Becas </a> </div>
+                <div id="becas" (click)="this.activarElemento('becas')" [class.active]="getActiveElement() == 1" class="header__opciones__elementos__animation option"> <a> Becas </a> </div>
                 <div class="line"></div>
-                <div id="carreras" (click)="this.activarElemento('carreras')" class="header__opciones__elementos__animation option"> <a routerLink="carreras"> Carreras </a> </div>
+                <div id="carreras" (click)="this.activarElemento('carreras')" [class.active]="getActiveElement() == 2" class="header__opciones__elementos__animation option"> <a routerLink="carreras"> Carreras </a> </div>
                 <div class="line"></div> 
-                <div id="instalaciones" (click)="this.activarElemento('instalaciones')" class="header__opciones__elementos__animation margin_instalaciones option"> <a> Instalaciones </a> </div> 
+                <div id="instalaciones" (click)="this.activarElemento('instalaciones')" [class.active]="getActiveElement() == 3" class="header__opciones__elementos__animation margin_instalaciones option"> <a> Instalaciones </a> </div> 
                 <div class="line"></div>
-                <div id="acerca" (click)="this.activarElemento('inscripciones')" class="header__opciones__elementos__animation margin_acerca option"> <a> Inscripciones </a> </div> 
+                <div id="acerca" (click)="this.activarElemento('inscripciones')" [class.active]="getActiveElement() == 4" class="header__opciones__elementos__animation margin_acerca option"> <a> Inscripciones </a> </div> 
 
             </div>
         </div>
         <i id="menu__burguer" class="fa-solid fa-list icon-select" style="color: white;"></i>
     </div>
 </div>
+
+
+<div class="modal fade" id="keyBoardDocsModal" tabindex="-1" aria-labelledby="keyBoardDocsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="text-align: center;">
+                <div class="col-12"><h1 class="modal-title fs-5" id="keyBoardDocsModalLabel">Teclas de acceso rapido</h1></div>
+                <button type="button" style="position: relative; left: -36px;" class="btn" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark fa-xl"></i></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="title-section">
+                        <h4>Navegación</h4>
+                    </div>
+                    <div>
+                        <app-teclado type="navegation"></app-teclado>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                </div>
+                <div>
+                    <div class="title-section">
+                        <h4>Solicitar ayuda</h4>
+                    </div>
+                    <div>
+                        <app-teclado type="ayuda"></app-teclado>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                </div>
+                <div>
+                    <div class="title-section">
+                        <h4>Tema</h4>
+                    </div>
+                    <div>
+                        <app-teclado type="theme"></app-teclado>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="title-section">
+                        <h4>Teclas rapidas</h4>
+                    </div>
+                    <div>
+                        <app-teclado type="keys"></app-teclado>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                </div>
+
+
+                <div>
+                    <div class="title-section">
+                        <h4>Microfono</h4>
+                    </div>
+                    <div>
+                        <app-teclado type="micro"></app-teclado>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="justify-content: center;">
+                <button type="button" class="btn btn-submit" data-bs-dismiss="modal">Salir</button>
+            </div>
+        </div>
+    </div>
+</div>
+

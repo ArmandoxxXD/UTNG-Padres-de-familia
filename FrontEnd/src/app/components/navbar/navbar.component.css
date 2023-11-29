@@ -6,7 +6,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #00259A;
+    background-color: #0136FA;
     width: 100%;
     z-index: 100;
 }
@@ -35,6 +35,11 @@
 
 #header__navegador__lupa:hover {
     cursor: pointer;
+}
+
+.header__navegador {
+    width: 50px;
+    padding-right: 20px;
 }
 
 .header__opciones {
@@ -116,7 +121,8 @@
 }
 
 .header__opciones__elementos__animation:hover::before {
-    background-color: rgba(0, 0, 0, 0.699);
+    background-color: rgba(0, 0, 0, 0.397);
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -126,7 +132,8 @@
 }
 
 .active::before {
-    background-color: rgba(0, 0, 0, 0.699);
+    background-color: rgba(0, 0, 0, 0.397);
+    border-radius: 10px;
 }
 
 .header__opciones__elementos div a {
@@ -271,3 +278,12 @@ a {
 
 /* titulos 78px  */
 
+.btn-help {
+    color: white;
+    transition: color 0.3s;
+}
+
+
+.btn-help:hover {
+    color: rgba(0, 0, 0, 0.397);
+}

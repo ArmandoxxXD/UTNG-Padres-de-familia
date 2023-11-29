@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
@@ -17,9 +17,35 @@ export class NavbarComponent implements OnInit {
   @ViewChild('voiceButton') voiceButton!: ElementRef;
 
 
+  private activeElement = 0;
   constructor(private router: Router, private modoOscuroService: ModoOscuroService,  private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.router.events.subscribe(() => {
+      switch (this.router.url) {
+        case '/home':
+            this.activeElement = 0;
+          break;
+        case '/becas/tipos-becas':
+        case '/becas/becas-externas':
+        case '/becas/becas-internas':
+            this.activeElement = 1;
+          break;
+        case '/carreras':
+            this.activeElement = 2;
+          break;
+        case '/instalaciones':
+            this.activeElement = 3;
+          break;
+        case '/inscripciones':
+            this.activeElement = 4;
+          break;
+        default:
+          this.activeElement = 0;
+      }
+    })
+
+
     const menu = document.getElementById("menu__burguer");
     const navbar = document.getElementById("header_elements");
 
@@ -36,11 +62,11 @@ export class NavbarComponent implements OnInit {
       const claseDelObjeto = document.getElementById("header_elements");
 
       const clasesDelElemento = claseDelObjeto?.classList;
-  
-      const arrayDeClases = Array.from(Object(clasesDelElemento));
-      
 
-      if(String(arrayDeClases[2]) == "animation_close"){
+      const arrayDeClases = Array.from(Object(clasesDelElemento));
+
+
+      if (String(arrayDeClases[2]) == "animation_close") {
         navbar?.classList.add("nabvar_abierto")
         navbar?.classList.remove("nabvar_cerrado")
         this.limpiar_Nabvar_close(navbar, options);
@@ -85,12 +111,12 @@ export class NavbarComponent implements OnInit {
 
   }
 
+
+  getActiveElement() {
+    return this.activeElement;
+  }
+
   activarElemento(path: any) {
-    this.eliminarActivarGeneral();
-
-    var elemento = document.getElementById(path);
-
-    elemento?.classList.add('active');
     switch (path) {
       case "home":
         this.router.navigate(['home'])
@@ -123,8 +149,8 @@ export class NavbarComponent implements OnInit {
     elemento_4?.classList.remove('active');
     elemento_5?.classList.remove('active');
   }
-  
-  limpiar_Nabvar_open(navbar: any, options: any){
+
+  limpiar_Nabvar_open(navbar: any, options: any) {
     //open
     navbar?.classList.remove("animation_open");
 
@@ -133,7 +159,7 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  limpiar_Nabvar_close(navbar: any, options: any){
+  limpiar_Nabvar_close(navbar: any, options: any) {
     //close
     navbar?.classList.remove("animation_close");
 
@@ -208,6 +234,7 @@ handleVoiceCommand(command: string) {
 
   test(event: any) {
     console.log(event);
+  }
 
   public theme: "light" | "dark" = "light";
 
@@ -219,7 +246,7 @@ handleVoiceCommand(command: string) {
     this.theme = 'dark';
     this.modoOscuroService.setModoOscuro(true);
   }
-  
+
   TemaClaro() {
     document.querySelector('body')?.setAttribute("data-bs-theme", "light");
     document.body.classList.remove('dark-mode');
@@ -228,9 +255,31 @@ handleVoiceCommand(command: string) {
     this.theme = 'light';
     this.modoOscuroService.setModoOscuro(false);
   }
-  
+
   CambiarTema() {
-    document.querySelector('body')?.getAttribute("data-bs-theme") === 'light' ? this.TemaOscuro() :this.TemaClaro();
+    document.querySelector('body')?.getAttribute("data-bs-theme") === 'light' ? this.TemaOscuro() : this.TemaClaro();
   }
 
+
+
+  @ViewChild('themeButton', { static: false })
+  themeButtonRef!: ElementRef;
+
+  @ViewChild('keysButton', { static: false })
+  keysButtonRef!: ElementRef;
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent) {
+    if ((event.altKey || event.metaKey) && (event.key === 't')) {
+      const themeButton: HTMLInputElement = this.themeButtonRef.nativeElement;
+      themeButton.click();
+    }
+
+    if ((event.altKey || event.metaKey) && (event.key === 'k')) {
+      const keysButton: HTMLInputElement = this.keysButtonRef.nativeElement;
+      keysButton.click();
+    }
+  }
+
+  
 }
