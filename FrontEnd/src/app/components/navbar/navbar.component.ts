@@ -1,10 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-
+import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 // Declaraciones para evitar errores de compilación
 declare var webkitSpeechRecognition: any;
 declare var SpeechRecognition: any;
+
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +16,8 @@ declare var SpeechRecognition: any;
 export class NavbarComponent implements OnInit {
   @ViewChild('voiceButton') voiceButton!: ElementRef;
 
-  constructor(private router: Router, private toastr: ToastrService) { }
+
+  constructor(private router: Router, private modoOscuroService: ModoOscuroService,  private toastr: ToastrService) { }
 
   ngOnInit(): void {
     const menu = document.getElementById("menu__burguer");
@@ -206,6 +208,29 @@ handleVoiceCommand(command: string) {
 
   test(event: any) {
     console.log(event);
+
+  public theme: "light" | "dark" = "light";
+
+  TemaOscuro() {
+    document.querySelector('body')?.setAttribute("data-bs-theme", "dark");
+    document.body.classList.remove('light-mode');
+    document.body.classList.add('dark-mode');
+    document.querySelector('#icon')?.setAttribute("class", "fa-solid fa-sun");
+    this.theme = 'dark';
+    this.modoOscuroService.setModoOscuro(true);
+  }
+  
+  TemaClaro() {
+    document.querySelector('body')?.setAttribute("data-bs-theme", "light");
+    document.body.classList.remove('dark-mode');
+    document.body.classList.add('light-mode');
+    document.querySelector('#icon')?.setAttribute("class", "fa-solid fa-moon");
+    this.theme = 'light';
+    this.modoOscuroService.setModoOscuro(false);
+  }
+  
+  CambiarTema() {
+    document.querySelector('body')?.getAttribute("data-bs-theme") === 'light' ? this.TemaOscuro() :this.TemaClaro();
   }
 
 }

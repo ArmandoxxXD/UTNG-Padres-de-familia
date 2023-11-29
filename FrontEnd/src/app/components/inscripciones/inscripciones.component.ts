@@ -1,4 +1,7 @@
+
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
+
 
 @Component({
   selector: 'app-inscripciones',
@@ -6,6 +9,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
   styleUrls: ['./inscripciones.component.css']
 })
 export class InscripcionesComponent implements OnInit, AfterViewInit {
+
   requisitos = [
     '1.- CURP',
     '2.- Comprobante de pago',
@@ -14,11 +18,18 @@ export class InscripcionesComponent implements OnInit, AfterViewInit {
 
   mostrarCostos: boolean = false;
   mostrarRequisitos: boolean = false;
-  
   isCollapseCostosExpanded: boolean = false;
   isCollapseRequisitosExpanded: boolean = false;
+  esModoOscuro: boolean = false;
+
+  constructor(private modoOscuroService:ModoOscuroService) { }
+
 
   ngOnInit(): void {
+    this.modoOscuroService.esModoOscuro$.subscribe((modoOscuro) => {
+      this.esModoOscuro = modoOscuro;
+    });
+
   }
 
   ngAfterViewInit() {
@@ -44,8 +55,17 @@ export class InscripcionesComponent implements OnInit, AfterViewInit {
     this.mostrarRequisitos = !this.mostrarRequisitos;
   }
 
+
   // Función para hacer scroll a la sección especificada.
   scrollIntoView(element: HTMLElement): void {
     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+
+
+  modoOscuro() {
+    this.modoOscuroService.modoOscuro.subscribe((value: boolean) => {
+    })
+  }
+
+
 }

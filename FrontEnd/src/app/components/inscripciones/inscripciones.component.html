@@ -4,8 +4,9 @@
     <h1>Inscripciones</h1>
   </div>
   <div class="container">
-    <div class="card">
-      <div class="card-header">
+
+    <div class="card" [class.oscuro]="esModoOscuro">
+      <div class="card-header"  [class.oscuro]="esModoOscuro">
         <p>Haga clic en el botón para ver más detalles</p>
 
         <p>
@@ -67,8 +68,8 @@
       </div>
     </div>
     <!-- Contenido de .requisitos -->
-    <div class="card">
-      <div class="card-header">
+    <div class="card" [class.oscuro]="esModoOscuro">
+      <div class="card-header" [class.oscuro]="esModoOscuro">
         <p>Haga clic en el botón para ver más detalles</p>
 
         <p>
