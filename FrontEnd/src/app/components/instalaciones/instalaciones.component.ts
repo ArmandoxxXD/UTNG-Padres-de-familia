@@ -6,10 +6,7 @@ import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 @Component({
   selector: 'app-instalaciones',
   templateUrl: './instalaciones.component.html',
-  styleUrls: ['./instalaciones.component.css'],
-  template: `
-
-  `
+  styleUrls: ['./instalaciones.component.css']
 })
 export class InstalacionesComponent implements OnInit {
   esModoOscuro: boolean = false;

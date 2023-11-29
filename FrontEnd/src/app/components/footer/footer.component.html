@@ -1,11 +1,11 @@
 <div class="footer">
     <div class="d-flex footer-body">
         <div class="col-2 w-25"></div>
-        <div class="col-8 w-50" style="text-align: center;">
+        <div class="col-8 w-50" style="text-align: center; height: auto;">
             <h4>©UTNG 2023</h4>
         </div>
         <div class="col-2 w-25" style="text-align: right;">
-            <button class="btn btn-help" #modalButton data-bs-toggle="modal" data-bs-target="#ayudaModal">Solicitar ayuda</button>
+            <button class="btn btn-p-primary" #modalButton data-bs-toggle="modal" data-bs-target="#ayudaModal">Solicitar ayuda</button>
         </div>
     </div>
 </div>
@@ -34,7 +34,7 @@
                 </form>
             </div>
             <div class="modal-footer" style="justify-content: center;">
-                <button type="button" class="btn btn-submit" data-bs-dismiss="modal" [disabled]="form.invalid">Enviar</button>
+                <button type="button" class="btn btn-p-primary" data-bs-dismiss="modal" [disabled]="form.invalid">Enviar</button>
             </div>
         </div>
     </div>
