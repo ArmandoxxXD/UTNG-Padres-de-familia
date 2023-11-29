@@ -35,7 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
     ContactoComponent,
     CarrerasComponent,
     InstalacionesComponent,
-    NieveComponent
+    NieveComponent,
     TecladoComponent
   ],
   imports: [
