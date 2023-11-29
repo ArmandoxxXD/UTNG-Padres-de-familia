@@ -1,11 +1,3 @@
-.becas-internas {
-  padding-top: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding-bottom: 130px;
-}
 
 body {
     background-color: #f2f2f2;
@@ -49,7 +41,7 @@ h1 {
   }
   
   .card-header {
-    background-color: #0056b3; /* Color azul para la cabecera */
+    background-color: #7FB2F0; /* Color azul para la cabecera */
     color: white; /* Color de texto para la cabecera */
     padding: 0.75rem 1.25rem;
     border-top-left-radius: 0.5rem; /* Bordes redondeados en la parte superior izquierda */
@@ -87,7 +79,7 @@ h1 {
   }
   
   .bg-blue {
-    background-color: #0056b3; /* Color azul para elementos específicos */
+    background-color: #7FB2F0; /* Color azul para elementos específicos */
   }
   
   .text-white {

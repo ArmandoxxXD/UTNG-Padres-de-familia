@@ -26,9 +26,9 @@
       <div class="card-body">
         <div class="collapse" id="collapseCostos">
           <div class="header">
-            <h1 (mouseenter)="this.lectura.leerTexto('Costos')">Costos</h1>
+            <h1  (mouseenter)="this.lectura.leerTexto('Costos')" class="title-costos">Costos</h1>
             <h1 (mouseenter)="this.lectura.leerTexto('Técnico Superior Universitario - Ingeniería - Licenciatura')">Técnico Superior Universitario - Ingeniería - Licenciatura</h1>
-            <div class="header-p" (mouseenter)="this.lectura.leerTexto('Periodo de venta de fichas del 12 al 23 de agosto de 2023 Examen de admisión 25 de agosto de 2023')">
+            <div class="header-p"  (mouseenter)="this.lectura.leerTexto('Periodo de venta de fichas del 12 al 23 de agosto de 2023 Examen de admisión 25 de agosto de 2023')">
               <p>Periodo de venta de fichas</p>
               <p> del 12 al 23 de agosto de 2023</p>
               <p>Examen de admisión 25 de agosto de 2023</p>
@@ -91,32 +91,44 @@
           <div class="container-r">
             <div class="req">
             </div>
-            <div class="requisitos-container">
-              <div class="title-r" (mouseenter)="this.lectura.leerTexto('Requisitos de ficha:')">Requisitos de ficha:</div>
+            <div class="requisitos-container playing">
+              <div class="title-r"  (mouseenter)="this.lectura.leerTexto('Requisitos de ficha:')">Requisitos de ficha:</div>
               <ol class="requisitos-list">
-                <li *ngFor="let requisito of requisitos">{{ requisito }}</li>
+                <li *ngFor="let requisito of requisitos" class="text-r">{{ requisito }}</li>
               </ol>
-            </div>
-            <div class="number-box" (mouseenter)="this.lectura.leerTexto('uno')">1</div>
-            <div class="req">
-            </div>
-            <div class="requisitos-container">
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
+
+            <div class="number-box"  (mouseenter)="this.lectura.leerTexto('uno')">1</div>
+            <div class="req"></div>
+        
+            <div class="requisitos-container playing">
               <p class="text-r" (mouseenter)="this.lectura.leerTexto('Envíe la documentación completa en formato PDF (no se aceptan fotos) al correo electrónico
               correspondiente según a el campus al que su hijo aspire.')">Envíe la documentación completa en formato PDF (no se aceptan fotos) al correo
-                electrónico
-                correspondiente según a el campus al que su hijo aspire.</p>
+                electrónico correspondiente según a el campus al que su hijo aspire.</p>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
             </div>
+        
             <div class="number-box" (mouseenter)="this.lectura.leerTexto('dos')">2</div>
-            <div class="req">
-            </div>
-            <div class="requisitos-container" (mouseenter)="this.lectura.leerTexto('Recibirá dos correos electrónicos: uno confirmando la recepción de la documentación y
+            <div class="req"></div>
+        
+            <div class="requisitos-container playing"  (mouseenter)="this.lectura.leerTexto('Recibirá dos correos electrónicos: uno confirmando la recepción de la documentación y
             otro solicitando el registro de datos en la página de CENEVAL, la institución que evaluará a los aspirantes.')">
+
               <p class="text-r">Recibirá dos correos electrónicos: uno confirmando la recepción de la documentación y
-                otro
-                solicitando el registro de datos en la página de CENEVAL, la institución que evaluará a los aspirantes.
+                otro solicitando el registro de datos en la página de CENEVAL, la institución que evaluará a los aspirantes.
               </p>
+              <div class="wave"></div>
+              <div class="wave"></div>
+              <div class="wave"></div>
             </div>
+        
             <div class="number-box" (mouseenter)="this.lectura.leerTexto('tres')">3</div>
+              
+          </div>
           </div>
         </div>
       </div>

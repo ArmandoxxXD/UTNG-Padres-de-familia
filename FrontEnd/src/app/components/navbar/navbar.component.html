@@ -1,22 +1,37 @@
 <div class="header">
-    
+
 
     <div class="header__logo">
         <img id="header__logo__img" src="assets/header/logo-UTNG.webp" alt="Logo UTNG">
     </div>
     <div class="header__derecha">
 
-        <div class="header__navegador">
-            <i class="fa-solid fa-podcast" style="cursor: pointer; color: white;" (click)="activar()"></i>
+        <div id="iconMenu" class="collapse">
+            <div class="d-flex">
+                <div class="header__navegador">
+                    <i class="btn-help fa-solid" #themeButton [class.fa-moon]="theme === 'light'" [class.fa-sun]="theme === 'dark'" (click)="CambiarTema()"></i>
+                </div>
+                <div class="header__navegador">
+                    <i class="btn-help fa-solid fa-keyboard" #keysButton data-bs-toggle="modal" data-bs-target="#keyBoardDocsModal"></i>
+                </div>
+                <div class="header__navegador">
+                     <i class="fa-solid fa-podcast" style="cursor: pointer; color: white;" (click)="activar()"></i>
+                </div>
+                <div class="header__navegador">
+                    <i class="btn-help fa-solid fa-microphone" [class.btn-active]="isMicEnabled" #listenButton (click)="listenToVoice()"></i>
+                </div>
+            </div>
+
         </div>
 
         <div class="header__navegador">
-            <i class="btn-help fa-solid" #themeButton  [class.fa-moon]="theme === 'light'" [class.fa-sun]="theme === 'dark'" (click)="CambiarTema()"></i>
+            <button class="btn" style="color: white;" id="menuButton" data-bs-toggle="collapse" data-bs-target="#iconMenu">
+                <i class="fa-solid fa-universal-access"></i>
+            </button>
         </div>
-        <div class="header__navegador">
-            <i class="btn-help fa-solid fa-keyboard" #keysButton data-bs-toggle="modal" data-bs-target="#keyBoardDocsModal"></i>
-        </div>
-        <div id="header_elements"  class="header__opciones nabvar_abierto">
+
+
+        <div id="header_elements" class="header__opciones nabvar_abierto">
             <div class="header__opciones__elementos">
 
 
@@ -32,7 +47,7 @@
                 <div class="line"></div> 
                 <div id="instalaciones" (click)="this.activarElemento('instalaciones')" [class.active]="getActiveElement() == 3" class="header__opciones__elementos__animation margin_instalaciones option"> <a (mouseenter)="this.lectura.leerTexto('Instalaciones')"> Instalaciones </a> </div> 
                 <div class="line"></div>
-                <div id="acerca" (click)="this.activarElemento('inscripciones')" [class.active]="getActiveElement() == 4" class="header__opciones__elementos__animation margin_acerca option"> <a (mouseenter)="this.lectura.leerTexto('Inscripciones')"> Inscripciones </a> </div> 
+
 
             </div>
         </div>
@@ -41,12 +56,16 @@
 </div>
 
 
-<div class="modal fade" id="keyBoardDocsModal" tabindex="-1" aria-labelledby="keyBoardDocsModalLabel" aria-hidden="true">
+<div class="modal fade" id="keyBoardDocsModal" tabindex="-1" aria-labelledby="keyBoardDocsModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" style="text-align: center;">
-                <div class="col-12"><h1 class="modal-title fs-5" id="keyBoardDocsModalLabel">Teclas de acceso rapido</h1></div>
-                <button type="button" style="position: relative; left: -36px;" class="btn" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark fa-xl"></i></button>
+                <div class="col-12">
+                    <h1 class="modal-title fs-5" id="keyBoardDocsModalLabel">Teclas de acceso rapido</h1>
+                </div>
+                <button type="button" style="position: relative; left: -36px;" class="btn" data-bs-dismiss="modal"
+                    aria-label="Close"><i class="fa-solid fa-xmark fa-xl"></i></button>
             </div>
             <div class="modal-body">
                 <div>
@@ -109,9 +128,8 @@
                 </div>
             </div>
             <div class="modal-footer" style="justify-content: center;">
-                <button type="button" class="btn btn-submit" data-bs-dismiss="modal">Salir</button>
+                <button type="button" class="btn btn-p-primary" data-bs-dismiss="modal">Salir</button>
             </div>
         </div>
     </div>
 </div>
-
