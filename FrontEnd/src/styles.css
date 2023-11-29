@@ -1,3 +1,4 @@
+
 .oscuro{
     background-color: #444 !important;  /* Color de fondo del botón en modo oscuro */
     color: #eee !important; /* Color del texto del botón en modo oscuro */
@@ -17,3 +18,26 @@
     transition: all 0.6s;
     background-color: #EEEEEE;
 }
+
+
+
+.modal-header {
+    background-color: #0056b3;
+    color: #ffffff !important;
+}
+
+.modal-header .btn {
+    background-color: #0056b3;
+    color: #ffffff !important;
+    transition: box-shadow 0.3s;
+}
+
+.modal-header .btn:hover {
+    box-shadow: 0px 0px 5px #0000009f; /* Sombra ligera para el botón */
+}
+
+.invalid {
+    border: solid #ff9393 1px;
+    background-color: #ffc5c5;
+}
+

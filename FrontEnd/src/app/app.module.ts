@@ -14,7 +14,13 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { CarrerasComponent } from './components/carreras/carreras.component';
 import { InstalacionesComponent } from './components/instalaciones/instalaciones.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NieveComponent } from './efectos/nieve/nieve.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TecladoComponent } from './components/teclado/teclado.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
+
 
 @NgModule({
   declarations: [
@@ -28,13 +34,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     InscripcionesComponent,
     ContactoComponent,
     CarrerasComponent,
-    InstalacionesComponent
+    InstalacionesComponent,
+    NieveComponent,
+    TecladoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added, Alertas de exepciones
   ],
   providers: [],
   bootstrap: [AppComponent]

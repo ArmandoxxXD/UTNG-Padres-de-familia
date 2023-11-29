@@ -30,7 +30,7 @@ font-family: 'Roboto', sans-serif;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: 4vh;
+    margin-top: 3em;
     width: 100%;
 }
 
@@ -42,14 +42,26 @@ font-family: 'Roboto', sans-serif;
     width: 100%;
     border-radius: 100px !important;
     border: 1px solid black;
+    z-index: 100;
+}
+
+.carreras__buscador_input:focus {
+    z-index: 100;
 }
 
 .search_button {
     border: 0px;
     height: 100%;
+    right: -2px;
     margin-right: 2px;
-    border-radius: 100px 0px 0px 100px;
+    border-radius: 90px 0px 0px 90px;
+    transform: rotateY(3.142rad);
     position: absolute;
+    z-index: 500;
+}
+
+.search_button:focus {
+    z-index: 500;
 }
 
 /* Migas de pan */
@@ -78,7 +90,7 @@ font-family: 'Roboto', sans-serif;
     justify-content: center;
     width: 15vw;
     height: 50%;
-    overflow:initial;
+    overflow: initial;
 }
 
 .carreras__migas_de_pan_miga__img {
@@ -96,9 +108,237 @@ font-family: 'Roboto', sans-serif;
     margin-top: 10px;
 }
 
+.carrera__boton {
+    width: 100%;
+    text-align: left;
+}
+
+.carrera__collapse__button {
+    margin-top: 2em;
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carrera__collapse__button i {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    margin: 0 1em;
+    color: white;
+}
+
+/* collapse */
+
+.cursos__collapse {
+    width: 100%;
+}
+
+.btn-blue {
+    background-color: #006CF0;
+    color: white;
+}
+
+
+/* card */
+.ag-format-container {
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.collapse {
+    z-index: 0;
+}
+
+
+body {
+    background-color: #000;
+}
+
+.ag-courses_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    padding: 50px 0;
+}
+
+.ag-courses_item {
+    -ms-flex-preferred-size: calc(33.33333% - 30px);
+    flex-basis: calc(33.33333% - 30px);
+    border: 1px solid #0136FA;
+
+    margin: 0 15px 30px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    border-radius: 28px;
+}
+
+
+.ag-courses-item_link {
+    display: block;
+    padding: 30px 20px;
+    background-color: #FFF;
+
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+
+    position: relative;
+}
+
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_bg {
+    -webkit-transform: scale(10);
+    -ms-transform: scale(10);
+    transform: scale(10);
+}
+
+.ag-courses-item_title {
+    min-height: 87px;
+    margin: 0 0 25px;
+
+    overflow: hidden;
+
+    font-weight: bold;
+    font-size: 30px;
+    color: #006CF0;
+
+    z-index: 2;
+    position: relative;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_title {
+    color: white;
+}
+
+.ag-courses-item_date-box {
+    font-size: 18px;
+    color: #006CF0;
+
+    z-index: 2;
+    position: relative;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_date-box {
+    color: #FFF;
+}
+
+.ag-courses-item_date {
+    font-weight: bold;
+    color: #EF9100;
+
+    -webkit-transition: color .5s ease;
+    -o-transition: color .5s ease;
+    transition: color .5s ease
+}
+
+.ag-courses-item_bg {
+    height: 128px;
+    width: 128px;
+    background-color: #006CF0;
+
+    z-index: 1;
+    position: absolute;
+    top: -75px;
+    right: -75px;
+
+    border-radius: 50%;
+
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+    background-color: #3ecd5e;
+}
+
+.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+    background-color: #e44002;
+}
+
+
+
+
+@media only screen and (max-width: 979px) {
+    .ag-courses_item {
+        -ms-flex-preferred-size: calc(50% - 30px);
+        flex-basis: calc(50% - 30px);
+    }
+
+    .ag-courses-item_title {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .ag-format-container {
+        width: 96%;
+    }
+
+}
+
+@media only screen and (max-width: 639px) {
+    .ag-courses_item {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    }
+
+    .ag-courses-item_title {
+        min-height: 72px;
+        line-height: 1;
+
+        font-size: 24px;
+    }
+
+    .ag-courses-item_link {
+        padding: 22px 40px;
+    }
+
+    .ag-courses-item_date-box {
+        font-size: 16px;
+    }
+}
+
+
+/* nieve */
+
+#carrera-nieve {
+    visibility: hidden;
+}
+
+.ag-courses_item:hover #carrera-nieve {
+    visibility: visible;
+}
+
+.shini {
+    background-image: url('/assets/carreras/gif/shini.gif');
+    background-size: 6%;
+}
+
+/* llamar la atención */
+
+
 /* Filtros */
-.carreras_filtros {
-    margin: 1vh;
+/* .carreras_filtros {
+    margin: 2.5em 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -137,211 +377,11 @@ font-family: 'Roboto', sans-serif;
 }
 
 .filtro {
-    border-radius: 15px;
+    border-radius: 2vw;
 }
 
 .filtro:hover {
     margin: 0 0.8vw 0 0.8vw;
     transition: 0.2s;
     transform: scale(1.08);
-}
-
-/* carreras */
-.carreras_carreras {
-    width: 100%;
-    height: 100%;
-}
-
-.home__carreras_carreras {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.carrera {
-    cursor: pointer;
-    margin: 0.5em 0.5em 0 0.5em;
-}
-
-.carrera:hover {
-    transition: 0.5s;
-    transform: scale(1.02);
-}
-
-.carrera_RH {
-    width: 14vw;
-    height: 28vh;
-    border-radius: 25px;
-    border: solid #E57A08 0.2vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carrera_PI {
-    width: 14vw;
-    height: 28vh;
-    border-radius: 25px;
-    border: solid #AAAAAA 0.2vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carrera_TI {
-    width: 14vw;
-    height: 28vh;
-    border-radius: 25px;
-    border: solid #00259A 0.2vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#carrera_capital {
-    background-image: url("/assets/carreras/carrera/capital.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#carrera_capital {
-    background-image: url("/assets/carreras/carrera/capital.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#carrera_contaduria {
-    background-image: url("/assets/carreras/carrera/contaduria.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#carrera_energias {
-    background-image: url("/assets/carreras/carrera/energia_renovable.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#carrera_ingenieria_desarrollo {
-    background-image: url("/assets/carreras/carrera/ingenieria_desarrollo.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#carrera_desarrollo {
-    background-image: url("/assets/carreras/carrera/desarrollo.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#carrera_mecatronica {
-    background-image: url("/assets/carreras/carrera/mecatronica.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#carrera_entornos {
-    background-image: url("/assets/carreras/carrera/entornos.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#electricidad {
-    background-image: url("/assets/carreras/carrera/electrica.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#produccion {
-    background-image: url("/assets/carreras/carrera/produccion.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#turismo {
-    background-image: url("/assets/carreras/carrera/turismo.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.carrera_RH__div_titulo {
-    width: 100%;
-    height: 20%;
-    margin-top: 40%;
-    background-color: rgba(229, 122, 8, 0.767);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carrera_PI__div_titulo {
-    width: 100%;
-    height: 20%;
-    margin-top: 40%;
-    background-color: #aaaaaaf1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carrera_TI__div_titulo {
-    width: 100%;
-    height: 20%;
-    margin-top: 40%;
-    background-color: #00249aad;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carrera__titulo {
-    color: white;
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-    font-weight: 700;
-}
-
-.carrera__suma {
-    font-size: 10em;
-    color: white;
-}
-
-.mas_carreras {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #E57A08;
-}
-
-.margen {
-    margin-top: 7vh;
-}
-
-.contaduria {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: row-reverse;
-}
-
-@media screen and (max-width: 900px) {
-    .carrera_RH {
-        width: 20vw;
-        height: 15vh;
-    }
-    
-    .carrera_PI {
-        width: 20vw;
-        height: 15vh;
-    }
-    
-    .carrera_TI {
-        width: 20vw;
-        height: 15vh;
-    }
-}
+} */
