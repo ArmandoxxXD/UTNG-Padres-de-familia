@@ -16,6 +16,10 @@ import { InstalacionesComponent } from './components/instalaciones/instalaciones
 import { HttpClientModule } from '@angular/common/http';
 import { NieveComponent } from './efectos/nieve/nieve.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TecladoComponent } from './components/teclado/teclado.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -32,12 +36,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     CarrerasComponent,
     InstalacionesComponent,
     NieveComponent
+    TecladoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added, Alertas de exepciones
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -37,6 +37,11 @@
     cursor: pointer;
 }
 
+.header__navegador {
+    width: 50px;
+    padding-right: 20px;
+}
+
 .header__opciones {
     height: 100%;
     width: 50em;
@@ -116,7 +121,8 @@
 }
 
 .header__opciones__elementos__animation:hover::before {
-    background-color: rgba(0, 0, 0, 0.699);
+    background-color: rgba(0, 0, 0, 0.397);
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -126,7 +132,8 @@
 }
 
 .active::before {
-    background-color: rgba(0, 0, 0, 0.699);
+    background-color: rgba(0, 0, 0, 0.397);
+    border-radius: 10px;
 }
 
 .header__opciones__elementos div a {
@@ -271,3 +278,12 @@ a {
 
 /* titulos 78px  */
 
+.btn-help {
+    color: white;
+    transition: color 0.3s;
+}
+
+
+.btn-help:hover {
+    color: rgba(0, 0, 0, 0.397);
+}

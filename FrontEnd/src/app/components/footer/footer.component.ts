@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 
@@ -8,6 +8,11 @@ import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+
+
+  @ViewChild('modalButton', { static: false })
+  modalButtonRef!: ElementRef;
+
   form: FormGroup = new FormGroup({
     email: new FormControl('', Validators.email),
     temaValue: new FormControl(1)
@@ -36,5 +41,14 @@ export class FooterComponent implements OnInit {
 
   test(event: any) {
     console.log(event)
+  }
+
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent) {
+    if ((event.altKey || event.metaKey) && (event.key === 'a')) {
+      const modalButton: HTMLInputElement = this.modalButtonRef.nativeElement;
+      modalButton.click();
+    }
   }
 }
