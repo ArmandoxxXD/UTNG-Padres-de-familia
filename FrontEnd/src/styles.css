@@ -22,12 +22,12 @@
 
 
 .modal-header {
-    background-color: #0056b3;
+    background-color: #7FB2F0;
     color: #ffffff !important;
 }
 
 .modal-header .btn {
-    background-color: #0056b3;
+    background-color: #7FB2F0;
     color: #ffffff !important;
     transition: box-shadow 0.3s;
 }
@@ -41,3 +41,28 @@
     background-color: #ffc5c5;
 }
 
+.btn-p-primary {
+    color: white;
+    background-color: #2557a7;
+    border: 1px transparent solid;
+}
+
+.btn-p-primary:hover {
+    color: white;
+    background-color: #4c6a99;
+    border: 1px transparent solid;
+}
+
+
+.btn-p-primary:active {
+    color: white !important;
+    background-color: #3a5b8f !important;
+    border: 1px white solid;
+}
+
+
+.btn-p-primary:disabled {
+    color: white !important;
+    background-color: #3a5b8f !important;
+    border: 1px white solid;
+}
