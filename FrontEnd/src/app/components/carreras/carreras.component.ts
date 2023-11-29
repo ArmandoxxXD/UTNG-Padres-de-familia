@@ -13,8 +13,26 @@ export class CarrerasComponent implements OnInit {
 
   intervaloId: any;
   carreras: any;
+  title: string = "Carreras";
+  typing: boolean = true;
 
   constructor(public lectura: LecturaService) { 
+  }
+
+  ngAfterViewInit() {
+    let currentLength = 0;
+    const fullText = this.title;
+    this.title = '';
+
+    const typingInterval = setInterval(() => {
+      this.title += fullText[currentLength];
+      currentLength++;
+
+      if (currentLength === fullText.length) {
+        clearInterval(typingInterval);
+        this.typing = false; // Oculta el cursor al finalizar
+      }
+    }, 150); // Velocidad de escritura (ms por carácter)
   }
 
   ngOnInit(): void {
