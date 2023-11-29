@@ -1,7 +1,7 @@
 <!-- Contenido de .inscripciones -->
 <div class="incripciones">
   <!-- Componente Angular con el efecto aplicado -->
-  <div class="titulo-ins">
+  <div class="titulo-ins" (mouseenter)="this.lectura.leerTexto('Inscripciones')">
    <h1 [class.typing-effect]="typing" [class.end-typing]="!typing">{{ title }}</h1>
  </div>
  
@@ -9,7 +9,7 @@
  
      <div class="card" [class.oscuro]="esModoOscuro">
        <div class="card-header"  [class.oscuro]="esModoOscuro">
-         <p>Haga clic en el texto para ver más detalles</p>
+         <p (mouseenter)="this.lectura.leerTexto('Haga clic en el texto para ver más detalles')" >Haga clic en el texto para ver más detalles</p>
  
          <p>
  <!-- Botón de Costos -->
@@ -17,7 +17,7 @@
  data-bs-toggle="collapse" data-bs-target="#collapseCostos"
  onclick="isCollapseCostosExpanded = !isCollapseCostosExpanded"
  aria-controls="collapseCostos" style="width: 100%; text-align: left;">
- <span class="hover-underline-animation">Costos de inscripción (Fechas, Precios...) </span>
+ <span class="hover-underline-animation" (mouseenter)="this.lectura.leerTexto('Costos de inscripción (Fechas, Precios...)')" >Costos de inscripción (Fechas, Precios...) </span>
  <i class="fas" style="float: right;"></i>
  <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" >
  <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"></path>
@@ -30,9 +30,9 @@
        <div class="card-body">
          <div class="collapse" id="collapseCostos">
            <div class="header">
-             <h1 class="title-costos">Costos</h1>
-             <h1>Técnico Superior Universitario - Ingeniería - Licenciatura</h1>
-             <div class="header-p">
+             <h1 class="title-costos" (mouseenter)="this.lectura.leerTexto('Costos')">Costos</h1>
+             <h1 (mouseenter)="this.lectura.leerTexto('Técnico Superior Universitario - Ingeniería - Licenciatura')">Técnico Superior Universitario - Ingeniería - Licenciatura</h1>
+             <div class="header-p" (mouseenter)="this.lectura.leerTexto('Periodo de venta de fichas del 12 al 23 de agosto de 2023 Examen de admisión 25 de agosto de 2023')">
                <p>Periodo de venta de fichas</p>
                <p> del 12 al 23 de agosto de 2023</p>
                <p>Examen de admisión 25 de agosto de 2023</p>
@@ -40,20 +40,20 @@
            </div>
            <div class="cost-section">
              <div class="cost-block">
-               <h3>Ficha</h3>
-               <p>$466.00</p>
+               <h3 (mouseenter)="this.lectura.leerTexto('Ficha')">Ficha</h3>
+               <p (mouseenter)="this.lectura.leerTexto('cuatrocientos sesenta y seis pesos')">$466.00</p>
              </div>
              <div class="cost-block">
-               <h3>Inscripción</h3>
-               <p>$466.00</p>
+               <h3 (mouseenter)="this.lectura.leerTexto('Inscripción')">Inscripción</h3>
+               <p (mouseenter)="this.lectura.leerTexto('cuatrocientos sesenta y seis pesos')">$466.00</p>
              </div>
              <div class="cost-block">
-               <h3>Cuatrimestre</h3>
-               <p>$1,795.00</p>
+               <h3 (mouseenter)="this.lectura.leerTexto('Cuatrimestre')">Cuatrimestre</h3>
+               <p (mouseenter)="this.lectura.leerTexto('mil setesientos noventa y cinco pesos')">$1,795.00</p>
              </div>
            </div>
            <div class="contact-info">
-             <h2 id="M-info">Mayores Informes:</h2>
+             <h2 id="M-info" (mouseenter)="this.lectura.leerTexto('Mayores Informes: Campus Dolores | Janet Sánchez Beltrán admisionTSUdolores@utng.edu.mx 418 1825500 ext. 1253')">Mayores Informes:</h2>
              <div class="campus-info">
                <div class="campus-detalles">
                  Campus Dolores | Janet Sánchez Beltrán<br>
@@ -61,7 +61,7 @@
                  <span>418 1825500 ext. 1253</span>
                </div>
                <div class="separator"></div>
-               <div class="campus-detalles">
+               <div class="campus-detalles" (mouseenter)="this.lectura.leerTexto('Campus Victoria | Marcela García García admisionTSUvictoria@utng.edu.mx 4192399098')">
                  Campus Victoria | Marcela García García<br>
                  <a href="mailto:admisionTSUvictoria@utng.edu.mx">{{'admisionTSUvictoria@utng.edu.mx'}}</a><br>
                  <span><i class="fa-brands fa-square-whatsapp" style="color: #10c62e;"></i> 4192399098</span>
@@ -74,14 +74,14 @@
      <!-- Contenido de .requisitos -->
      <div class="card" [class.oscuro]="esModoOscuro">
        <div class="card-header" [class.oscuro]="esModoOscuro">
-         <p>Haga clic en el texto para ver más detalles</p>
+         <p (mouseenter)="this.lectura.leerTexto('Haga clic en el texto para ver más detalles')">Haga clic en el texto para ver más detalles</p>
  
          <p>
            <button class="btn btn-primary cta" type="button" 
            data-bs-toggle="collapse" data-bs-target="#collapseRequisitos"
            onclick="isCollapseRequisitosExpanded = !isCollapseRequisitosExpanded"
            aria-controls="collapseRequisitos" style="width: 100%; text-align: left;">
-       <span class="hover-underline-animation">Requisitos de inscripción (Ficha, Documentación...)</span>
+       <span class="hover-underline-animation" (mouseenter)="this.lectura.leerTexto('Requisitos de inscripción (Ficha, Documentación...)')">Requisitos de inscripción (Ficha, Documentación...)</span>
        <i class="fas" style="float: right;"></i>
        <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" >
            <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"></path>
@@ -93,13 +93,13 @@
        <div class="card-body">
          <div class="collapse" id="collapseRequisitos">
            <div class="header">
-             <h1>Requisitos para la inscripción</h1>
+             <h1 (mouseenter)="this.lectura.leerTexto('Requisitos para la inscripción')">Requisitos para la inscripción</h1>
            </div>
            <div class="container-r">
              <div class="req">
              </div>
              <div class="requisitos-container playing">
-               <div class="title-r">Requisitos de ficha:</div>
+               <div class="title-r" (mouseenter)="this.lectura.leerTexto('Requisitos de ficha:')">Requisitos de ficha:</div>
                <ol class="requisitos-list">
                  <div class="text-r">
                    <li *ngFor="let requisito of requisitos" >{{ requisito }}</li>
@@ -111,10 +111,11 @@
                <div class="wave"></div>
              </div>
          
-             <div class="number-box">1</div>
+             <div class="number-box" (mouseenter)="this.lectura.leerTexto('uno')">1</div>
              <div class="req"></div>
          
-             <div class="requisitos-container playing">
+             <div class="requisitos-container playing" (mouseenter)="this.lectura.leerTexto('Envíe la documentación completa en formato PDF (no se aceptan fotos) al correo
+             electrónico correspondiente según a el campus al que su hijo aspire.')">
                <p class="text-r">Envíe la documentación completa en formato PDF (no se aceptan fotos) al correo
                  electrónico correspondiente según a el campus al que su hijo aspire.</p>
                <div class="wave"></div>
@@ -122,11 +123,12 @@
                <div class="wave"></div>
              </div>
          
-             <div class="number-box">2</div>
+             <div class="number-box" (mouseenter)="this.lectura.leerTexto('dos')">2</div>
              <div class="req"></div>
          
              <div class="requisitos-container playing">
-               <p class="text-r">Recibirá dos correos electrónicos: uno confirmando la recepción de la documentación y
+               <p class="text-r" (mouseenter)="this.lectura.leerTexto('Recibirá dos correos electrónicos: uno confirmando la recepción de la documentación y
+               otro solicitando el registro de datos en la página de CENEVAL, la institución que evaluará a los aspirantes.')">Recibirá dos correos electrónicos: uno confirmando la recepción de la documentación y
                  otro solicitando el registro de datos en la página de CENEVAL, la institución que evaluará a los aspirantes.
                </p>
                <div class="wave"></div>
@@ -134,7 +136,7 @@
                <div class="wave"></div>
              </div>
          
-             <div class="number-box">3</div>
+             <div class="number-box" (mouseenter)="this.lectura.leerTexto('tres')">3</div>
            </div>
            </div>
          </div>
