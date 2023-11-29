@@ -1,4 +1,6 @@
 <div class="header">
+    
+
     <div class="header__logo">
         <img id="header__logo__img" src="../../../assets/header/logo-UTNG.webp" alt="Logo UTNG">
     </div>
@@ -8,7 +10,9 @@
         </div>
         <div id="header_elements"  class="header__opciones nabvar_abierto">
             <div class="header__opciones__elementos">
-
+                <!-- ... tu código HTML existente ... -->
+                <button #voiceButton class="btn btn-help" (click)="listenToVoice()"><i class="fa-solid fa-microphone" style="color: #ffffff;"></i></button>
+                <!-- ... tu código HTML existente ... -->
                 <div id="home"  (click)="this.activarElemento('home')"  class="header__opciones__elementos__animation option"> <a routerLink="home"> Home </a> </div>
                 <div class="line"></div>
                 <div id="becas" (click)="this.activarElemento('becas')" class="header__opciones__elementos__animation option"> <a> Becas </a> </div>
