@@ -1,5 +1,9 @@
 <div class="carreras" style="padding-top: 100px; padding-bottom: 500px;">
     <div class="carreras__body">
+        <div class="titulo-ins" (mouseenter)="this.lectura.leerTexto('Inscripciones')">
+            <h1 [class.typing-effect]="typing" [class.end-typing]="!typing" style="font-size: 3em;">{{ title }}</h1>
+        </div>
+
         <div class="carreras__buscador">
             <div class="carreras__buscador_buscador input-group mb-3">
                 <button class="btn btn-outline-secondary search_button" type="button" id="button-addon1"><i
