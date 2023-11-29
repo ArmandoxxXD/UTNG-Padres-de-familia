@@ -13,9 +13,7 @@ body {
     font-family: 'Arial', sans-serif;
   }
   
-h1 {
-    color: #f58220;
-}
+
   
 .card {
     border: none; /* Sin bordes para la tarjeta */
@@ -110,5 +108,15 @@ h1 {
     border-top: none;
   }
 
-
+  .titulo-ins .typing-effect, .titulo-ins .end-typing {
+    margin-top: 0.625rem;
+    font-size: 2.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.125rem solid black; /* Cursor simulado */
+    font-family: 'Special Elite', monospace; /* Aplicar la fuente Special Elite */
+  }
   
+  .titulo-ins .end-typing {
+    border-right: none; /* Cursor oculto después de la animación */
+  }
