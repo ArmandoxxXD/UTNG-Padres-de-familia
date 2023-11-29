@@ -15,9 +15,13 @@
                     <i class="btn-help fa-solid fa-keyboard" #keysButton data-bs-toggle="modal" data-bs-target="#keyBoardDocsModal"></i>
                 </div>
                 <div class="header__navegador">
+                     <i class="fa-solid fa-podcast" style="cursor: pointer; color: white;" (click)="activar()"></i>
+                </div>
+                <div class="header__navegador">
                     <i class="btn-help fa-solid fa-microphone" [class.btn-active]="isMicEnabled" #listenButton (click)="listenToVoice()"></i>
                 </div>
             </div>
+
         </div>
 
         <div class="header__navegador">
@@ -31,25 +35,19 @@
             <div class="header__opciones__elementos">
 
 
-                <div id="home" (click)="this.activarElemento('home')" [class.active]="getActiveElement() == 0"
-                    class="header__opciones__elementos__animation option"> <a routerLink="home"> Home </a> </div>
+                <div id="home"  (click)="this.activarElemento('home')"  [class.active]="getActiveElement() == 0" class="header__opciones__elementos__animation option"> <a routerLink="home" (mouseenter)="this.lectura.leerTexto('Home')"> Home </a> </div>
+                <!-- ... tu código HTML existente ... -->
+                <button #voiceButton class="btn btn-help" (click)="listenToVoice()"><i class="fa-solid fa-microphone" style="color: #ffffff;"></i></button>
+                <!-- ... tu código HTML existente ... -->
 
                 <div class="line"></div>
-                <div id="becas" (click)="this.activarElemento('becas')" [class.active]="getActiveElement() == 1"
-                    class="header__opciones__elementos__animation option"> <a> Becas </a> </div>
+                <div id="becas" (click)="this.activarElemento('becas')" [class.active]="getActiveElement() == 1" class="header__opciones__elementos__animation option"> <a (mouseenter)="this.lectura.leerTexto('Becas')"> Becas </a> </div>
                 <div class="line"></div>
-                <div id="carreras" (click)="this.activarElemento('carreras')" [class.active]="getActiveElement() == 2"
-                    class="header__opciones__elementos__animation option"> <a routerLink="carreras"> Carreras </a>
-                </div>
+                <div id="carreras" (click)="this.activarElemento('carreras')" [class.active]="getActiveElement() == 2" class="header__opciones__elementos__animation option"> <a routerLink="carreras" (mouseenter)="this.lectura.leerTexto('Carreras')"> Carreras </a> </div>
+                <div class="line"></div> 
+                <div id="instalaciones" (click)="this.activarElemento('instalaciones')" [class.active]="getActiveElement() == 3" class="header__opciones__elementos__animation margin_instalaciones option"> <a (mouseenter)="this.lectura.leerTexto('Instalaciones')"> Instalaciones </a> </div> 
                 <div class="line"></div>
-                <div id="instalaciones" (click)="this.activarElemento('instalaciones')"
-                    [class.active]="getActiveElement() == 3"
-                    class="header__opciones__elementos__animation margin_instalaciones option"> <a> Instalaciones </a>
-                </div>
-                <div class="line"></div>
-                <div id="acerca" (click)="this.activarElemento('inscripciones')"
-                    [class.active]="getActiveElement() == 4"
-                    class="header__opciones__elementos__animation margin_acerca option"> <a> Inscripciones </a> </div>
+
 
             </div>
         </div>
