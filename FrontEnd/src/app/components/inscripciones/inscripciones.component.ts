@@ -10,6 +10,9 @@ import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 })
 export class InscripcionesComponent implements OnInit, AfterViewInit {
 
+  title = 'Inscripciones';
+  typing = true;
+
   requisitos = [
     '1.- CURP',
     '2.- Comprobante de pago',
@@ -33,6 +36,20 @@ export class InscripcionesComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    let currentLength = 0;
+    const fullText = this.title;
+    this.title = '';
+
+    const typingInterval = setInterval(() => {
+      this.title += fullText[currentLength];
+      currentLength++;
+
+      if (currentLength === fullText.length) {
+        clearInterval(typingInterval);
+        this.typing = false; // Oculta el cursor al finalizar
+      }
+    }, 150); // Velocidad de escritura (ms por carácter)
+  
     const collapseCostos = document.getElementById('collapseCostos');
     const collapseRequisitos = document.getElementById('collapseRequisitos');
 
@@ -66,6 +83,7 @@ export class InscripcionesComponent implements OnInit, AfterViewInit {
     this.modoOscuroService.modoOscuro.subscribe((value: boolean) => {
     })
   }
+
 
 
 }
