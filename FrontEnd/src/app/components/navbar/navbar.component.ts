@@ -234,6 +234,7 @@ handleVoiceCommand(command: string) {
 
   test(event: any) {
     console.log(event);
+  }
 
   public theme: "light" | "dark" = "light";
 
