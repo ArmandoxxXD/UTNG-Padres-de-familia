@@ -1,4 +1,6 @@
 <div class="header">
+    
+
     <div class="header__logo">
         <img id="header__logo__img" src="assets/header/logo-UTNG.webp" alt="Logo UTNG">
     </div>
@@ -13,7 +15,12 @@
         <div id="header_elements"  class="header__opciones nabvar_abierto">
             <div class="header__opciones__elementos">
 
+
                 <div id="home"  (click)="this.activarElemento('home')"  [class.active]="getActiveElement() == 0" class="header__opciones__elementos__animation option"> <a routerLink="home"> Home </a> </div>
+                <!-- ... tu código HTML existente ... -->
+                <button #voiceButton class="btn btn-help" (click)="listenToVoice()"><i class="fa-solid fa-microphone" style="color: #ffffff;"></i></button>
+                <!-- ... tu código HTML existente ... -->
+
                 <div class="line"></div>
                 <div id="becas" (click)="this.activarElemento('becas')" [class.active]="getActiveElement() == 1" class="header__opciones__elementos__animation option"> <a> Becas </a> </div>
                 <div class="line"></div>
@@ -28,7 +35,6 @@
         <i id="menu__burguer" class="fa-solid fa-list icon-select" style="color: white;"></i>
     </div>
 </div>
-
 
 
 <div class="modal fade" id="keyBoardDocsModal" tabindex="-1" aria-labelledby="keyBoardDocsModalLabel" aria-hidden="true">
@@ -104,3 +110,4 @@
         </div>
     </div>
 </div>
+
