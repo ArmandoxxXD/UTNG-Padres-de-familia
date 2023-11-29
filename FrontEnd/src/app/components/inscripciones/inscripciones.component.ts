@@ -64,13 +64,12 @@ export class InscripcionesComponent implements OnInit, AfterViewInit {
   }
 
   toggleCostos(): void {
-    this.mostrarCostos = !this.mostrarCostos;
+    this.isCollapseCostosExpanded = true;
   }
 
   toggleRequisitos(): void {
-    this.mostrarRequisitos = !this.mostrarRequisitos;
+    this.isCollapseRequisitosExpanded = true;
   }
-
 
   // Función para hacer scroll a la sección especificada.
   scrollIntoView(element: HTMLElement): void {
