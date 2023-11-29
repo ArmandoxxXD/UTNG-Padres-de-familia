@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 export class VerBecasInternasComponent implements OnInit {
   esModoOscuro: boolean = false;
 
-  constructor(private modoOscuroService:ModoOscuroService) { }
+  constructor(private modoOscuroService: ModoOscuroService) { }
 
   ngOnInit(): void {
     this.modoOscuroService.esModoOscuro$.subscribe((modoOscuro) => {
