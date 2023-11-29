@@ -15,7 +15,7 @@
                     <i class="btn-help fa-solid fa-keyboard" #keysButton data-bs-toggle="modal" data-bs-target="#keyBoardDocsModal"></i>
                 </div>
                 <div class="header__navegador">
-                     <i class="fa-solid fa-podcast" style="cursor: pointer; color: white;" (click)="activar()"></i>
+                     <i class="fa-solid fa-podcast speak" #speakButtonRef (click)="activar()"></i>
                 </div>
                 <div class="header__navegador">
                     <i class="btn-help fa-solid fa-microphone" [class.btn-active]="isMicEnabled" #listenButton (click)="listenToVoice()"></i>
