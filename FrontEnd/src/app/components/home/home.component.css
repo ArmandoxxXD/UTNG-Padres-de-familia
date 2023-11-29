@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 130px !important;
+    margin-bottom: 50px !important;
 }
 
 .carousel {
@@ -31,7 +31,7 @@
 .home__carreras_titulo {
     text-align: center;
     color: #00259A;
-    letter-spacing: 0.3vw;
+    letter-spacing: 6px;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
 }
