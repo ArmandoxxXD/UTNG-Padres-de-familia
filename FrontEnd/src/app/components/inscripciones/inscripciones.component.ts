@@ -2,6 +2,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 
+import {LecturaService} from 'src/app/services/lectura.service'
 
 @Component({
   selector: 'app-inscripciones',
@@ -22,7 +23,7 @@ export class InscripcionesComponent implements OnInit, AfterViewInit {
   isCollapseRequisitosExpanded: boolean = false;
   esModoOscuro: boolean = false;
 
-  constructor(private modoOscuroService:ModoOscuroService) { }
+  constructor(private modoOscuroService:ModoOscuroService, public lectura: LecturaService) { }
 
 
   ngOnInit(): void {

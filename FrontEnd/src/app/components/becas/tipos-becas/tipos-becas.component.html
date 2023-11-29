@@ -2,7 +2,7 @@
   <div class="container-fluid my-5">
     <div class="row">
       <div class="col-12">
-        <div class="text-center mb-3">
+        <div class="text-center mb-3" (mouseenter)="this.lectura.leerTexto('Becas')">
           <button class="custom-button">Becas</button>
         </div>
       </div>
@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col-lg-6 mb-4">
         <div class="card h-100"  [class.oscuro]="esModoOscuro">
-          <div class="card-body" routerLink="/becas/becas-externas">
+          <div class="card-body" routerLink="/becas/becas-externas" (mouseenter)="this.lectura.leerTexto('Externas... Becas proporcionadas por la entidad federal o estatal')">
             <h2 class="card-title">Externas</h2>
             <p class="card-text">Becas proporcionadas por la entidad federal o estatal.</p>
           </div>
@@ -20,7 +20,7 @@
       </div>
       <div class="col-lg-6 mb-4">
         <div class="card h-100"  [class.oscuro]="esModoOscuro">
-          <div class="card-body" routerLink="/becas/becas-internas">
+          <div class="card-body" routerLink="/becas/becas-internas" (mouseenter)="this.lectura.leerTexto('Internas... Becas proporcionadas por la universidad tecnológica del norte de guanajuato.')">
             <h2 class="card-title">Internas</h2>
             <p class="card-text">Becas proporcionadas por la universidad tecnológica del norte de guanajuato.</p>
           </div>

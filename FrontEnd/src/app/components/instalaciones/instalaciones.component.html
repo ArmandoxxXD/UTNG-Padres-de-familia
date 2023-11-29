@@ -1,6 +1,6 @@
 <div class="instalaciones">
     <div class="container" style="margin-bottom: 130px;">
-        <div class="title">
+        <div class="title" (mouseenter)="this.lectura.leerTexto('Instalaciones:')">
             Instalaciones
         </div>
         <div class="h-100 w-100" *ngFor="let location of locations; let i=index" >
@@ -14,13 +14,13 @@
                     <div class="col-md-10">
                         <div [class.card-header-left]="(i + 1) % 2 !== 0" [class.card-header-right]="(i + 1) % 2 === 0">
                             <h5 class="subtitle  card-title" [class.subtitle-left]="(i + 1) % 2 !== 0"
-                                [class.subtitle-right]="(i + 1) % 2 === 0">{{location.title}}</h5>
+                                [class.subtitle-right]="(i + 1) % 2 === 0" (mouseenter)='this.lectura.leerTexto("{{location.title}}")'>{{location.title}}</h5>
                         </div>
                         <div class="card-body">
 
                             <div class="h-100 w-100">
                                 <p class="card-text text-ins" [class.text-ins-left]="(i + 1) % 2 !== 0"
-                                    [class.text-ins-right]="(i + 1) % 2 === 0">{{location.description}}</p>
+                                    [class.text-ins-right]="(i + 1) % 2 === 0" (mouseenter)='this.lectura.leerTexto("{{location.description}}")'>{{location.description}}</p>
                             </div>
                         </div>
                     </div>
@@ -33,10 +33,10 @@
 
             <div class="card mb-3" *ngIf="locations.length === (i + 1)"  [class.oscuro]="esModoOscuro">
                 <div class="card-header">
-                    <h5 class="subtitle card-title">{{location.title}}</h5>
+                    <h5 class="subtitle card-title" (mouseenter)='this.lectura.leerTexto("{{location.title}}")'>{{location.title}}</h5>
                 </div>
                 <div class="card-body">
-                    <p class="card-text text-ins">{{location.description}}</p>
+                    <p class="card-text text-ins" (mouseenter)='this.lectura.leerTexto("{{location.description}}")'>{{location.description}}</p>
                 </div>
                 <img src="{{location.src}}" (click)="openImageModal(location)" data-bs-toggle="modal" data-bs-target="#imageModal" height="179"
                     class="card-img-bottom button-img" alt="...">
@@ -51,7 +51,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" style="text-align: center;">
-                <div class="col-12"><h1 class="modal-title fs-5" id="exampleModalLabel">{{selectedLocation?.title}}</h1></div>
+                <div class="col-12"><h1 class="modal-title fs-5" id="exampleModalLabel" (mouseenter)='this.lectura.leerTexto("{{selectedLocation?.title}}")'>{{selectedLocation?.title}}</h1></div>
                 <button type="button" style="position: relative; left: -36px;" class="btn" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark fa-xl"></i></button>
             </div>
             <div class="modal-body" style="text-align: center;">
