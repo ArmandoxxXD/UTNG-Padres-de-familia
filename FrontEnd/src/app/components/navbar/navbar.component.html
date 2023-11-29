@@ -37,7 +37,7 @@
 
                 <div id="home"  (click)="this.activarElemento('home')"  [class.active]="getActiveElement() == 0" class="header__opciones__elementos__animation option"> <a routerLink="home" (mouseenter)="this.lectura.leerTexto('Home')"> Home </a> </div>
                 <!-- ... tu código HTML existente ... -->
-                <button #voiceButton class="btn btn-help" (click)="listenToVoice()"><i class="fa-solid fa-microphone" style="color: #ffffff;"></i></button>
+                <!-- <button #voiceButton class="btn btn-help" (click)="listenToVoice()"><i class="fa-solid fa-microphone" style="color: #ffffff;"></i></button> -->
                 <!-- ... tu código HTML existente ... -->
 
                 <div class="line"></div>
@@ -47,6 +47,7 @@
                 <div class="line"></div> 
                 <div id="instalaciones" (click)="this.activarElemento('instalaciones')" [class.active]="getActiveElement() == 3" class="header__opciones__elementos__animation margin_instalaciones option"> <a (mouseenter)="this.lectura.leerTexto('Instalaciones')"> Instalaciones </a> </div> 
                 <div class="line"></div>
+                <div id="acerca" (click)="this.activarElemento('inscripciones')" [class.active]="getActiveElement() == 4" class="header__opciones__elementos__animation margin_acerca option"> <a (mouseenter)="this.lectura.leerTexto('Inscripciones')"> Inscripciones </a> </div> 
 
 
             </div>
