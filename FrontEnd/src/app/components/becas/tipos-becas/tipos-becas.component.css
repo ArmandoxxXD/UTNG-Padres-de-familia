@@ -1,5 +1,5 @@
 .tipos-becas {
-  padding-top: 130px;
+  padding-top: 7.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,4 +146,18 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.titulo-ins .typing-effect, .titulo-ins .end-typing {
+  margin-top: 0.625rem;
+  font-size: 2.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.125rem solid black; /* Cursor simulado */
+  font-family: 'Special Elite', monospace; /* Aplicar la fuente Special Elite */
+  margin-bottom: 3.125rem;
+}
+
+.titulo-ins .end-typing {
+  border-right: none; /* Cursor oculto después de la animación */
 }
