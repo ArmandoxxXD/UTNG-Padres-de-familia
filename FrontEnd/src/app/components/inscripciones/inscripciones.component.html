@@ -1,23 +1,27 @@
 <!-- Contenido de .inscripciones -->
 <div class="incripciones">
-  <div class="titulo-ins">
-    <h1>Inscripciones</h1>
-  </div>
+ <!-- Componente Angular con el efecto aplicado -->
+ <div class="titulo-ins">
+  <h1 [class.typing-effect]="typing" [class.end-typing]="!typing">{{ title }}</h1>
+</div>
+
   <div class="container">
 
     <div class="card" [class.oscuro]="esModoOscuro">
       <div class="card-header"  [class.oscuro]="esModoOscuro">
-        <p (mouseenter)="this.lectura.leerTexto('Haga clic en el botón para ver más detalles')">Haga clic en el botón para ver más detalles</p>
+        <p  (mouseenter)="this.lectura.leerTexto('Haga clic en el botón para ver más detalles')" >Haga clic en el texto para ver más detalles</p>
 
         <p>
 <!-- Botón de Costos -->
-<button class="btn btn-primary" type="button" 
-  data-bs-toggle="collapse" data-bs-target="#collapseCostos"
-  [attr.aria-expanded]="isCollapseCostosExpanded.toString()"
-  (click)="isCollapseCostosExpanded = !isCollapseCostosExpanded"
-  aria-controls="collapseCostos" (mouseenter)="this.lectura.leerTexto('Costos de inscripción (Fechas, Precios...) ')">
-  Costos de inscripción (Fechas, Precios...)  
-  <i class="fas" [ngClass]="{'fa-chevron-down': !isCollapseCostosExpanded, 'fa-chevron-up': isCollapseCostosExpanded}"></i>
+<button class="btn btn-primary cta" type="button" 
+data-bs-toggle="collapse" data-bs-target="#collapseCostos"
+onclick="iscollapseCostosExpanded = !iscollapseCostosExpanded"
+aria-controls="collapseCostos" style="width: 100%; text-align: left;" (mouseenter)="this.lectura.leerTexto('Costos de inscripción (Fechas, Precios...) ')">
+<span class="hover-underline-animation">Costos de inscripción (Fechas, Precios...) </span>
+<i class="fas" style="float: right;"></i>
+<svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" >
+<path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"></path>
+
 </button>
 
 
@@ -70,17 +74,20 @@
     <!-- Contenido de .requisitos -->
     <div class="card" [class.oscuro]="esModoOscuro">
       <div class="card-header" [class.oscuro]="esModoOscuro">
-        <p (mouseenter)="this.lectura.leerTexto('Haga clic en el botón para ver más detalles')">Haga clic en el botón para ver más detalles</p>
+        <p (mouseenter)="this.lectura.leerTexto('Haga clic en el botón para ver más detalles')">Haga clic en el texto para ver más detalles</p>
 
         <p>
-          <button class="btn btn-primary" type="button" 
+          <button class="btn btn-primary cta" type="button" 
           data-bs-toggle="collapse" data-bs-target="#collapseRequisitos"
-          [attr.aria-expanded]="isCollapseRequisitosExpanded.toString()"
-          (click)="isCollapseRequisitosExpanded = !isCollapseRequisitosExpanded"
-          aria-controls="collapseRequisitos" (mouseenter)="this.lectura.leerTexto('Requisitos de inscripción (Fichas, Documentación...)')">
-          Requisitos de inscripción (Fichas, Documentación...) 
-          <i class="fas" [ngClass]="{'fa-chevron-down': !isCollapseRequisitosExpanded, 'fa-chevron-up': isCollapseRequisitosExpanded}"></i>
-        </button>
+          onclick="isCollapseRequisitosExpanded = !isCollapseRequisitosExpanded"
+          aria-controls="collapseRequisitos" style="width: 100%; text-align: left;">
+      <span class="hover-underline-animation">Requisitos de inscripción (Ficha, Documentación...)</span>
+      <i class="fas" style="float: right;"></i>
+      <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" >
+          <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"></path>
+      </svg>
+  </button>
+
         </p>
       </div>
       <div class="card-body">
@@ -94,7 +101,10 @@
             <div class="requisitos-container playing">
               <div class="title-r"  (mouseenter)="this.lectura.leerTexto('Requisitos de ficha:')">Requisitos de ficha:</div>
               <ol class="requisitos-list">
-                <li *ngFor="let requisito of requisitos" class="text-r">{{ requisito }}</li>
+                <div class="text-r">
+                  <li *ngFor="let requisito of requisitos" >{{ requisito }}</li>
+                </div>
+                
               </ol>
               <div class="wave"></div>
               <div class="wave"></div>

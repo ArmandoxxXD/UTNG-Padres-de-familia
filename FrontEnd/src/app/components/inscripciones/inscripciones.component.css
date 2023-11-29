@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Italianno:wght@400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
 .incripciones {
   display: flex;
@@ -12,14 +13,20 @@ body {
   font-family: 'Nunito', sans-serif;
   background-color: white;
 }
-
-.titulo-ins{
-  font-style: italic;
+.titulo-ins .typing-effect, .titulo-ins .end-typing {
   margin-top: 20px;
   font-size: 36px;
-  color: #FF8200;
-  text-shadow: 0px 2px 2px #00109e;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid black; /* Cursor simulado */
+  font-family: 'Special Elite', monospace; /* Aplicar la fuente Special Elite */
 }
+
+.titulo-ins .end-typing {
+  border-right: none; /* Cursor oculto después de la animación */
+}
+
+
 
 #title-costos{
   color: #0056b3;
@@ -188,7 +195,8 @@ body {
     padding-top: 12px;
     padding-left: 12px;
     padding-right: 12px;
-    background: #000;
+    background: transparent;
+    box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
     border-radius: 10px; 
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
@@ -211,19 +219,17 @@ body {
     color:white;
     position: relative;
     word-wrap: break-word;
-    font-weight: bold;
-    z-index: 999;
+    z-index: 1;
+    font-weight: 400;
    
   }
   .text-r{
-    color: white;
-    text-align: justify;
     font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: 400;
     position: relative;
-    word-wrap: break-word;
-
-    
     z-index: 999;
+
   }
   
   
@@ -263,7 +269,7 @@ body {
     }
   
     .requisitos-container {
-      margin-bottom: 20px; /* Add some space between the list and the next element */
+      margin-bottom: 30px; /* Add some space between the list and the next element */
     }
   
     .number-box {
@@ -341,28 +347,69 @@ body {
   border-bottom: 1px solid #ddd; /* Borde para separar del cuerpo de la tarjeta */
 }
 
-
-.btn.btn-primary{
-  width: 100%; /* Hace que el botón abarque toda la anchura del encabezado de la tarjeta */
-  text-align: left; /* Alinea el texto a la izquierda */
-  background-color: transparent; /* Fondo transparente para el botón */
-  color: #0056b3; /* Color del texto para el botón */
-  padding: .75rem 1.25rem; /* Espaciado interno para el botón */
-  border: none; /* Sin borde para el botón */
-  text-decoration: none; /* Sin subrayado para el botón */
+.btn.btn-primary.cta {
+    background-color: transparent;
+    color: #0056b3;
+    padding: .75rem 1.25rem;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 5px;
+    cursor: pointer;
+    width: 100%; /* Hace que el botón abarque toda la anchura del encabezado de la tarjeta */
+    text-align: left; /* Alinea el texto a la izquierda */
 }
 
-/* Botones */
-.btn.btn-primary {
-  background-color: transparent; /* Fondo transparente */
-  color: #0056b3; /* Color de texto que destaque */
-  padding: 5px 10px; /* Espaciado interno */
-  text-decoration: underline; /* Subrayado para indicar interactividad */
-  cursor: pointer; /* Cursor en forma de mano al pasar el ratón */
+.cta {
   border: none;
-  display: inline-block;
-  margin-right: 5px; /* Separación entre elementos */
+  background: none;
 }
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 
 
 /* Sección de costos e información de contacto */
@@ -409,7 +456,6 @@ body {
   padding-top: 12px;
   padding-left: 12px;
   padding-right: 12px;
-  background: #D9D9D9;
   border-radius: 10px; 
   border-bottom-right-radius: 0px;
   border-top-right-radius: 0px;
