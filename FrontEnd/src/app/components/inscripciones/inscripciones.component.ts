@@ -1,8 +1,6 @@
-
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 
-import {LecturaService} from 'src/app/services/lectura.service'
 
 @Component({
   selector: 'app-inscripciones',
@@ -10,6 +8,9 @@ import {LecturaService} from 'src/app/services/lectura.service'
   styleUrls: ['./inscripciones.component.css']
 })
 export class InscripcionesComponent implements OnInit, AfterViewInit {
+
+  title = 'Inscripciones';
+  typing = true;
 
   requisitos = [
     '1.- CURP',
@@ -23,7 +24,7 @@ export class InscripcionesComponent implements OnInit, AfterViewInit {
   isCollapseRequisitosExpanded: boolean = false;
   esModoOscuro: boolean = false;
 
-  constructor(private modoOscuroService:ModoOscuroService, public lectura: LecturaService) { }
+  constructor(private modoOscuroService:ModoOscuroService) { }
 
 
   ngOnInit(): void {
@@ -34,6 +35,20 @@ export class InscripcionesComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    let currentLength = 0;
+    const fullText = this.title;
+    this.title = '';
+
+    const typingInterval = setInterval(() => {
+      this.title += fullText[currentLength];
+      currentLength++;
+
+      if (currentLength === fullText.length) {
+        clearInterval(typingInterval);
+        this.typing = false; // Oculta el cursor al finalizar
+      }
+    }, 150); // Velocidad de escritura (ms por carácter)
+  
     const collapseCostos = document.getElementById('collapseCostos');
     const collapseRequisitos = document.getElementById('collapseRequisitos');
 
@@ -67,6 +82,7 @@ export class InscripcionesComponent implements OnInit, AfterViewInit {
     this.modoOscuroService.modoOscuro.subscribe((value: boolean) => {
     })
   }
+
 
 
 }
