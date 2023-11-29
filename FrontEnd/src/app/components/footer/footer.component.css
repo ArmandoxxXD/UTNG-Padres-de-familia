@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Italianno');
 
 .footer {
-    background-color: #00A887;
+    background-color: #4989D6;
     margin-top: auto;
     padding: 20px;
     width: 100%;
@@ -25,14 +25,14 @@ h4 {
 .btn-help {
     font-family: Nunito;
     color: white;
-    background-color: #e57a08;
+    background-color: #2557a7;
     border: 1px white solid;
 }
 
 .btn-help:hover {
     font-family: Nunito;
     color: white;
-    background-color: #f78d1d;
+    background-color: #2557a7;
     border: 1px white solid;
 }
 
@@ -40,7 +40,7 @@ h4 {
 .btn-help:active {
     font-family: Nunito;
     color: white;
-    background-color: #a85c0a;
+    background-color: #2557a7;
     border: 1px white solid;
 }
 
@@ -48,7 +48,7 @@ h4 {
 .btn-submit {
     font-family: Nunito;
     color: white;
-    background-color: #e57a08;
+    background-color: #2557a7;
     border: 1px white solid;
     border-radius: 0%;
     box-shadow: 0px 4px 0px #94949478;
@@ -57,7 +57,7 @@ h4 {
 .btn-submit:hover {
     font-family: Nunito;
     color: white;
-    background-color: #f78d1d;
+    background-color: #2557a7;
     border: 1px white solid;
     border-radius: 0%;
     box-shadow: 0px 4px 0px #94949478;
@@ -66,7 +66,7 @@ h4 {
 .btn-submit:active {
     font-family: Nunito;
     color: white;
-    background-color: #a85c0a;
+    background-color: #2557a7;
     border: 1px white solid;
     border-radius: 0%;
     box-shadow: 0px 4px 0px #ffecd478;
