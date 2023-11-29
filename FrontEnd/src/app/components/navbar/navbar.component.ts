@@ -6,39 +6,73 @@ import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 declare var webkitSpeechRecognition: any;
 declare var SpeechRecognition: any;
 
+import {LecturaService} from 'src/app/services/lectura.service'
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html', 
+  templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
 
 export class NavbarComponent implements OnInit {
   @ViewChild('voiceButton') voiceButton!: ElementRef;
 
-
   private activeElement = 0;
-  constructor(private router: Router, private modoOscuroService: ModoOscuroService,  private toastr: ToastrService) { }
+  private recognition = new webkitSpeechRecognition();
+  public isMicEnabled: boolean = false;
+  public statusMic: 'error' | 'done' | 'default' = 'default';
+
+  constructor(private router: Router, private modoOscuroService: ModoOscuroService, private toastr: ToastrService, public lectura: LecturaService) { 
+    this.recognition.lang = 'es-ES';
+
+    this.recognition.onstart = (event: any) => {
+      this.isMicEnabled = true;
+      console.log(this.isMicEnabled)
+    };
+
+    this.recognition.onresult = (event: any) => {
+      const command = event.results[0][0].transcript.toLowerCase();
+      this.handleVoiceCommand(command);
+    };
+
+    this.recognition.onerror = (event: any) => {
+      this.toastr.error('Error en el reconocimiento de voz', 'Error', {timeOut: 3000});
+      if(this.statusMic === 'error') {
+        this.statusMic = 'error';
+      }
+    };
+
+    this.recognition.onend = () => {
+      console.log(this.statusMic)
+      if(this.statusMic === 'error') { this.recognition.start() }
+
+      this.isMicEnabled = false;
+      this.toastr.error('Comando no reconocido', 'Error', {timeOut: 3000});
+
+    };
+  }
 
   ngOnInit(): void {
+    console.log(this.lectura.lectura)
+
     this.router.events.subscribe(() => {
       switch (this.router.url) {
         case '/home':
-            this.activeElement = 0;
+          this.activeElement = 0;
           break;
         case '/becas/tipos-becas':
         case '/becas/becas-externas':
         case '/becas/becas-internas':
-            this.activeElement = 1;
+          this.activeElement = 1;
           break;
         case '/carreras':
-            this.activeElement = 2;
+          this.activeElement = 2;
           break;
         case '/instalaciones':
-            this.activeElement = 3;
+          this.activeElement = 3;
           break;
         case '/inscripciones':
-            this.activeElement = 4;
+          this.activeElement = 4;
           break;
         default:
           this.activeElement = 0;
@@ -57,37 +91,6 @@ export class NavbarComponent implements OnInit {
     const elemento_4 = document.getElementById("instalaciones");
     const elemento_5 = document.getElementById("inscripciones");
 
-
-    menu?.addEventListener('click', () => {
-      const claseDelObjeto = document.getElementById("header_elements");
-
-      const clasesDelElemento = claseDelObjeto?.classList;
-
-      const arrayDeClases = Array.from(Object(clasesDelElemento));
-
-
-      if (String(arrayDeClases[2]) == "animation_close") {
-        navbar?.classList.add("nabvar_abierto")
-        navbar?.classList.remove("nabvar_cerrado")
-        this.limpiar_Nabvar_close(navbar, options);
-
-        void navbar?.offsetWidth;
-        this.abrir_Nabvar(navbar, options);
-      } else if (String(arrayDeClases[2]) == "animation_open") {
-        navbar?.classList.add("nabvar_cerrado")
-        navbar?.classList.remove("nabvar_abierto")
-        this.limpiar_Nabvar_open(navbar, options);
-
-        void navbar?.offsetWidth;
-        this.cerrar_Nabvar(navbar, options);
-      } else {
-        navbar?.classList.add("nabvar_abierto")
-        navbar?.classList.remove("nabvar_cerrado")
-        this.abrir_Nabvar(navbar, options);
-      }
-      console.log(arrayDeClases)
-
-    })
 
     const ubicacionActual = window.location.pathname;
 
@@ -150,91 +153,50 @@ export class NavbarComponent implements OnInit {
     elemento_5?.classList.remove('active');
   }
 
-  limpiar_Nabvar_open(navbar: any, options: any) {
-    //open
-    navbar?.classList.remove("animation_open");
-
-    for (let i = 0; i < options.length; i++) {
-      options[i].classList.remove('font_open');
-    }
-  }
-
-  limpiar_Nabvar_close(navbar: any, options: any) {
-    //close
-    navbar?.classList.remove("animation_close");
-
-    for (let i = 0; i < options.length; i++) {
-      options[i].classList.remove('font_close');
-    }
-  }
-
-  cerrar_Nabvar(navbar: any, options: any) {
-
-    navbar?.classList.add("animation_close");
-
-    for (let i = 0; i < options.length; i++) {
-      options[i].classList.add('font_close');
-    }
-  }
-
-  abrir_Nabvar(navbar: any, options: any) {
-    navbar?.classList.add("animation_open");
-
-    for (let i = 0; i < options.length; i++) {
-      options[i].classList.add('font_open');
-    }
-  }
 
   listenToVoice() {
-    const recognition = new webkitSpeechRecognition() || new SpeechRecognition();
-    recognition.lang = 'es-ES';
+    if(this.isMicEnabled) {
+      this.statusMic = 'default'
 
-    recognition.onresult = (event: any) => {
-        const command = event.results[0][0].transcript.toLowerCase();
-        this.handleVoiceCommand(command);
-    };
-
-    recognition.onerror = (event: any) => {
-        console.error('Error en el reconocimiento de voz', event.error);
-        this.toastr.error('Error en el reconocimiento de voz', 'Error');
-    };
-
-    recognition.onend = () => {
-        recognition.start();
-        this.toastr.error('Comando no reconocido', 'Error');
-       
-    };
-    recognition.start();
-  
-}
-
-handleVoiceCommand(command: string) {
-    if (command.includes('inscripciones')) {
-        window.location.href = '/inscripciones';
-    } else if (command.includes('home')) {
-        window.location.href = '/home';
-    } else if (command.includes('tipos becas')) {
-        window.location.href = '/becas/tipos-becas';
-    } else if (command.includes('becas internas')) {
-        window.location.href = '/becas/becas-internas';
-    } else if (command.includes('becas externas')) {
-        window.location.href = '/becas/becas-externas';
-    } else if (command.includes('contacto')) {
-        window.location.href = '/contacto';
-    } else if (command.includes('carreras')) {
-        window.location.href = '/carreras';
-    } else if (command.includes('instalaciones')) {
-        window.location.href = '/instalaciones';
+      console.log(this.statusMic)
+      this.recognition.stop();
     } else {
-        console.log('Comando no reconocido');
-        // No need to display the toast here since it will be handled in onend
+      this.recognition.start();
     }
-}
-
-
-  test(event: any) {
-    console.log(event);
   }
+
+  handleVoiceCommand(command: string) {
+    if (command.includes('inscripciones')) {
+      this.router.navigate(['/inscripciones']);
+      this.statusMic = 'done';
+    } else if (command.includes('home')) {
+      this.router.navigate(['/home']);
+      this.statusMic = 'done';
+    } else if (command.includes('tipos becas') || command.includes('becas')) {
+      this.router.navigate(['/becas/tipos-becas']);
+      this.statusMic = 'done';
+    } else if (command.includes('becas internas')) {
+      this.router.navigate(['/becas/becas-internas']);
+      this.statusMic = 'done';
+    } else if (command.includes('becas externas')) {
+      this.router.navigate(['/becas/becas-externas']);
+      this.statusMic = 'done';
+    } else if (command.includes('contacto')) {
+      this.router.navigate(['/contacto']);
+      this.statusMic = 'done';
+    } else if (command.includes('carreras')) {
+      this.router.navigate(['/carreras']);
+      this.statusMic = 'done';
+    } else if (command.includes('instalaciones')) {
+      this.router.navigate(['/instalaciones']);
+      this.statusMic = 'done';
+    } else {
+      this.toastr.error('Comando no reconocido', 'Error', {timeOut: 3000});
+      this.statusMic = 'error';
+    }
+  }
+
+
 
   public theme: "light" | "dark" = "light";
 
@@ -268,6 +230,9 @@ handleVoiceCommand(command: string) {
   @ViewChild('keysButton', { static: false })
   keysButtonRef!: ElementRef;
 
+  @ViewChild('listenButton', { static: false })
+  listenButtonRef!: ElementRef;
+
   @HostListener('document:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
     if ((event.altKey || event.metaKey) && (event.key === 't')) {
@@ -279,7 +244,18 @@ handleVoiceCommand(command: string) {
       const keysButton: HTMLInputElement = this.keysButtonRef.nativeElement;
       keysButton.click();
     }
+
+
+    if ((event.altKey || event.metaKey) && (event.key === 'm')) {
+      const listenButton: HTMLInputElement = this.listenButtonRef.nativeElement;
+      listenButton.click();
+    }
   }
 
+
+  activar() {
+    this.lectura.lectura = !this.lectura.lectura
+    console.log(this.lectura.lectura)
+  }
   
 }

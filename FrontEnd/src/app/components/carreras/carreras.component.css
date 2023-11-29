@@ -15,6 +15,7 @@ font-family: 'Roboto', sans-serif;
     margin-bottom: 80px !important;
 }
 
+
 .carreras__body {
     height: 92.55vh;
     width: 80vw;
@@ -139,6 +140,20 @@ font-family: 'Roboto', sans-serif;
 .btn-blue {
     background-color: #006CF0;
     color: white;
+}
+
+
+/* boton */
+.ag-courses_item {
+    position: relative;
+}
+
+.negocios-click {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
 }
 
 
@@ -332,56 +347,3 @@ body {
     background-image: url('/assets/carreras/gif/shini.gif');
     background-size: 6%;
 }
-
-/* llamar la atención */
-
-
-/* Filtros */
-/* .carreras_filtros {
-    margin: 2.5em 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.carreras_filtros__imagen {
-    width: 10%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carreras_filtros__imagen_list {
-    font-size: 1.7vw;
-}
-
-.carreras_filtros__botones {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-}
-
-.carreras_filtro {
-    width: 100%;
-    height: 100%;
-    margin: 0 0.5vw 0 0.5vw;
-    width: auto;
-    font-weight: 700;
-    color: white;
-    font-family: 'Nunito', sans-serif;
-    padding: 0.2vw 2vw 0.2vw 2vw;
-    letter-spacing: 3px;
-}
-
-.filtro {
-    border-radius: 2vw;
-}
-
-.filtro:hover {
-    margin: 0 0.8vw 0 0.8vw;
-    transition: 0.2s;
-    transform: scale(1.08);
-} */

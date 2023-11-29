@@ -4,8 +4,12 @@
 .footer {
     background-color: #4989D6;
     margin-top: auto;
-    padding: 20px;
+    padding: 5px;
     width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
 }
 
 .footer-body {
@@ -16,6 +20,7 @@
 h4 {
     font-family: Nunito;
     font-weight: bold;
+    margin-bottom: 0px !important;
 }
 
 h4 {
@@ -26,21 +31,21 @@ h4 {
     font-family: Nunito;
     color: white;
     background-color: #2557a7;
-    border: 1px white solid;
+    border: 1px transparent solid;
 }
 
 .btn-help:hover {
     font-family: Nunito;
     color: white;
-    background-color: #2557a7;
-    border: 1px white solid;
+    background-color: #4c6a99;
+    border: 1px transparent solid;
 }
 
 
 .btn-help:active {
     font-family: Nunito;
     color: white;
-    background-color: #2557a7;
+    background-color: #3a5b8f;
     border: 1px white solid;
 }
 
@@ -78,25 +83,4 @@ h4 {
 
 #exampleFormControlTextarea1:disabled{
     background:  #D9D9D9; border-radius: 5px; border: 1px black solid
-}
-
-
-.modal-header {
-    background-color: #0056b3;
-    color: #ffffff !important;
-}
-
-.modal-header .btn {
-    background-color: #0056b3;
-    color: #ffffff !important;
-    transition: box-shadow 0.3s;
-}
-
-.modal-header .btn:hover {
-    box-shadow: 0px 0px 5px #0000009f; /* Sombra ligera para el botón */
-}
-
-.invalid {
-    border: solid #ff9393 1px;
-    background-color: #ffc5c5;
 }
