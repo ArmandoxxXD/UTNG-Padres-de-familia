@@ -6,18 +6,26 @@
     </div>
     <div class="header__derecha">
 
-        <div class="header__navegador">
-            <i class="btn-help fa-solid" #themeButton [class.fa-moon]="theme === 'light'"
-                [class.fa-sun]="theme === 'dark'" (click)="CambiarTema()"></i>
-        </div>
-        <div class="header__navegador">
-            <i class="btn-help fa-solid fa-keyboard" #keysButton data-bs-toggle="modal"
-                data-bs-target="#keyBoardDocsModal"></i>
+        <div id="iconMenu" class="collapse">
+            <div class="d-flex">
+                <div class="header__navegador">
+                    <i class="btn-help fa-solid" #themeButton [class.fa-moon]="theme === 'light'" [class.fa-sun]="theme === 'dark'" (click)="CambiarTema()"></i>
+                </div>
+                <div class="header__navegador">
+                    <i class="btn-help fa-solid fa-keyboard" #keysButton data-bs-toggle="modal" data-bs-target="#keyBoardDocsModal"></i>
+                </div>
+                <div class="header__navegador">
+                    <i class="btn-help fa-solid fa-microphone" [class.btn-active]="isMicEnabled" #listenButton (click)="listenToVoice()"></i>
+                </div>
+            </div>
         </div>
 
         <div class="header__navegador">
-            <i class="btn-help fa-solid fa-microphone" [class.btn-active]="isMicEnabled" #listenButton (click)="listenToVoice()"></i>
+            <button class="btn" style="color: white;" id="menuButton" data-bs-toggle="collapse" data-bs-target="#iconMenu">
+                <i class="fa-solid fa-universal-access"></i>
+            </button>
         </div>
+
 
         <div id="header_elements" class="header__opciones nabvar_abierto">
             <div class="header__opciones__elementos">
