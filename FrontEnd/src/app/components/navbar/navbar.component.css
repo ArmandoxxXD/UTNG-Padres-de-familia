@@ -1,14 +1,17 @@
 
 .header {
     height: 4.5em;
-    position: sticky;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #0136FA;
+    background-color: #4989D6;
     width: 100%;
     z-index: 100;
+
+    position: fixed;
+    left: 0;
+    top: 0;
 }
 
 .header__logo {
@@ -97,6 +100,7 @@
 }
 
 .header__opciones__elementos__animation::before {
+    transition: all 0.3s;
     content: "";
     position: absolute;
     width: 140%;
@@ -122,7 +126,8 @@
 
 .header__opciones__elementos__animation:hover::before {
     background-color: rgba(0, 0, 0, 0.397);
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #0000009f;
     cursor: pointer;
 }
 
@@ -133,7 +138,7 @@
 
 .active::before {
     background-color: rgba(0, 0, 0, 0.397);
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .header__opciones__elementos div a {
@@ -189,6 +194,7 @@ a {
 
     .header__opciones__elementos__animation {
         font-size: 2.5em;
+        transition: all 0.3s;
     }
     
     .line {
@@ -279,6 +285,8 @@ a {
 /* titulos 78px  */
 
 .btn-help {
+    text-align: center;
+    width: 30px;
     color: white;
     transition: color 0.3s;
 }
@@ -286,4 +294,12 @@ a {
 
 .btn-help:hover {
     color: rgba(0, 0, 0, 0.397);
+}
+
+
+.btn-active {
+    text-align: center;
+    width: 30px;
+    color: rgba(0, 0, 0, 0.397);
+    transition: color 0.3s;
 }

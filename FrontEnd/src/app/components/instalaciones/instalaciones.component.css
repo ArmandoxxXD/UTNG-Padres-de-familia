@@ -11,31 +11,52 @@
     margin-top: 80px !important;
     text-align: center;
     margin: 12px;
-    background-color: #f58220; /* Color de fondo naranja */
+    background-color: #f58220;
+    /* Color de fondo naranja */
     margin-bottom: 80px !important;
-    border: none; /* Sin borde */
-    border-radius: 20px; /* Bordes redondeados */
-    color: white; /* Color de texto blanco */
-    padding: 10px 60px; /* Relleno dentro del botón */
-    font-size: 24px !important; /* Tamaño de la fuente */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Sombra ligera para el botón */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    font-weight: bold; /* Fuente en negrita */
-    letter-spacing: 1px; /* Espacio entre letras */
+    border: none;
+    /* Sin borde */
+    border-radius: 20px;
+    /* Bordes redondeados */
+    color: white;
+    /* Color de texto blanco */
+    padding: 10px 60px;
+    /* Relleno dentro del botón */
+    font-size: 24px !important;
+    /* Tamaño de la fuente */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra ligera para el botón */
+    text-transform: uppercase;
+    /* Texto en mayúsculas */
+    font-weight: bold;
+    /* Fuente en negrita */
+    letter-spacing: 1px;
+    /* Espacio entre letras */
 }
 
 .title-text {
-    background-color: #f58220; /* Color de fondo naranja */
-    border: none; /* Sin borde */
-    border-radius: 20px; /* Bordes redondeados */
-    color: white; /* Color de texto blanco */
-    padding: 10px 60px; /* Relleno dentro del botón */
-    font-size: 24px; /* Tamaño de la fuente */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Sombra ligera para el botón */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    font-weight: bold; /* Fuente en negrita */
-    letter-spacing: 1px; /* Espacio entre letras */
-    transition: background-color 0.3s; /* Transición suave al cambiar de color */
+    background-color: #f58220;
+    /* Color de fondo naranja */
+    border: none;
+    /* Sin borde */
+    border-radius: 20px;
+    /* Bordes redondeados */
+    color: white;
+    /* Color de texto blanco */
+    padding: 10px 60px;
+    /* Relleno dentro del botón */
+    font-size: 24px;
+    /* Tamaño de la fuente */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra ligera para el botón */
+    text-transform: uppercase;
+    /* Texto en mayúsculas */
+    font-weight: bold;
+    /* Fuente en negrita */
+    letter-spacing: 1px;
+    /* Espacio entre letras */
+    transition: background-color 0.3s;
+    /* Transición suave al cambiar de color */
     width: 60%;
 }
 
@@ -50,7 +71,7 @@
     padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
     margin-bottom: 0;
     color: #ffffff;
-    background-color: #0056b3;
+    background-color: #7FB2F0;
     border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
 }
 
@@ -62,12 +83,12 @@
     padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-x);
     margin-bottom: 0;
     color: #ffffff;
-    background-color: #0056b3;
+    background-color: #7FB2F0;
     border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
 }
 
 .card-header {
-    background-color: #0056b3;
+    background-color: #7FB2F0;
 }
 
 .card-header-right:first-child {
@@ -86,8 +107,8 @@
     margin-top: 60px;
     margin-bottom: 60px;
     height: 2px;
-    background: #00259A;
-    color: #00259A;
+    background: #7FB2F0;
+    color: #7FB2F0;
     opacity: 100 !important;
 }
 
@@ -98,11 +119,13 @@
 }
 
 .responsive-image-left {
-    border-top-right-radius: 0%; border-bottom-right-radius: 0%;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
 }
 
 .responsive-image-right {
-    border-top-left-radius: 0%; border-bottom-left-radius: 0%;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
 }
 
 
@@ -147,14 +170,17 @@
 
 @media (max-width: 767px) {
     .responsive-image-left {
-        border-bottom-right-radius: 0% !important; border-bottom-left-radius: 0% !important;
+        border-bottom-right-radius: 0% !important;
+        border-bottom-left-radius: 0% !important;
         border-top-right-radius: var(--bs-card-inner-border-radius);
     }
 
     .responsive-image-right {
-        border-top-right-radius: 0% !important; border-top-left-radius: 0% !important;
+        border-top-right-radius: 0% !important;
+        border-top-left-radius: 0% !important;
         border-bottom-left-radius: var(--bs-card-inner-border-radius);
     }
+
     .subtitle-left {
         padding-left: 0%;
     }
@@ -166,6 +192,7 @@
     .text-ins-right {
         padding-right: 0%;
     }
+
     .hr-inst {
         margin-top: 30px;
         margin-bottom: 30px;
@@ -186,48 +213,164 @@
     .card-header-right:first-child {
         border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
     }
+
+    .badge-open-right {
+        position: absolute !important;
+        /* Posicionar la insignia sobre la cabecera */
+        top: 10px !important;
+        /* Espacio desde la parte superior de la cabecera */
+        right: 10px !important;
+    }
 }
 
 
 img {
-    transition: box-shadow 0.3s, transform 0.4s, border-radius 0.3s; 
-}
-
-.button-img:active {
-    box-shadow: 0px 0px 10px #0000009f; /* Sombra ligera para el botón */
-    cursor: pointer;
-    border-radius: var(--bs-card-inner-border-radius) !important;
-    transform: scale(1.01); 
-}
-
-.button-img:hover {
-    box-shadow: 0px 0px 10px #0000009f; /* Sombra ligera para el botón */
-    cursor: pointer;
-    border-radius: var(--bs-card-inner-border-radius) !important;
-    transform: scale(1.01); 
-}
-
-
-.modal-img {
-    border-radius: var(--bs-modal-border-radius) !important;
-    border: #0056b3 1px solid;
+    transition: box-shadow 0.3s, transform 0.4s, border-radius 0.3s;
 }
 
 .modal-header {
-    background-color: #0056b3;
+    background-color: #7FB2F0;
     color: #ffffff !important;
 }
 
 .modal-header .btn {
-    background-color: #0056b3;
+    background-color: #7FB2F0;
     color: #ffffff !important;
     transition: box-shadow 0.3s;
 }
 
 .modal-header .btn:hover {
-    box-shadow: 0px 0px 5px #0000009f; /* Sombra ligera para el botón */
+    box-shadow: 0px 0px 5px #0000009f;
+    /* Sombra ligera para el botón */
 }
 
 .modal {
     --bs-modal-width: auto;
+}
+
+.badge {
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: solid 1px transparent;
+    background-color: #2557a7;
+}
+
+.badge:hover {
+    background-color: #4c6a99;
+    box-shadow: 0px 0px 5px #0000009f;
+}
+
+
+.badge:active {
+    border: solid 1px white;
+}
+
+
+.badge-open {
+    position: absolute;
+    /* Posicionar la insignia sobre la cabecera */
+    top: 10px;
+    /* Espacio desde la parte superior de la cabecera */
+    right: 10px;
+}
+
+
+.badge-open-left {
+    position: absolute;
+    /* Posicionar la insignia sobre la cabecera */
+    top: 10px;
+    /* Espacio desde la parte superior de la cabecera */
+    right: 10px;
+}
+
+.badge-open-right {
+    position: absolute;
+    /* Posicionar la insignia sobre la cabecera */
+    top: 10px;
+    /* Espacio desde la parte superior de la cabecera */
+    right: 230px;
+}
+
+
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    z-index: 1;
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    background-image: linear-gradient(to top, #a7bcf5 20%, #0099ff 80%);
+}
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+.bgBottom {
+    z-index: 5;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+   -webkit-animation: move-wave 3s;
+   -webkit-animation-delay: 1s;
+   animation-delay: 1s;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+
+.card-body {
+    background-color: #7FB2F0;
+    position: relative;
+    z-index: 2;
+}
+
+.card-text {
+    position: relative;
+    z-index: 2;
 }
