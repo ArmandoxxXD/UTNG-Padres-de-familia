@@ -254,9 +254,8 @@ export class NavbarComponent implements OnInit {
       listenButton.click();
     }
 
-    if ((event.altKey || event.metaKey) && (event.key === 'm')) {
-      const listenButton: HTMLInputElement = this.speakButtonRef.nativeElement;
-      listenButton.click();
+    if ((event.altKey || event.metaKey) && (event.key === 'l')) {
+      this.activar();
     }
   }
 

@@ -15,7 +15,7 @@
                     <i class="btn-help fa-solid fa-keyboard" #keysButton data-bs-toggle="modal" data-bs-target="#keyBoardDocsModal"></i>
                 </div>
                 <div class="header__navegador">
-                     <i class="fa-solid fa-podcast speak" #speakButtonRef (click)="activar()"></i>
+                     <i class="btn-help fa-solid fa-podcast speak" [class.btn-active]="lectura.lectura" #speakButtonRef (click)="activar()"></i>
                 </div>
                 <div class="header__navegador">
                     <i class="btn-help fa-solid fa-microphone" [class.btn-active]="isMicEnabled" #listenButton (click)="listenToVoice()"></i>
@@ -122,6 +122,18 @@
                     </div>
                     <div>
                         <app-teclado type="micro"></app-teclado>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="title-section">
+                        <h4>Bocina</h4>
+                    </div>
+                    <div>
+                        <app-teclado type="audio"></app-teclado>
                     </div>
                     <div>
                         <hr>

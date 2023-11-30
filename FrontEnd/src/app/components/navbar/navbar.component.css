@@ -7,7 +7,7 @@
     justify-content: space-between;
     background-color: #4989D6; 
     width: 100%;
-    z-index: 100;
+    z-index: 10;
 
     position: fixed;
     left: 0;
@@ -303,7 +303,7 @@ a {
 .btn-active {
     text-align: center;
     width: 30px;
-    color: rgba(0, 0, 0, 0.397);
+    color: rgba(0, 0, 0, 0.397) !important;
     transition: color 0.3s;
 }
 
