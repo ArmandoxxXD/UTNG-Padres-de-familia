@@ -16,6 +16,8 @@ export class CarrerasComponent implements OnInit {
   title: string = "Carreras";
   typing: boolean = true;
 
+  contaduria: boolean[] = [true, false, false, false]
+
   constructor(public lectura: LecturaService) { 
   }
 
