@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 
 .instalaciones {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 100px;
 }
 
 .title {
@@ -229,14 +233,14 @@ img {
 }
 
 .modal-header {
-    background-color: #7FB2F0;
+    background-color: #7FB2F0 !important;
     color: #ffffff !important;
 }
 
 .modal-header .btn {
-    background-color: #7FB2F0;
+    background-color: #7FB2F0 !important;
     color: #ffffff !important;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s !important;
 }
 
 .modal-header .btn:hover {
@@ -374,3 +378,16 @@ img {
     position: relative;
     z-index: 2;
 }
+
+.titulo-ins .typing-effect, .titulo-ins .end-typing {
+    margin-top: 20px;
+    font-size: 36px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid black; /* Cursor simulado */
+    font-family: 'Special Elite', monospace; /* Aplicar la fuente Special Elite */
+  }
+  
+  .titulo-ins .end-typing {
+    border-right: none; /* Cursor oculto después de la animación */
+  }

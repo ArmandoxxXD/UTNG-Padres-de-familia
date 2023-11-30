@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { location } from 'src/app/models/location';
 import { InstalacionesService } from 'src/app/services/instalaciones.service';
 import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
@@ -10,8 +10,10 @@ import {LecturaService} from 'src/app/services/lectura.service'
   templateUrl: './instalaciones.component.html',
   styleUrls: ['./instalaciones.component.css']
 })
-export class InstalacionesComponent implements OnInit {
+export class InstalacionesComponent implements OnInit,AfterViewInit {
   esModoOscuro: boolean = false;
+  title = 'Instalaciones';
+  typing = true;
   public selectedLocation: location | undefined = undefined;
   public locations: Array<location> = []
 
@@ -29,4 +31,21 @@ export class InstalacionesComponent implements OnInit {
   openImageModal(location: location) {
     this.selectedLocation = location;
   }
+
+  ngAfterViewInit() {
+    let currentLength = 0;
+    const fullText = this.title;
+    this.title = '';
+
+    const typingInterval = setInterval(() => {
+      this.title += fullText[currentLength];
+      currentLength++;
+
+      if (currentLength === fullText.length) {
+        clearInterval(typingInterval);
+        this.typing = false; // Oculta el cursor al finalizar
+      }
+    }, 150); // Velocidad de escritura (ms por carácter)
+  }
+  
 }

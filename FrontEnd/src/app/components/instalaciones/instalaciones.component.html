@@ -1,7 +1,12 @@
 <div class="instalaciones">
 
-    <div class="container" style="margin-bottom: 130px; margin-top: 130px;">
+    <div class="titulo-ins" style="text-align: center;" (mouseenter)="this.lectura.leerTexto('Instalaciones')">
+        <h1 [class.typing-effect]="typing" [class.end-typing]="!typing" style="font-size: 3em;">{{ title }}</h1>
+    </div>
 
+
+    <div class="container" style="margin-bottom: 130px; margin-top: 100px;">
+        
         <div class="h-100 w-100" *ngFor="let location of locations; let i=index">
             <div class="card mb-3" *ngIf="locations.length !== (i + 1)"
                 style="border: none; min-height: 208px !important;" [class.oscuro]="esModoOscuro">
@@ -92,7 +97,7 @@
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div>
+            <div class="modal-header">
                 <div class="col-12">
                     <h1 class="modal-title fs-5" id="exampleModalLabel"
                         (mouseenter)='this.lectura.leerTexto("{{selectedLocation?.title}}")'>{{selectedLocation?.title}}
