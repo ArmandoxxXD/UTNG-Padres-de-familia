@@ -257,6 +257,42 @@ export class NavbarComponent implements OnInit {
     if ((event.altKey || event.metaKey) && (event.key === 'l')) {
       this.activar();
     }
+  
+
+  
+  }
+// En tu componente
+zoomLevel: number = 1;
+
+zoomIn() {
+    this.zoomLevel += 0.1;
+    this.applyZoom();
+}
+
+zoomOut() {
+    this.zoomLevel = Math.max(this.zoomLevel - 0.1, 0.1); // Evita el zoom negativo
+    this.applyZoom();
+}
+
+applyZoom() {
+    document.body.style.transform = `scale(${this.zoomLevel})`;
+    document.body.style.transformOrigin = 'top left';
+    this.checkZoomLevel();
+}
+
+checkZoomLevel() {
+  const navbar = document.getElementById('tuIdNavbar'); // Asegúrate de reemplazar con tu ID de navbar
+  if (navbar) {
+      if (this.zoomLevel < 1) {
+          navbar.style.display = 'none';
+      } else {
+          navbar.style.display = 'block';
+      }
+  }
+}
+  restartZoom() {
+    this.zoomLevel = 1; // Restablece el nivel de zoom al valor predeterminado
+    this.applyZoom();
   }
 
 

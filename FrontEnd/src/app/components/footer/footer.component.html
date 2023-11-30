@@ -5,7 +5,7 @@
             <h4>©UTNG 2023</h4>
         </div>
         <div class="col-2 w-25" style="text-align: right;">
-            <button class="btn btn-p-primary" #modalButton data-bs-toggle="modal" data-bs-target="#ayudaModal">Solicitar ayuda</button>
+            <button class="btn btn-p-primary" #modalButton data-bs-toggle="modal" data-bs-target="#ayudaModal">Preguntas frecuentes</button>
         </div>
     </div>
 </div>
@@ -17,24 +17,145 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" style="text-align: center;">
-                <div class="col-12"><h1 class="modal-title fs-5" id="ayudaModalLabel">Solicitar ayuda</h1></div>
-                <button type="button" style="position: relative; left: -36px;" class="btn" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark fa-xl"></i></button>
+                <div class="col-12">
+                    <h1 class="modal-title fs-5" id="ayudaModalLabel">Preguntas frecuentes</h1>
+                </div>
+                <button type="button" style="position: relative; left: -36px;" class="btn" data-bs-dismiss="modal"
+                    aria-label="Close"><i class="fa-solid fa-xmark fa-xl"></i></button>
             </div>
             <div class="modal-body">
-                <form [formGroup]="form">
+
+                <!-- <ul class="nav nav-pills nav-fill" style="margin-bottom: 10px;">
+                    <li class="nav-item col-6" style="padding-right: 2px;">
+                        <a class="nav-link" [class.active]="option === 'preguntas'" (click)="option = 'preguntas'"
+                            aria-current="page">Preguntas frecuentes</a>
+                    </li>
+                    <li class="nav-item col-6">
+                        <a class="nav-link" [class.active]="option === 'ayuda'" (click)="option = 'ayuda'">Solicitar
+                            ayuda</a>
+                    </li>
+                </ul>
+                <hr> -->
+
+
+                <div *ngIf="option === 'preguntas'">
+                    <p class="d-inline-flex w-100">
+                        <button class="btn collap dropdown-toggle w-100" data-bs-toggle="collapse" href="#collapseDireccion"
+                            role="button" aria-expanded="false" aria-controls="collapseDireccion">
+                            ¿Cuál es la dirección y número de contacto de la escuela?
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseDireccion">
+                        <div class="card card-body">
+                            Av. Educacion Tecnologica No.34, Fracc. Universidad, Dolores Hidalgo Cuna de la
+                            Independencia Nacional, Guanajuato.C.P. 37800
+                        </div>
+                        <br>
+                    </div>
+
+                    <p class="d-inline-flex w-100">
+                        <button class="btn collap dropdown-toggle w-100" data-bs-toggle="collapse" href="#collapseMision"
+                            role="button" aria-expanded="false" aria-controls="collapseMision">
+                            ¿Cuál es la misión de la universidad?
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseMision">
+                        <div class="card card-body">
+                            Somos una institución de Educación Superior Tecnológica comprometida en la formación
+                            integral de profesionistas líderes en los niveles de Técnico Superior Universitario y
+                            Licenciatura con programas educativos de excelencia, contribuyendo así, al desarrollo
+                            económico y social del estado y la región.
+                        </div>
+                        <br>
+                    </div>
+
+                    <p class="d-inline-flex w-100">
+                        <button class="btn collap dropdown-toggle w-100" data-bs-toggle="collapse" href="#collapseVision"
+                            role="button" aria-expanded="false" aria-controls="collapseVision">
+                            ¿Cuál es la visión de la universidad?
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseVision">
+                        <div class="card card-body">
+                            En el 2026 la Universidad Tecnológica del Norte de Guanajuato será una institución de
+                            educación superior reconocida nacional e internacionalmente por formar egresados
+                            competitivos que se integran exitosamente al ámbito laboral, en los que resaltará su
+                            formación humana e integral; se contará con programas educativos de excelencia, pertinentes
+                            e incluyentes: en los que se promueve la investigación aplicada e innovación tecnológica a
+                            través de sus cuerpos académicos; se tendrá una fuerte vinculación con todos los sectores y
+                            se impulsará el emprendimiento y la competitividad, contribuyendo así a la transformación de
+                            la educación en Guanajuato. Se consolidará el enfoque hacía la igualdad y no discriminación;
+                            al desarrollo sostenible y cuidado del ambiente; al respeto de los derechos humanos; a la
+                            promoción de la cultura de paz y no violencia; a la transparencia y rendición de cuentas en
+                            la gestión y administración de los recursos, utilizando para su implementación referentes
+                            estatales, nacionales e internacionales.
+                        </div>
+                        <br>
+                    </div>
+
+                    <p class="d-inline-flex w-100">
+                        <button class="btn collap dropdown-toggle w-100" data-bs-toggle="collapse" href="#collapseContacto"
+                            role="button" aria-expanded="false" aria-controls="collapseContacto">
+                            ¿Cuál es la información de contacto?
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseContacto">
+                        <div class="card card-body">
+                            Tel: (418) 182 5500
+                        </div>
+                        <br>
+                    </div>
+                    <p class="d-inline-flex w-100">
+                        <button class="btn collap dropdown-toggle w-100" data-bs-toggle="collapse" href="#collapseServicios"
+                            role="button" aria-expanded="false" aria-controls="collapseServicios">
+                            ¿Qué servicios están disponibles?
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseServicios">
+                        <div class="card card-body">
+                            <li>
+                                Reproducción y manejo de cactáceas.
+                            </li>
+                            <li>
+                                Diseño y establecimiento de jardines de bajo consumo de agua.
+                            </li>
+                            <li>
+                                Transferencia de la tecnológica de jitomates via agricultura protegida.
+                            </li>
+                            <li>
+                                Capacitación en el establecimiento de huertos urbanos.
+                            </li>
+                            <li>
+                                Capacitación en la producción de lombricomposta.
+                            </li>
+                        </div>
+                    </div>
+                </div>
+
+                <form [formGroup]="form" *ngIf="option === 'ayuda'">
                     <input type="text" class="form-control" placeholder="Nombre" required>
                     <br />
-                    <input type="email" class="form-control" placeholder="Correo electrónico" formControlName="email" [class.invalid]="form.get('email')?.hasError('email') && form.get('email')?.dirty" required>
+                    <input type="email" class="form-control" placeholder="Correo electrónico" formControlName="email"
+                        [class.invalid]="form.get('email')?.hasError('email') && form.get('email')?.dirty" required>
                     <br />
-                    <select class="form-select" aria-label="Default select example" formControlName="temaValue" required>
+                    <select class="form-select" aria-label="Default select example" formControlName="temaValue"
+                        required>
                         <option *ngFor="let tema of temas; let i = index" [value]="i + 1">{{ tema }}</option>
                     </select>
                     <br />
-                    <textarea  [class.oscuro]="esModoOscuro" class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="Descripción" [disabled]="form.get('temaValue')?.value != 7"></textarea>
+                    <textarea [class.oscuro]="esModoOscuro" class="form-control" id="exampleFormControlTextarea1"
+                        rows="8" placeholder="Descripción" [disabled]="form.get('temaValue')?.value != 7"></textarea>
                 </form>
             </div>
-            <div class="modal-footer" style="justify-content: center;">
-                <button type="button" class="btn btn-p-primary" data-bs-dismiss="modal" [disabled]="form.invalid">Enviar</button>
+
+            <div class="modal-footer" style="justify-content: center;" *ngIf="option === 'preguntas'">
+                <button type="button" class="btn btn-p-primary" data-bs-dismiss="modal"
+                    [disabled]="form.invalid">Salir</button>
+            </div>
+
+            <div class="modal-footer" style="justify-content: center;" *ngIf="option === 'ayuda'">
+                <button type="button" class="btn btn-p-primary" data-bs-dismiss="modal"
+                    [disabled]="form.invalid">Enviar</button>
             </div>
         </div>
     </div>
