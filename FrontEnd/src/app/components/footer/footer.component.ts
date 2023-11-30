@@ -18,6 +18,9 @@ export class FooterComponent implements OnInit {
     temaValue: new FormControl(1)
   })
   esModoOscuro: boolean = false;
+
+  option: 'preguntas' | 'ayuda' = 'preguntas'
+
   constructor(private modoOscuroService:ModoOscuroService) { }
 
 
