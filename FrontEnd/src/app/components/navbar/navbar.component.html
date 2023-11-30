@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header" >
 
 
     <div class="header__logo">
@@ -7,7 +7,17 @@
     <div class="header__derecha">
 
         <div id="iconMenu" class="collapse">
+
             <div class="d-flex">
+                <div class="header__navegador">
+                    <i class="btn-help fa-solid fa-search-plus" (click)="zoomIn()" ></i>
+                </div>
+                <div class="header__navegador">
+                    <i class="btn-help fa-solid fa-search-minus" (click)="zoomOut()" ></i>
+                </div>
+                <div class="header__navegador">
+                    <i class="fa-solid fa-recycle" style="color: #fafcff;" (click)="restartZoom()"> </i>
+                </div>
                 <div class="header__navegador">
                     <i class="btn-help fa-solid" #themeButton [class.fa-moon]="theme === 'light'" [class.fa-sun]="theme === 'dark'" (click)="CambiarTema()"></i>
                 </div>
@@ -145,4 +155,6 @@
             </div>
         </div>
     </div>
+    
+
 </div>
