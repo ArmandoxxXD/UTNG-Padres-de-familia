@@ -42,8 +42,8 @@
 }
 
 .btn-p-primary {
-    color: white;
-    background-color: #2557a7;
+    color: white !important;
+    background-color: #2557a7 !important;
     border: 1px transparent solid;
 }
 
