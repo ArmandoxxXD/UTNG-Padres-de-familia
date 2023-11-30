@@ -146,6 +146,8 @@
 
 .header__opciones__elementos div a {
     cursor: pointer;
+
+    user-select: none;
 }
 
 .line::before {
