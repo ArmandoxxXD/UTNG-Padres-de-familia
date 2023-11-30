@@ -1,7 +1,7 @@
 <div class="tipos-becas">
 
   <div class="titulo-ins">
-    <h1 [class.typing-effect]="typing" [class.end-typing]="!typing">{{ title }}</h1>
+    <h1 [class.typing-effect]="typing" [class.end-typing]="!typing" (mouseenter)="this.lectura.leerTexto('Becas')">{{ title }}</h1>
   </div>
 
   <div class="row">
@@ -11,7 +11,7 @@
         <button class="btn btn-info btn-sm position-absolute top-0 end-0 m-2" data-bs-toggle="modal" data-bs-target="#modalBecasExternas">
           <i class="fas fa-question"></i>
         </button>
-        <div class="card-body" routerLink="/becas/becas-externas"  (mouseenter)="this.lectura.leerTexto('Externas... Becas proporcionadas por la entidad federal o estatal')">
+        <div class="card-body" routerLink="/becas/becas-externas" (mouseenter)="this.lectura.leerTexto('Externas... Becas proporcionadas por la entidad federal o estatal')">
           <h2 class="card-title">Externas</h2>
           <p class="card-text">Becas proporcionadas por la entidad federal o estatal.</p>
         </div>
