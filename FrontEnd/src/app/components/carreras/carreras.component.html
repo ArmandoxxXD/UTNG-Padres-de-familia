@@ -6,276 +6,147 @@
 
         <div class="carreras__buscador">
             <div class="carreras__buscador_buscador input-group mb-3">
-                <button class="btn btn-outline-secondary search_button" type="button" id="button-addon1"><i
-                        class="fa-solid fa-magnifying-glass"></i> </button>
+                <button class="btn btn-outline-secondary search_button" type="button" id="button-addon1"
+                    (click)="buscar()"><i class="fa-solid fa-magnifying-glass"></i> </button>
                 <input type="text" class="form-control carreras__buscador_input" placeholder=""
-                    aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    aria-label="Example text with button addon" aria-describedby="button-addon1"
+                    [(ngModel)]="terminoBusqueda" (keydown)="buscar()">
             </div>
         </div>
-        <!-- <div class="carreras__migas_de_pan mt-4">
-            <div class="carreras__migas_de_pan__miga" style="left: 1.5vw;">
-                <div class="carreras__migas_de_pan_miga__acomodar">
-                    <img class="carreras__migas_de_pan_miga__img" src="/assets/carreras/migas/miga_verde.png"
-                        alt="miga_carreras">
-                    <h5 class="carreras__migas_de_pan_miga__texto">Carreras</h5>
-                </div>
+
+        <div *ngIf="!busqueda" style="width: 100%;">
+            <div class="carrera__collapse__button mt-5">
+                <button class="btn btn-blue carrera__boton" id="boton-negocios" type="button" data-bs-toggle="collapse"
+                    (mouseenter)="this.lectura.leerTexto('Negocios y Administración')"
+                    data-bs-target="#NegociosYAdministracion" aria-expanded="false"
+                    aria-controls="NegociosYAdministracion">
+                    Negocios y Administración
+                </button>
+                <i class="fa-solid fa-chevron-down"></i>
             </div>
 
-            <div class="carreras__migas_de_pan__miga">
-                <div class="carreras__migas_de_pan__miga">
-                    <img class="carreras__migas_de_pan_miga__img" src="/assets/carreras/migas/miga_naranja.png"
-                        alt="miga_carreras">
-                    <h5 class="carreras__migas_de_pan_miga__texto text-center">Seleccionar <br> Carrera</h5>
+            <div class="ag-format-container collapse" id="NegociosYAdministracion">
+
+                <div class="ag-courses_box">
+
+                    <div class="ag-courses_item" *ngFor="let carrera of Carreras_NA">
+                        <app-nieve id="carrera-nieve"></app-nieve>
+                        <a class="ag-courses-item_link" [id]="carrera.id"
+                            (mouseenter)="this.lectura.leerTexto(carrera.nombre + '.... Modalidad: Presencial')">
+                            <div class="ag-courses-item_bg"></div>
+
+                            <div class="ag-courses-item_title">
+                                {{carrera.nombre}}
+                            </div>
+
+                            <div class="ag-courses-item_date-box">
+                                Modalidad:
+                                <span class="ag-courses-item_date">
+                                    Presencial
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
+
             </div>
 
-            <div class="carreras__migas_de_pan__miga">
-                <div class="carreras__migas_de_pan__miga" style="right: 1.5vw;">
-                    <img class="carreras__migas_de_pan_miga__img" src="/assets/carreras/migas/miga_verde.png"
-                        alt="miga_carreras">
-                    <h5 class="carreras__migas_de_pan_miga__texto">Requisitos</h5>
-                </div>
+            <div class="carrera__collapse__button mt-5"
+                (mouseenter)="this.lectura.leerTexto('Tecnología e Informática')">
+                <button class="btn btn-blue carrera__boton" id="boton-tic" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#Tecnologia" aria-expanded="false" aria-controls="Tecnologia">
+                    Tecnología e Informática
+                </button>
+                <i class="fa-solid fa-chevron-down"></i>
             </div>
 
-            <div class="carreras__migas_de_pan__miga">
-                <div class="carreras__migas_de_pan__miga" style="right: 3vw;">
-                    <img class="carreras__migas_de_pan_miga__img" src="/assets/carreras/migas/miga_verde.png"
-                        alt="miga_carreras">
-                    <h5 class="carreras__migas_de_pan_miga__texto">Inscripción</h5>
-                </div>
-            </div>
-        </div> -->
+            <div class="ag-format-container collapse" id="Tecnologia">
 
-        <div class="carrera__collapse__button mt-5">
-            <button class="btn btn-blue carrera__boton" id="boton-negocios" type="button" data-bs-toggle="collapse" (mouseenter)="this.lectura.leerTexto('Negocios y Administración')"
-                data-bs-target="#NegociosYAdministracion" aria-expanded="false" aria-controls="NegociosYAdministracion">
-                Negocios y Administración
-            </button>
-            <i class="fa-solid fa-chevron-down"></i>
+                <div class="ag-courses_box">
+
+                    <div class="ag-courses_item" *ngFor="let carrera of Carreras_TIC">
+                        <app-nieve id="carrera-nieve"></app-nieve>
+                        <a class="ag-courses-item_link"
+                            (mouseenter)="this.lectura.leerTexto(carrera.nombre + '.... Modalidad: Presencial')">
+                            <div class="ag-courses-item_bg"></div>
+
+                            <div class="ag-courses-item_title">
+                                {{carrera.nombre}}
+                            </div>
+
+                            <div class="ag-courses-item_date-box">
+                                Modalidad:
+                                <span class="ag-courses-item_date">
+                                    Presencial
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="carrera__collapse__button mt-5"
+                (mouseenter)="this.lectura.leerTexto('Ingeniería y Tecnología de la Producción')">
+                <button class="btn btn-blue carrera__boton" id="boton-pi" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#ProcesosIndustriales" aria-expanded="false" aria-controls="ProcesosIndustriales">
+                    Ingeniería y Tecnología de la Producción
+                </button>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+            <div class="ag-format-container collapse" id="ProcesosIndustriales">
+
+                <div class="ag-courses_box">
+
+                    <div class="ag-courses_item" *ngFor="let carrera of Carreras_PI">
+                        <app-nieve id="carrera-nieve"></app-nieve>
+                        <a class="ag-courses-item_link"
+                            (mouseenter)="this.lectura.leerTexto(carrera.nombre + '.... Modalidad: Presencial')">
+                            <div class="ag-courses-item_bg"></div>
+
+                            <div class="ag-courses-item_title">
+                                {{carrera.nombre}}
+                            </div>
+
+                            <div class="ag-courses-item_date-box">
+                                Modalidad:
+                                <span class="ag-courses-item_date">
+                                    Presencial
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
 
-        <div class="ag-format-container collapse" id="NegociosYAdministracion">
+        <div *ngIf="busqueda" style="width: 100%; display: flex; flex-wrap: wrap;">
 
-            <div class="ag-courses_box">
+            <div class="ag-courses_item" *ngFor="let carrera of resultadoBusqueda" style="width: 31em; margin: 0.5em 0.5em;">
+                <app-nieve id="carrera-nieve"></app-nieve>
+                <a class="ag-courses-item_link" [id]="carrera.id"
+                    (mouseenter)="this.lectura.leerTexto(carrera.nombre + '.... Modalidad: Presencial')">
+                    <div class="ag-courses-item_bg"></div>
 
-                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Administración Area de Capital Humano.... Modalidad: Presencial')">
-                    <app-nieve id="carrera-nieve"></app-nieve>
-                    <a class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
+                    <div class="ag-courses-item_title">
+                        {{carrera.nombre}}
+                    </div>
 
-                        <div class="ag-courses-item_title">
-                            Administración Area de Capital Humano
-                        </div>
-
-                        <div class="ag-courses-item_date-box">
-                            Modalidad:
-                            <span class="ag-courses-item_date">
-                                Presencial
-                            </span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Contaduría.... Modalidad: Presencial')">
-                    <!-- <button type="button" class="btn btn-primary negocios-click" data-bs-toggle="modal" data-bs-target="#contaduria" data-bs-whatever="@mdo">Open modal for @mdo</button> -->
-                    <app-nieve id="carrera-nieve"></app-nieve>
-
-                    <a class="ag-courses-item_link" id="Contaduria">
-                        <div class="ag-courses-item_bg"></div>
-
-                        <div class="ag-courses-item_title" >
-                            Contaduría
-                        </div>
-
-                        <div class="ag-courses-item_date-box">
-                            Modalidad:
-                            <span class="ag-courses-item_date">
-                                Presencial
-                            </span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Ingeniería en Entornos Virtuales y Negocios Digitales.... Modalidad: Presencial')">
-                    <app-nieve id="carrera-nieve"></app-nieve>
-                    <a class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
-
-                        <div class="ag-courses-item_title">
-                            Ingeniería en Entornos Virtuales y Negocios Digitales
-                        </div>
-
-                        <div class="ag-courses-item_date-box">
-                            Modalidad:
-                            <span class="ag-courses-item_date">
-                                Presencial
-                            </span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Turismo.... Modalidad: Presencial')">
-                    <app-nieve id="carrera-nieve"></app-nieve>
-                    <a class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
-
-                        <div class="ag-courses-item_title">
-                            Turismo
-                        </div>
-
-                        <div class="ag-courses-item_date-box">
-                            Modalidad:
-                            <span class="ag-courses-item_date">
-                                Presencial
-                            </span>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="carrera__collapse__button mt-5" (mouseenter)="this.lectura.leerTexto('Tecnología e Informática')">
-            <button class="btn btn-blue carrera__boton" id="boton-tic" type="button" data-bs-toggle="collapse"
-                data-bs-target="#Tecnologia" aria-expanded="false" aria-controls="Tecnologia">
-                Tecnología e Informática
-            </button>
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
-
-        <div class="ag-format-container collapse" id="Tecnologia">
-
-            <div class="ag-courses_box">
-
-                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Desarrollo de Software Multiplataforma.... Modalidad: Presencial')">
-                    <app-nieve id="carrera-nieve"></app-nieve>
-                    <a class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
-
-                        <div class="ag-courses-item_title" >
-                            Desarrollo de Software Multiplataforma
-                        </div>
-
-                        <div class="ag-courses-item_date-box">
-                            Modalidad:
-                            <span class="ag-courses-item_date">
-                                Presencial
-                            </span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="ag-courses_item"  (mouseenter)="this.lectura.leerTexto('Ingeniería en Desarrollo y Gestión de Software.... Modalidad: Presencial')">
-                    <app-nieve id="carrera-nieve"></app-nieve>
-                    <a class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
-
-                        <div class="ag-courses-item_title">
-                            Ingeniería en Desarrollo y Gestión de Software
-                        </div>
-
-                        <div class="ag-courses-item_date-box">
-                            Modalidad:
-                            <span class="ag-courses-item_date">
-                                Presencial
-                            </span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Ingeniería en Mecatrónica.... Modalidad: Presencial')">
-                    <app-nieve id="carrera-nieve"></app-nieve>
-                    <a class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
-
-                        <div class="ag-courses-item_title">
-                            Ingeniería en Mecatrónica
-                        </div>
-
-                        <div class="ag-courses-item_date-box">
-                            Modalidad:
-                            <span class="ag-courses-item_date">
-                                Presencial
-                            </span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Mecatrónica Área Instalaciones Eléctricas Eficientes.... Modalidad: Presencial')">
-                    <app-nieve id="carrera-nieve"></app-nieve>
-                    <a class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
-
-                        <div class="ag-courses-item_title">
-                            Mecatrónica Área Instalaciones Eléctricas Eficientes
-                        </div>
-
-                        <div class="ag-courses-item_date-box">
-                            Modalidad:
-                            <span class="ag-courses-item_date">
-                                Presencial
-                            </span>
-                        </div>
-                    </a>
-                </div>
-
+                    <div class="ag-courses-item_date-box">
+                        Modalidad:
+                        <span class="ag-courses-item_date">
+                            Presencial
+                        </span>
+                    </div>
+                </a>
             </div>
 
         </div>
-
-        <div class="carrera__collapse__button mt-5" (mouseenter)="this.lectura.leerTexto('Ingeniería y Tecnología de la Producción')">
-            <button class="btn btn-blue carrera__boton" id="boton-pi" type="button" data-bs-toggle="collapse"
-                data-bs-target="#ProcesosIndustriales" aria-expanded="false" aria-controls="ProcesosIndustriales">
-                Ingeniería y Tecnología de la Producción
-            </button>
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
-
-        <div class="ag-format-container collapse" id="ProcesosIndustriales">
-
-            <div class="ag-courses_box">
-
-                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Energias Renovables Área Calidad y Ahorro de Energía.... Modalidad: Presencial')">
-                    <app-nieve id="carrera-nieve"></app-nieve>
-                    <a class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
-
-                        <div class="ag-courses-item_title">
-                            Energias Renovables Área Calidad y Ahorro de Energía
-                        </div>
-
-                        <div class="ag-courses-item_date-box">
-                            Modalidad:
-                            <span class="ag-courses-item_date">
-                                Presencial
-                            </span>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="ag-courses_item" (mouseenter)="this.lectura.leerTexto('Ingeniería en Tecnologías de la Producción.... Modalidad: Presencial')">
-                    <app-nieve id="carrera-nieve"></app-nieve>
-                    <a class="ag-courses-item_link">
-                        <div class="ag-courses-item_bg"></div>
-
-                        <div class="ag-courses-item_title">
-                            Ingeniería en Tecnologías de la Producción
-                        </div>
-
-                        <div class="ag-courses-item_date-box">
-                            Modalidad:
-                            <span class="ag-courses-item_date">
-                                Presencial
-                            </span>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
     </div>
 </div>
 
@@ -286,42 +157,56 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel" (mouseenter)="this.lectura.leerTexto('Contaduría')">Contaduria</h5>
+                <h5 class="modal-title" id="exampleModalLabel" (mouseenter)="this.lectura.leerTexto('Contaduría')">
+                    Contaduria</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
 
                 <ul class="nav nav-tabs">
-                    <li class="nav-item" (click)="contaduria = [true, false, false, false]" style="cursor: pointer;" (mouseenter)="this.lectura.leerTexto('Perfil de ingreso')">
-                        <a class="nav-link" [class.active]="contaduria[0] == true" aria-current="page">PERFIL DE INGRESO</a>
+                    <li class="nav-item" (click)="contaduria = [true, false, false, false]" style="cursor: pointer;"
+                        (mouseenter)="this.lectura.leerTexto('Perfil de ingreso')">
+                        <a class="nav-link" [class.active]="contaduria[0] == true" aria-current="page">PERFIL DE
+                            INGRESO</a>
                     </li>
-                    <li style="cursor: pointer;" (click)="contaduria = [false, true, false, false]"  class="nav-item" (mouseenter)="this.lectura.leerTexto('COMPETENCIAS ESPECÍFICAS ADQUIRIDAS')">
-                        <a class="nav-link" [class.active]="contaduria[1] == true">COMPETENCIAS ESPECÍFICAS ADQUIRIDAS</a>
+                    <li style="cursor: pointer;" (click)="contaduria = [false, true, false, false]" class="nav-item"
+                        (mouseenter)="this.lectura.leerTexto('COMPETENCIAS ESPECÍFICAS ADQUIRIDAS')">
+                        <a class="nav-link" [class.active]="contaduria[1] == true">COMPETENCIAS ESPECÍFICAS
+                            ADQUIRIDAS</a>
                     </li>
-                    <li class="nav-item" (click)="contaduria = [false, false, true, false]"  style="cursor: pointer;" (mouseenter)="this.lectura.leerTexto('Ocupaciones profesionales')">
+                    <li class="nav-item" (click)="contaduria = [false, false, true, false]" style="cursor: pointer;"
+                        (mouseenter)="this.lectura.leerTexto('Ocupaciones profesionales')">
                         <a class="nav-link" [class.active]="contaduria[2] == true">OCUPACIONES PROFESIONALES</a>
                     </li>
-                    <li style="cursor: pointer;" (click)="contaduria = [false, false, false, true]"  (mouseenter)="this.lectura.leerTexto('Mapa curricular')">
-                        <a class="nav-link" tabindex="-1" aria-disabled="true" [class.active]="contaduria[3] == true">MAPA CURRICULAR</a>
+                    <li style="cursor: pointer;" (click)="contaduria = [false, false, false, true]"
+                        (mouseenter)="this.lectura.leerTexto('Mapa curricular')">
+                        <a class="nav-link" tabindex="-1" aria-disabled="true"
+                            [class.active]="contaduria[3] == true">MAPA CURRICULAR</a>
                     </li>
                 </ul>
 
-                <div *ngIf="contaduria[0]" class="contaduria" style="display: flex; flex-direction: row-reverse; margin: auto; width: 90%;" >
+                <div *ngIf="contaduria[0]" class="contaduria"
+                    style="display: flex; flex-direction: row-reverse; margin: auto; width: 90%;">
                     <div class="mt-3">
                         <img style="width: 80%; height: 80%;" src="/assets/carreras/carrera/contaduria-Logo.jpg"
                             alt="ContaduriaLogo">
                     </div>
-                    <div class="mt-5" >
-                        <p  (mouseenter)="this.lectura.leerTexto('El aspirante deberá de ser egresado en educación media superior, preferentemente de las áreas
-                        de Administración, Contabilidad, Humanidades o áreas afines.')">El aspirante deberá de ser egresado en educación media superior, preferentemente de las áreas
+                    <div class="mt-5">
+                        <p (mouseenter)="this.lectura.leerTexto('El aspirante deberá de ser egresado en educación media superior, preferentemente de las áreas
+                        de Administración, Contabilidad, Humanidades o áreas afines.')">El aspirante deberá de ser
+                            egresado en educación media superior, preferentemente de las áreas
                             de Administración, Contabilidad, Humanidades o áreas afines.</p>
                     </div>
                 </div>
 
-                <div *ngIf="contaduria[1]" class="contaduria" style="display: flex; flex-direction: row; justify-content: center;">
+                <div *ngIf="contaduria[1]" class="contaduria"
+                    style="display: flex; flex-direction: row; justify-content: center;">
                     <div class="mt-4" style="width: 90%;">
-                        <h5 (mouseenter)="this.lectura.leerTexto('Nuestro Técnico Superior Universitario en Contaduría aprenderá:')">Nuestro Técnico Superior Universitario en Contaduría aprenderá:</h5>
-                        <ol (mouseenter)="this.lectura.leerTexto('Valuar las operaciones del ente económico. Evaluar la información financiera del ente económico. Administrar el capital humano.')" class="mt-3">
+                        <h5
+                            (mouseenter)="this.lectura.leerTexto('Nuestro Técnico Superior Universitario en Contaduría aprenderá:')">
+                            Nuestro Técnico Superior Universitario en Contaduría aprenderá:</h5>
+                        <ol (mouseenter)="this.lectura.leerTexto('Valuar las operaciones del ente económico. Evaluar la información financiera del ente económico. Administrar el capital humano.')"
+                            class="mt-3">
                             <li class="mt-1">Valuar las operaciones del ente económico.</li>
                             <li class="mt-1">Evaluar la información financiera del ente económico.</li>
                             <li class="mt-1">Administrar el capital humano.</li>
@@ -329,194 +214,335 @@
                     </div>
                 </div>
 
-                <div *ngIf="contaduria[2]" class="contaduria" style="display: flex; flex-direction: row;" >
+                <div *ngIf="contaduria[2]" class="contaduria" style="display: flex; flex-direction: row;">
                     <div class="mt-4" style="width: 90%;">
-                        <h5 (mouseenter)="this.lectura.leerTexto('Podrá desempeñarse profesionalmente como:')">Podrá desempeñarse profesionalmente como:</h5>
+                        <h5 (mouseenter)="this.lectura.leerTexto('Podrá desempeñarse profesionalmente como:')">Podrá
+                            desempeñarse profesionalmente como:</h5>
                         <ol class="mt-3">
-                            <li (mouseenter)="this.lectura.leerTexto('Supervisor del área de contabilidad.')" class="mt-1">Supervisor del área de contabilidad.</li>
-                            <li (mouseenter)="this.lectura.leerTexto('Coordinador de contraloría interna.')" class="mt-1">Coordinador de contraloría interna.</li>
-                            <li (mouseenter)="this.lectura.leerTexto('Coordinador de auditoría.')" class="mt-1">Coordinador de auditoría.</li>
-                            <li (mouseenter)="this.lectura.leerTexto('Coordinador en el área de finanzas.')" class="mt-1">Coordinador en el área de finanzas.</li>
-                            <li (mouseenter)="this.lectura.leerTexto('Coordinador de costos.')" class="mt-1">Coordinador de costos.</li>
-                            <li (mouseenter)="this.lectura.leerTexto('Asesor fiscal y contable.')" class="mt-1">Asesor fiscal y contable.</li>
-                            <li (mouseenter)="this.lectura.leerTexto('Coordinador de administración de personal.')" class="mt-1">Coordinador de administración de personal.
+                            <li (mouseenter)="this.lectura.leerTexto('Supervisor del área de contabilidad.')"
+                                class="mt-1">Supervisor del área de contabilidad.</li>
+                            <li (mouseenter)="this.lectura.leerTexto('Coordinador de contraloría interna.')"
+                                class="mt-1">Coordinador de contraloría interna.</li>
+                            <li (mouseenter)="this.lectura.leerTexto('Coordinador de auditoría.')" class="mt-1">
+                                Coordinador de auditoría.</li>
+                            <li (mouseenter)="this.lectura.leerTexto('Coordinador en el área de finanzas.')"
+                                class="mt-1">Coordinador en el área de finanzas.</li>
+                            <li (mouseenter)="this.lectura.leerTexto('Coordinador de costos.')" class="mt-1">Coordinador
+                                de costos.</li>
+                            <li (mouseenter)="this.lectura.leerTexto('Asesor fiscal y contable.')" class="mt-1">Asesor
+                                fiscal y contable.</li>
+                            <li (mouseenter)="this.lectura.leerTexto('Coordinador de administración de personal.')"
+                                class="mt-1">Coordinador de administración de personal.
                             </li>
                         </ol>
-                        <h5 class="mt-4" (mouseenter)="this.lectura.leerTexto('Y desenvolverse en:')">Y desenvolverse en:</h5>
+                        <h5 class="mt-4" (mouseenter)="this.lectura.leerTexto('Y desenvolverse en:')">Y desenvolverse
+                            en:</h5>
                         <ol class="mt-3">
-                            <li class="mt-1" (mouseenter)="this.lectura.leerTexto('Valuar las operaciones del ente económico.')">Valuar las operaciones del ente económico.</li>
-                            <li class="mt-1" (mouseenter)="this.lectura.leerTexto('Evaluar la información financiera del ente económico.')">Evaluar la información financiera del ente económico.</li>
-                            <li class="mt-1" (mouseenter)="this.lectura.leerTexto('Administrar el capital humano.')">Administrar el capital humano.</li>
+                            <li class="mt-1"
+                                (mouseenter)="this.lectura.leerTexto('Valuar las operaciones del ente económico.')">
+                                Valuar las operaciones del ente económico.</li>
+                            <li class="mt-1"
+                                (mouseenter)="this.lectura.leerTexto('Evaluar la información financiera del ente económico.')">
+                                Evaluar la información financiera del ente económico.</li>
+                            <li class="mt-1" (mouseenter)="this.lectura.leerTexto('Administrar el capital humano.')">
+                                Administrar el capital humano.</li>
                         </ol>
                     </div>
                 </div>
 
-                <div *ngIf="contaduria[3]" class="contaduria" style="display: flex; flex-direction: row;" >
+                <div *ngIf="contaduria[3]" class="contaduria" style="display: flex; flex-direction: row;">
                     <div class="mt-5">
                         <div class="form-group row">
-							<div class="col-sm-12">
-								<table class="table table-bordered text-center">
-									<thead>
-										<tr>
-											<th colspan="1" class="table-borderless bg-primary"></th>
-											<th class="text-center table-borderless bg-primary" (mouseenter)="this.lectura.leerTexto('DISTRIBUCIÓN CUATRIMESTRAL DE LA CARRERA DE TÉCNICO SUPERIOR UNIVERSITARIO EN CONTADURÍA EN COMPETENCIAS PROFESIONALES')" colspan="5"><p class="text-justify" style="color:white;">DISTRIBUCIÓN CUATRIMESTRAL DE
-													LA CARRERA DE TÉCNICO SUPERIOR UNIVERSITARIO EN
-													CONTADURÍA EN COMPETENCIAS PROFESIONALES</p></th>
-											<th colspan="1" class=" table-borderless bg-primary"></th>
-										</tr>
-										<tr>
-											<th scope="col" class="divisorio bg-primary" style="color:white;">
-												<p style="text-align: right;" (mouseenter)="this.lectura.leerTexto('Cuatrimestre')">Cuatrimestre</p> <br>
-												<p style="text-align: left;" (mouseenter)="this.lectura.leerTexto('Áreas de conocimiento')">
-													Áreas de <br> conocimiento
-												</p>
-											</th>
-											<th scope="col" class="cuatrimestre" (mouseenter)="this.lectura.leerTexto('1er Cuatrimestre')">1er <br> Cuatrimestre
-											</th>
-											<th scope="col" class="cuatrimestre" (mouseenter)="this.lectura.leerTexto('2do Cuatrimestre')">2do <br> Cuatrimestre
-											</th>
-											<th scope="col" class="cuatrimestre" (mouseenter)="this.lectura.leerTexto('3er Cuatrimestre')">3er <br> Cuatrimestre
-											</th>
-											<th scope="col" class="cuatrimestre" (mouseenter)="this.lectura.leerTexto('4er Cuatrimestre')">4to <br> Cuatrimestre
-											</th>
-											<th scope="col" class="cuatrimestre" (mouseenter)="this.lectura.leerTexto('5er Cuatrimestre')">5to <br> Cuatrimestre
-											</th>
-											<th scope="col" class="cuatrimestre" (mouseenter)="this.lectura.leerTexto('6er Cuatrimestre')">6to <br> Cuatrimestre
-											</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th rowspan="3" class="bg-primary" style="color: white" (mouseenter)="this.lectura.leerTexto('CIENCIAS BÁSICAS APLICADAS')">CIENCIAS
-												BÁSICAS <br> APLICADAS
-											</th>
-											<td (mouseenter)="this.lectura.leerTexto('MATEMÁTICAS')">MATEMÁTICAS <br> <span class="glyphicon glyphicon-time"> 75 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('ESTADÍSTICA')">ESTADÍSTICA<br> <span class="glyphicon glyphicon-time"> 75 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('MATEMÁTICAS FINANCIERAS setenta y cinco Horas')">MATEMÁTICAS FINANCIERAS<br> <span class="glyphicon glyphicon-time"> 75 HRS</span></td>
-											<td><br></td>
-											<td class="inactivo"></td>
-											<td rowspan="13" class="estadia" (mouseenter)="this.lectura.leerTexto('ESTADÍA Quinientas veinte y cinco')">ESTADÍA <br> <span class="glyphicon glyphicon-time"> 525 HRS</span></td>
-										</tr>
-										<tr>
-											<td class="inactivo"><br> <br> <br></td>
-											<td class="inactivo"><br> <br> <br></td>
-											<td class="inactivo"><br> <br> <br></td>
-											<td class="inactivo"><br> <br> <br></td>
-											<td class="inactivo"><br> <br> <br></td>
-										</tr>
+                            <div class="col-sm-12">
+                                <table class="table table-bordered text-center">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="1" class="table-borderless bg-primary"></th>
+                                            <th class="text-center table-borderless bg-primary"
+                                                (mouseenter)="this.lectura.leerTexto('DISTRIBUCIÓN CUATRIMESTRAL DE LA CARRERA DE TÉCNICO SUPERIOR UNIVERSITARIO EN CONTADURÍA EN COMPETENCIAS PROFESIONALES')"
+                                                colspan="5">
+                                                <p class="text-justify" style="color:white;">DISTRIBUCIÓN CUATRIMESTRAL
+                                                    DE
+                                                    LA CARRERA DE TÉCNICO SUPERIOR UNIVERSITARIO EN
+                                                    CONTADURÍA EN COMPETENCIAS PROFESIONALES</p>
+                                            </th>
+                                            <th colspan="1" class=" table-borderless bg-primary"></th>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col" class="divisorio bg-primary" style="color:white;">
+                                                <p style="text-align: right;"
+                                                    (mouseenter)="this.lectura.leerTexto('Cuatrimestre')">Cuatrimestre
+                                                </p> <br>
+                                                <p style="text-align: left;"
+                                                    (mouseenter)="this.lectura.leerTexto('Áreas de conocimiento')">
+                                                    Áreas de <br> conocimiento
+                                                </p>
+                                            </th>
+                                            <th scope="col" class="cuatrimestre"
+                                                (mouseenter)="this.lectura.leerTexto('1er Cuatrimestre')">1er <br>
+                                                Cuatrimestre
+                                            </th>
+                                            <th scope="col" class="cuatrimestre"
+                                                (mouseenter)="this.lectura.leerTexto('2do Cuatrimestre')">2do <br>
+                                                Cuatrimestre
+                                            </th>
+                                            <th scope="col" class="cuatrimestre"
+                                                (mouseenter)="this.lectura.leerTexto('3er Cuatrimestre')">3er <br>
+                                                Cuatrimestre
+                                            </th>
+                                            <th scope="col" class="cuatrimestre"
+                                                (mouseenter)="this.lectura.leerTexto('4er Cuatrimestre')">4to <br>
+                                                Cuatrimestre
+                                            </th>
+                                            <th scope="col" class="cuatrimestre"
+                                                (mouseenter)="this.lectura.leerTexto('5er Cuatrimestre')">5to <br>
+                                                Cuatrimestre
+                                            </th>
+                                            <th scope="col" class="cuatrimestre"
+                                                (mouseenter)="this.lectura.leerTexto('6er Cuatrimestre')">6to <br>
+                                                Cuatrimestre
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th rowspan="3" class="bg-primary" style="color: white"
+                                                (mouseenter)="this.lectura.leerTexto('CIENCIAS BÁSICAS APLICADAS')">
+                                                CIENCIAS
+                                                BÁSICAS <br> APLICADAS
+                                            </th>
+                                            <td (mouseenter)="this.lectura.leerTexto('MATEMÁTICAS')">MATEMÁTICAS <br>
+                                                <span class="glyphicon glyphicon-time"> 75 HRS</span>
+                                            </td>
+                                            <td (mouseenter)="this.lectura.leerTexto('ESTADÍSTICA')">ESTADÍSTICA<br>
+                                                <span class="glyphicon glyphicon-time"> 75 HRS</span>
+                                            </td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('MATEMÁTICAS FINANCIERAS setenta y cinco Horas')">
+                                                MATEMÁTICAS FINANCIERAS<br> <span class="glyphicon glyphicon-time"> 75
+                                                    HRS</span></td>
+                                            <td><br></td>
+                                            <td class="inactivo"></td>
+                                            <td rowspan="13" class="estadia"
+                                                (mouseenter)="this.lectura.leerTexto('ESTADÍA Quinientas veinte y cinco')">
+                                                ESTADÍA <br> <span class="glyphicon glyphicon-time"> 525 HRS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="inactivo"><br> <br> <br></td>
+                                            <td class="inactivo"><br> <br> <br></td>
+                                            <td class="inactivo"><br> <br> <br></td>
+                                            <td class="inactivo"><br> <br> <br></td>
+                                            <td class="inactivo"><br> <br> <br></td>
+                                        </tr>
 
-										<tr>
-											<td class="inactivo"><br> <br> <br></td>
-											<td class="inactivo"><br> <br> <br></td>
-											<td class="inactivo"><br> <br> <br></td>
-											<td class="inactivo"><br> <br> <br></td>
-											<td class="inactivo"><br> <br> <br></td>
-										</tr>
-										<tr>
-											<th rowspan="7" class="bg-primary" style="color: white" (mouseenter)="this.lectura.leerTexto('FORMACIÓN TECNOLÓGICA')">FORMACIÓN
-												<br> TECNOLÓGICA
-											</th>
-											<td (mouseenter)="this.lectura.leerTexto('INFORMÁTICA uno sesenta horas')">INFORMÁTICA I<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('INFORMÁTICA dos sesenta horas')">INFORMÁTICA II<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('CONTABILIDAD DE SOCIEDADES sesenta horas')">CONTABILIDAD DE SOCIEDADES<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('FUNDAMENTOS DE AUDITORÍA cuarenta y cinco horas')">FUNDAMENTOS DE AUDITORÍA<br> <span class="glyphicon glyphicon-time"> 45 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('AUDITORÍA FINANCIERA ciento cinco horas')">AUDITORÍA FINANCIERA<br> <span class="glyphicon glyphicon-time"> 105 HRS</span></td>
-										</tr>
-										<tr>
-											<td (mouseenter)="this.lectura.leerTexto('DERECHO CIVIL uno sesenta horas')">DERECHO CIVIL<br> <span class="glyphicon glyphicon-time">
-													45 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('DERECHO MERCANTIL cuarenta y cinco horas')">DERECHO MERCANTIL<br> <span class="glyphicon glyphicon-time"> 45 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('CONTABILIDAD SUPERIOR noventa horas')">CONTABILIDAD SUPERIOR<br> <span class="glyphicon glyphicon-time"> 90 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('CONTABILIDAD DE COSTOS uno sesenta horas')">CONTABILIDAD DE COSTOS I<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('CONTABILIDAD DE COSTOS dos setenta y cinco horas')">CONTABILIDAD DE COSTOS II<br> <span class="glyphicon glyphicon-time"> 75 HRS</span></td>
-										</tr>
-										<tr>
-											<td (mouseenter)="this.lectura.leerTexto('CONTABILIDAD BÁSICA ciento veinte horas')">CONTABILIDAD BÁSICA<br> <span class="glyphicon glyphicon-time"> 120 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('CONTABILIDAD INTERMEDIA ciento cinco horas')">CONTABILIDAD INTERMEDIA<br> <span class="glyphicon glyphicon-time"> 105 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('INTRODUCCIÓN AL DERECHO FISCAL sesenta horas')">INTRODUCCIÓN AL DERECHO FISCAL<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('ADMINISTRACIÓN FINANCIERA sesenta horas')">ADMINISTRACIÓN FINANCIERA<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('CONTRIBUCIONES DE PERSONAS FÍSICAS noventa horas')">CONTRIBUCIONES DE PERSONAS FÍSICAS<br> <span class="glyphicon glyphicon-time"> 90 HRS</span></td>
-										</tr>
-										<tr>
-											<td (mouseenter)="this.lectura.leerTexto('FUNDAMENTOS DE ADMINISTRACIÓN sesenta horas')">FUNDAMENTOS DE ADMINISTRACIÓN<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('FUNDAMENTOS DE ADMINISTRACIÓN sesenta horas')">DERECHO LABORAL<br> <span class="glyphicon glyphicon-time"> 75 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('ANÁLISIS E INTERPRETACIÓN DE ESTADOS FINANCIEROS sesenta y cinco horas')">ANÁLISIS E INTERPRETACIÓN DE ESTADOS
-												FINANCIEROS<br> <span class="glyphicon glyphicon-time"> 75
-													HRS</span>
-											</td>
-											<td (mouseenter)="this.lectura.leerTexto('CALIDAD cuarenta y cinco horas')">CALIDAD<br> <span class="glyphicon glyphicon-time"> 45
-													HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('SUELDOS Y SALARIOS noventa horas')">SUELDOS Y SALARIOS<br> <span class="glyphicon glyphicon-time"> 90 HRS</span></td>
-										</tr>
-										<tr>
-											<td class="inactivo"></td>
-											<td (mouseenter)="this.lectura.leerTexto('ECONOMÍA sesenta horas')">ECONOMÍA<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('PRESUPUESTOS sesenta horas')">PRESUPUESTOS<br> <span class="glyphicon glyphicon-time">
-													60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('CONTRIBUCIONES DE PERSONAS MORALES ciento cinco horas')">CONTRIBUCIONES DE PERSONAS MORALES<br> <span class="glyphicon glyphicon-time"> 105 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('INTEGRADORA dos treinta horas')">INTEGRADORA II<br> <span class="glyphicon glyphicon-time">
-													30 HRS</span></td>
-										</tr>
-										<tr>
-											<td class="inactivo"></td>
-											<td class="inactivo"></td>
-											<td (mouseenter)="this.lectura.leerTexto('INTEGRADORA uno treinta horas')">INTEGRADORA I<br> <span class="glyphicon glyphicon-time">
-													30 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('COMERCIO EXTERIOR cuarenta y cinco horas')">COMERCIO EXTERIOR<br> <span class="glyphicon glyphicon-time"> 45 HRS</span></td>
-											<td class="inactivo"><br> <br> <br></td>
-										</tr>
-										<tr>
-											<td class="inactivo"></td>
-											<td class="inactivo"></td>
-											<td class="inactivo"></td>
-											<td (mouseenter)="this.lectura.leerTexto('EVALUACIÓN FINANCIERA DE PROYECTOS sesenta horas')">EVALUACIÓN FINANCIERA DE PROYECTOS<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td class="inactivo"><br> <br> <br></td>
+                                        <tr>
+                                            <td class="inactivo"><br> <br> <br></td>
+                                            <td class="inactivo"><br> <br> <br></td>
+                                            <td class="inactivo"><br> <br> <br></td>
+                                            <td class="inactivo"><br> <br> <br></td>
+                                            <td class="inactivo"><br> <br> <br></td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="7" class="bg-primary" style="color: white"
+                                                (mouseenter)="this.lectura.leerTexto('FORMACIÓN TECNOLÓGICA')">FORMACIÓN
+                                                <br> TECNOLÓGICA
+                                            </th>
+                                            <td (mouseenter)="this.lectura.leerTexto('INFORMÁTICA uno sesenta horas')">
+                                                INFORMÁTICA I<br> <span class="glyphicon glyphicon-time"> 60 HRS</span>
+                                            </td>
+                                            <td (mouseenter)="this.lectura.leerTexto('INFORMÁTICA dos sesenta horas')">
+                                                INFORMÁTICA II<br> <span class="glyphicon glyphicon-time"> 60 HRS</span>
+                                            </td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('CONTABILIDAD DE SOCIEDADES sesenta horas')">
+                                                CONTABILIDAD DE SOCIEDADES<br> <span class="glyphicon glyphicon-time">
+                                                    60 HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('FUNDAMENTOS DE AUDITORÍA cuarenta y cinco horas')">
+                                                FUNDAMENTOS DE AUDITORÍA<br> <span class="glyphicon glyphicon-time"> 45
+                                                    HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('AUDITORÍA FINANCIERA ciento cinco horas')">
+                                                AUDITORÍA FINANCIERA<br> <span class="glyphicon glyphicon-time"> 105
+                                                    HRS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('DERECHO CIVIL uno sesenta horas')">
+                                                DERECHO CIVIL<br> <span class="glyphicon glyphicon-time">
+                                                    45 HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('DERECHO MERCANTIL cuarenta y cinco horas')">
+                                                DERECHO MERCANTIL<br> <span class="glyphicon glyphicon-time"> 45
+                                                    HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('CONTABILIDAD SUPERIOR noventa horas')">
+                                                CONTABILIDAD SUPERIOR<br> <span class="glyphicon glyphicon-time"> 90
+                                                    HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('CONTABILIDAD DE COSTOS uno sesenta horas')">
+                                                CONTABILIDAD DE COSTOS I<br> <span class="glyphicon glyphicon-time"> 60
+                                                    HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('CONTABILIDAD DE COSTOS dos setenta y cinco horas')">
+                                                CONTABILIDAD DE COSTOS II<br> <span class="glyphicon glyphicon-time"> 75
+                                                    HRS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('CONTABILIDAD BÁSICA ciento veinte horas')">
+                                                CONTABILIDAD BÁSICA<br> <span class="glyphicon glyphicon-time"> 120
+                                                    HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('CONTABILIDAD INTERMEDIA ciento cinco horas')">
+                                                CONTABILIDAD INTERMEDIA<br> <span class="glyphicon glyphicon-time"> 105
+                                                    HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('INTRODUCCIÓN AL DERECHO FISCAL sesenta horas')">
+                                                INTRODUCCIÓN AL DERECHO FISCAL<br> <span
+                                                    class="glyphicon glyphicon-time"> 60 HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('ADMINISTRACIÓN FINANCIERA sesenta horas')">
+                                                ADMINISTRACIÓN FINANCIERA<br> <span class="glyphicon glyphicon-time"> 60
+                                                    HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('CONTRIBUCIONES DE PERSONAS FÍSICAS noventa horas')">
+                                                CONTRIBUCIONES DE PERSONAS FÍSICAS<br> <span
+                                                    class="glyphicon glyphicon-time"> 90 HRS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('FUNDAMENTOS DE ADMINISTRACIÓN sesenta horas')">
+                                                FUNDAMENTOS DE ADMINISTRACIÓN<br> <span
+                                                    class="glyphicon glyphicon-time"> 60 HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('FUNDAMENTOS DE ADMINISTRACIÓN sesenta horas')">
+                                                DERECHO LABORAL<br> <span class="glyphicon glyphicon-time"> 75
+                                                    HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('ANÁLISIS E INTERPRETACIÓN DE ESTADOS FINANCIEROS sesenta y cinco horas')">
+                                                ANÁLISIS E INTERPRETACIÓN DE ESTADOS
+                                                FINANCIEROS<br> <span class="glyphicon glyphicon-time"> 75
+                                                    HRS</span>
+                                            </td>
+                                            <td (mouseenter)="this.lectura.leerTexto('CALIDAD cuarenta y cinco horas')">
+                                                CALIDAD<br> <span class="glyphicon glyphicon-time"> 45
+                                                    HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('SUELDOS Y SALARIOS noventa horas')">
+                                                SUELDOS Y SALARIOS<br> <span class="glyphicon glyphicon-time"> 90
+                                                    HRS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="inactivo"></td>
+                                            <td (mouseenter)="this.lectura.leerTexto('ECONOMÍA sesenta horas')">
+                                                ECONOMÍA<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
+                                            <td (mouseenter)="this.lectura.leerTexto('PRESUPUESTOS sesenta horas')">
+                                                PRESUPUESTOS<br> <span class="glyphicon glyphicon-time">
+                                                    60 HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('CONTRIBUCIONES DE PERSONAS MORALES ciento cinco horas')">
+                                                CONTRIBUCIONES DE PERSONAS MORALES<br> <span
+                                                    class="glyphicon glyphicon-time"> 105 HRS</span></td>
+                                            <td (mouseenter)="this.lectura.leerTexto('INTEGRADORA dos treinta horas')">
+                                                INTEGRADORA II<br> <span class="glyphicon glyphicon-time">
+                                                    30 HRS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="inactivo"></td>
+                                            <td class="inactivo"></td>
+                                            <td (mouseenter)="this.lectura.leerTexto('INTEGRADORA uno treinta horas')">
+                                                INTEGRADORA I<br> <span class="glyphicon glyphicon-time">
+                                                    30 HRS</span></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('COMERCIO EXTERIOR cuarenta y cinco horas')">
+                                                COMERCIO EXTERIOR<br> <span class="glyphicon glyphicon-time"> 45
+                                                    HRS</span></td>
+                                            <td class="inactivo"><br> <br> <br></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="inactivo"></td>
+                                            <td class="inactivo"></td>
+                                            <td class="inactivo"></td>
+                                            <td
+                                                (mouseenter)="this.lectura.leerTexto('EVALUACIÓN FINANCIERA DE PROYECTOS sesenta horas')">
+                                                EVALUACIÓN FINANCIERA DE PROYECTOS<br> <span
+                                                    class="glyphicon glyphicon-time"> 60 HRS</span></td>
+                                            <td class="inactivo"><br> <br> <br></td>
 
-										</tr>
-										<tr>
-											<th rowspan="2" class="bg-primary" style="color: white" (mouseenter)="this.lectura.leerTexto('LENGUAS Y MÉTODOS')">LENGUAS
-												Y MÉTODOS</th>
-											<td (mouseenter)="this.lectura.leerTexto('INGLÉS uno')">INGLÉS I<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('INGLÉS dos')">INGLÉS II<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('INGLÉS tres')">INGLÉS III<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('INGLÉS cuatro')">INGLÉS IV<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('INGLÉS cinco')">INGLÉS V<br> <span class="glyphicon glyphicon-time"> 60 HRS</span></td>
-										</tr>
-										<tr>
-											<td (mouseenter)="this.lectura.leerTexto('EXPRESIÓN ORAL Y ESCRITA uno')">EXPRESIÓN ORAL Y ESCRITA I<br> <span class="glyphicon glyphicon-time"> 75 HRS</span></td>
-											<td class="inactivo"></td>
-											<td class="inactivo"></td>
-											<td class="inactivo"></td>
-											<td (mouseenter)="this.lectura.leerTexto('EXPRESIÓN ORAL Y ESCRITA dos')">EXPRESIÓN ORAL Y ESCRITA II<br> <span class="glyphicon glyphicon-time"> 75 HRS</span></td>
-										</tr>
-										<tr>
-											<th rowspan="1" class="bg-primary" style="color: white" (mouseenter)="this.lectura.leerTexto('HABILIADES GENERALES')">HABILIADES
-												GENERALES</th>
-											<td (mouseenter)="this.lectura.leerTexto('FORMACIÓN SOCIOCULTURAL uno')">FORMACIÓN SOCIOCULTURAL I<br> <span class="glyphicon glyphicon-time"> 30 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('FORMACIÓN SOCIOCULTURAL dos')">FORMACIÓN SOCIOCULTURAL II<br> <span class="glyphicon glyphicon-time"> 45 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('FORMACIÓN SOCIOCULTURAL tres')">FORMACIÓN SOCIOCULTURAL III<br> <span class="glyphicon glyphicon-time"> 30 HRS</span></td>
-											<td (mouseenter)="this.lectura.leerTexto('FORMACIÓN SOCIOCULTURAL cuatro')">FORMACIÓN SOCIOCULTURAL IV <br> <span class="glyphicon glyphicon-time"> 45 HRS</span></td>
-											<td class="inactivo"></td>
-										</tr>
-										<tr>
-											<th rowspan="1" class="totales" (mouseenter)="this.lectura.leerTexto('TOTALES')">TOTALES</th>
-											<td class="totales"><span class="glyphicon glyphicon-time" (mouseenter)="this.lectura.leerTexto('Quiniento veinte y cinco horas')">
-													525 HRS</span></td>
-											<td class="totales"><span class="glyphicon glyphicon-time" (mouseenter)="this.lectura.leerTexto('Quiniento veinte y cinco horas')">
-													525 HRS</span></td>
-											<td class="totales"><span class="glyphicon glyphicon-time" (mouseenter)="this.lectura.leerTexto('Quiniento veinte y cinco horas')">
-													525 HRS</span></td>
-											<td class="totales"><span class="glyphicon glyphicon-time" (mouseenter)="this.lectura.leerTexto('Quiniento veinte y cinco horas')">
-													525 HRS</span></td>
-											<td class="totales"><span class="glyphicon glyphicon-time" (mouseenter)="this.lectura.leerTexto('Quiniento veinte y cinco horas')">
-													525 HRS</span></td>
-											<td class="totales"><span class="glyphicon glyphicon-time" (mouseenter)="this.lectura.leerTexto('Quiniento veinte y cinco horas')">
-													525 HRS</span></td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="2" class="bg-primary" style="color: white"
+                                                (mouseenter)="this.lectura.leerTexto('LENGUAS Y MÉTODOS')">LENGUAS
+                                                Y MÉTODOS</th>
+                                            <td (mouseenter)="this.lectura.leerTexto('INGLÉS uno')">INGLÉS I<br> <span
+                                                    class="glyphicon glyphicon-time"> 60 HRS</span></td>
+                                            <td (mouseenter)="this.lectura.leerTexto('INGLÉS dos')">INGLÉS II<br> <span
+                                                    class="glyphicon glyphicon-time"> 60 HRS</span></td>
+                                            <td (mouseenter)="this.lectura.leerTexto('INGLÉS tres')">INGLÉS III<br>
+                                                <span class="glyphicon glyphicon-time"> 60 HRS</span>
+                                            </td>
+                                            <td (mouseenter)="this.lectura.leerTexto('INGLÉS cuatro')">INGLÉS IV<br>
+                                                <span class="glyphicon glyphicon-time"> 60 HRS</span>
+                                            </td>
+                                            <td (mouseenter)="this.lectura.leerTexto('INGLÉS cinco')">INGLÉS V<br> <span
+                                                    class="glyphicon glyphicon-time"> 60 HRS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td (mouseenter)="this.lectura.leerTexto('EXPRESIÓN ORAL Y ESCRITA uno')">
+                                                EXPRESIÓN ORAL Y ESCRITA I<br> <span class="glyphicon glyphicon-time">
+                                                    75 HRS</span></td>
+                                            <td class="inactivo"></td>
+                                            <td class="inactivo"></td>
+                                            <td class="inactivo"></td>
+                                            <td (mouseenter)="this.lectura.leerTexto('EXPRESIÓN ORAL Y ESCRITA dos')">
+                                                EXPRESIÓN ORAL Y ESCRITA II<br> <span class="glyphicon glyphicon-time">
+                                                    75 HRS</span></td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="1" class="bg-primary" style="color: white"
+                                                (mouseenter)="this.lectura.leerTexto('HABILIADES GENERALES')">HABILIADES
+                                                GENERALES</th>
+                                            <td (mouseenter)="this.lectura.leerTexto('FORMACIÓN SOCIOCULTURAL uno')">
+                                                FORMACIÓN SOCIOCULTURAL I<br> <span class="glyphicon glyphicon-time"> 30
+                                                    HRS</span></td>
+                                            <td (mouseenter)="this.lectura.leerTexto('FORMACIÓN SOCIOCULTURAL dos')">
+                                                FORMACIÓN SOCIOCULTURAL II<br> <span class="glyphicon glyphicon-time">
+                                                    45 HRS</span></td>
+                                            <td (mouseenter)="this.lectura.leerTexto('FORMACIÓN SOCIOCULTURAL tres')">
+                                                FORMACIÓN SOCIOCULTURAL III<br> <span class="glyphicon glyphicon-time">
+                                                    30 HRS</span></td>
+                                            <td (mouseenter)="this.lectura.leerTexto('FORMACIÓN SOCIOCULTURAL cuatro')">
+                                                FORMACIÓN SOCIOCULTURAL IV <br> <span class="glyphicon glyphicon-time">
+                                                    45 HRS</span></td>
+                                            <td class="inactivo"></td>
+                                        </tr>
+                                        <tr>
+                                            <th rowspan="1" class="totales"
+                                                (mouseenter)="this.lectura.leerTexto('TOTALES')">TOTALES</th>
+                                            <td class="totales"><span class="glyphicon glyphicon-time"
+                                                    (mouseenter)="this.lectura.leerTexto('Quiniento veinte y cinco horas')">
+                                                    525 HRS</span></td>
+                                            <td class="totales"><span class="glyphicon glyphicon-time"
+                                                    (mouseenter)="this.lectura.leerTexto('Quiniento veinte y cinco horas')">
+                                                    525 HRS</span></td>
+                                            <td class="totales"><span class="glyphicon glyphicon-time"
+                                                    (mouseenter)="this.lectura.leerTexto('Quiniento veinte y cinco horas')">
+                                                    525 HRS</span></td>
+                                            <td class="totales"><span class="glyphicon glyphicon-time"
+                                                    (mouseenter)="this.lectura.leerTexto('Quiniento veinte y cinco horas')">
+                                                    525 HRS</span></td>
+                                            <td class="totales"><span class="glyphicon glyphicon-time"
+                                                    (mouseenter)="this.lectura.leerTexto('Quiniento veinte y cinco horas')">
+                                                    525 HRS</span></td>
+                                            <td class="totales"><span class="glyphicon glyphicon-time"
+                                                    (mouseenter)="this.lectura.leerTexto('Quiniento veinte y cinco horas')">
+                                                    525 HRS</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -524,7 +550,8 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (mouseenter)="this.lectura.leerTexto('Cerrar')">Cerrar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                    (mouseenter)="this.lectura.leerTexto('Cerrar')">Cerrar</button>
             </div>
         </div>
     </div>

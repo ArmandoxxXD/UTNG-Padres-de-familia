@@ -1,5 +1,4 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-
 import {LecturaService} from 'src/app/services/lectura.service' 
 
 @Component({
