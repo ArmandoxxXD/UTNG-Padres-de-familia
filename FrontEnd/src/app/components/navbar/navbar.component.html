@@ -1,4 +1,6 @@
+
 <div class="header">
+
     <div class="header__logo">
         <a routerLink="home">
             <img id="header__logo__img" src="assets/header/logo-UTNG.webp" alt="Logo UTNG">
@@ -7,10 +9,21 @@
     <div class="header__derecha">
 
         <div id="iconMenu" class="collapse">
+
             <div class="d-flex">
                 <div class="header__navegador">
-                    <i class="btn-help fa-solid" #themeButton [class.fa-moon]="theme === 'light'"
-                        [class.fa-sun]="theme === 'dark'" (click)="CambiarTema()"></i>
+
+                    <i class="btn-help fa-solid fa-search-plus" (click)="zoomIn()" ></i>
+                </div>
+                <div class="header__navegador">
+                    <i class="btn-help fa-solid fa-search-minus" (click)="zoomOut()" ></i>
+                </div>
+                <div class="header__navegador">
+                    <i class="fa-solid fa-recycle" style="color: #fafcff;" (click)="restartZoom()"> </i>
+                </div>
+                <div class="header__navegador">
+                    <i class="btn-help fa-solid" #themeButton [class.fa-moon]="theme === 'light'" [class.fa-sun]="theme === 'dark'" (click)="CambiarTema()"></i>
+
                 </div>
                 <div class="header__navegador">
                     <i class="btn-help fa-solid fa-keyboard" #keysButton data-bs-toggle="modal"
@@ -162,4 +175,6 @@
             </div>
         </div>
     </div>
+    
+
 </div>

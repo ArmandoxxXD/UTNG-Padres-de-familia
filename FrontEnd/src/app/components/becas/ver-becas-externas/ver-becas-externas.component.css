@@ -135,3 +135,17 @@ h5 {
 .titulo-ins .end-typing {
   border-right: none; /* Cursor oculto después de la animación */
 }
+
+
+.becas-externas .back-button {
+  position: absolute;
+  top: 20px; 
+  left: 20px; 
+  background-color: #2557a7; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 10px 15px; 
+  cursor: pointer; 
+  margin-top: 90px;
+  color: white;
+}

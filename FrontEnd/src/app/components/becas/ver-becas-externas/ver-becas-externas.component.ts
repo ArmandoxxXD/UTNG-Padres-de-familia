@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import {LecturaService} from 'src/app/services/lectura.service' 
 
@@ -10,7 +11,7 @@ import {LecturaService} from 'src/app/services/lectura.service'
 export class VerBecasExternasComponent implements OnInit {
   title: string ='Becas Externas';
   typing: boolean  = true;
-  constructor( public lectura: LecturaService) { }
+  constructor( public lectura: LecturaService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -30,5 +31,9 @@ export class VerBecasExternasComponent implements OnInit {
       }
     }, 150); // Vel/* In the given code, there is no variable or function named `o`. Therefore, it is
    }
+
+   regresar(){
+    this.router.navigate(['/becas/tipos-becas']); 
+  }
 
 }
