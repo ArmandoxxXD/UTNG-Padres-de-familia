@@ -1,8 +1,10 @@
-<div class="header" >
 
+<div class="header">
 
     <div class="header__logo">
-        <img id="header__logo__img" src="assets/header/logo-UTNG.webp" alt="Logo UTNG">
+        <a routerLink="home">
+            <img id="header__logo__img" src="assets/header/logo-UTNG.webp" alt="Logo UTNG">
+        </a>
     </div>
     <div class="header__derecha">
 
@@ -10,6 +12,7 @@
 
             <div class="d-flex">
                 <div class="header__navegador">
+
                     <i class="btn-help fa-solid fa-search-plus" (click)="zoomIn()" ></i>
                 </div>
                 <div class="header__navegador">
@@ -20,22 +23,27 @@
                 </div>
                 <div class="header__navegador">
                     <i class="btn-help fa-solid" #themeButton [class.fa-moon]="theme === 'light'" [class.fa-sun]="theme === 'dark'" (click)="CambiarTema()"></i>
+
                 </div>
                 <div class="header__navegador">
-                    <i class="btn-help fa-solid fa-keyboard" #keysButton data-bs-toggle="modal" data-bs-target="#keyBoardDocsModal"></i>
+                    <i class="btn-help fa-solid fa-keyboard" #keysButton data-bs-toggle="modal"
+                        data-bs-target="#keyBoardDocsModal"></i>
                 </div>
                 <div class="header__navegador">
-                     <i class="btn-help fa-solid fa-podcast speak" [class.btn-active]="lectura.lectura" #speakButtonRef (click)="activar()"></i>
+                    <i class="btn-help fa-solid fa-podcast speak" [class.btn-active]="lectura.lectura" #speakButtonRef
+                        (click)="activar()"></i>
                 </div>
                 <div class="header__navegador">
-                    <i class="btn-help fa-solid fa-microphone" [class.btn-active]="isMicEnabled" #listenButton (click)="listenToVoice()"></i>
+                    <i class="btn-help fa-solid fa-microphone" [class.btn-active]="isMicEnabled" #listenButton
+                        (click)="listenToVoice()"></i>
                 </div>
             </div>
 
         </div>
 
         <div class="header__navegador">
-            <button class="btn" style="color: white;" id="menuButton" data-bs-toggle="collapse" data-bs-target="#iconMenu">
+            <button class="btn" style="color: white;" id="menuButton" data-bs-toggle="collapse"
+                data-bs-target="#iconMenu">
                 <i class="fa-solid fa-universal-access"></i>
             </button>
         </div>
@@ -45,19 +53,31 @@
             <div class="header__opciones__elementos">
 
 
-                <div id="home"  (click)="this.activarElemento('home')"  [class.active]="getActiveElement() == 0" class="header__opciones__elementos__animation option"> <a routerLink="home" (mouseenter)="this.lectura.leerTexto('Home')"> Home </a> </div>
+                <div id="home" (click)="this.activarElemento('home')" [class.active]="getActiveElement() == 0"
+                    class="header__opciones__elementos__animation option"> <a routerLink="home"
+                        (mouseenter)="this.lectura.leerTexto('Home')"> Home </a> </div>
                 <!-- ... tu código HTML existente ... -->
                 <!-- <button #voiceButton class="btn btn-help" (click)="listenToVoice()"><i class="fa-solid fa-microphone" style="color: #ffffff;"></i></button> -->
                 <!-- ... tu código HTML existente ... -->
 
                 <div class="line"></div>
-                <div id="becas" (click)="this.activarElemento('becas')" [class.active]="getActiveElement() == 1" class="header__opciones__elementos__animation option"> <a (mouseenter)="this.lectura.leerTexto('Becas')"> Becas </a> </div>
+                <div id="becas" (click)="this.activarElemento('becas')" [class.active]="getActiveElement() == 1"
+                    class="header__opciones__elementos__animation option"> <a
+                        (mouseenter)="this.lectura.leerTexto('Becas')"> Becas </a> </div>
                 <div class="line"></div>
-                <div id="carreras" (click)="this.activarElemento('carreras')" [class.active]="getActiveElement() == 2" class="header__opciones__elementos__animation option"> <a routerLink="carreras" (mouseenter)="this.lectura.leerTexto('Carreras')"> Carreras </a> </div>
-                <div class="line"></div> 
-                <div id="instalaciones" (click)="this.activarElemento('instalaciones')" [class.active]="getActiveElement() == 3" class="header__opciones__elementos__animation margin_instalaciones option"> <a (mouseenter)="this.lectura.leerTexto('Instalaciones')"> Instalaciones </a> </div> 
+                <div id="carreras" (click)="this.activarElemento('carreras')" [class.active]="getActiveElement() == 2"
+                    class="header__opciones__elementos__animation option"> <a routerLink="carreras"
+                        (mouseenter)="this.lectura.leerTexto('Carreras')"> Carreras </a> </div>
                 <div class="line"></div>
-                <div id="acerca" (click)="this.activarElemento('inscripciones')" [class.active]="getActiveElement() == 4" class="header__opciones__elementos__animation margin_acerca option"> <a (mouseenter)="this.lectura.leerTexto('Inscripciones')"> Inscripciones </a> </div> 
+                <div id="instalaciones" (click)="this.activarElemento('instalaciones')"
+                    [class.active]="getActiveElement() == 3"
+                    class="header__opciones__elementos__animation margin_instalaciones option"> <a
+                        (mouseenter)="this.lectura.leerTexto('Instalaciones')"> Instalaciones </a> </div>
+                <div class="line"></div>
+                <div id="acerca" (click)="this.activarElemento('inscripciones')"
+                    [class.active]="getActiveElement() == 4"
+                    class="header__opciones__elementos__animation margin_acerca option"> <a
+                        (mouseenter)="this.lectura.leerTexto('Inscripciones')"> Inscripciones </a> </div>
 
 
             </div>

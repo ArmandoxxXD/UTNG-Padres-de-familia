@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Modal} from "bootstrap";
 
 import {LecturaService} from 'src/app/services/lectura.service' 
-
+import {carreras_NA, carreras_TIC, carreras_PI, carreras_FULL} from './carreras-info';
 
 @Component({
   selector: 'app-carreras',
@@ -11,12 +11,20 @@ import {LecturaService} from 'src/app/services/lectura.service'
 })
 export class CarrerasComponent implements OnInit {
 
+  Carreras_NA: any = carreras_NA;
+  Carreras_TIC: any = carreras_TIC;
+  Carreras_PI: any = carreras_PI;
+  Carreras_FULL: any = carreras_FULL;
+
   intervaloId: any;
   carreras: any;
   title: string = "Carreras";
   typing: boolean = true;
+  busqueda: boolean = false;
 
   contaduria: boolean[] = [true, false, false, false]
+  resultadoBusqueda: any[] = [];
+  terminoBusqueda = '';
 
   constructor(public lectura: LecturaService) { 
   }
@@ -46,20 +54,9 @@ export class CarrerasComponent implements OnInit {
     const collapse_2 = document.getElementById("Tecnologia") as HTMLButtonElement;
     const collapse_3 = document.getElementById("ProcesosIndustriales") as HTMLButtonElement;
 
-
-    const contaduria = document.getElementById('Contaduria') as HTMLInputElement
-    const contaduriaModal = document.getElementById('contaduria') as HTMLInputElement
-
-    var myModal = new Modal(contaduriaModal);
-
-    contaduria.addEventListener( "click", () => {
-      myModal.show();
-    })
-
-    contaduria.addEventListener( "click", () => {
-      collapse_2.classList.remove("show")
-      collapse_3.classList.remove("show")
-    })
+    setTimeout(() => {
+      this.cargarContaduria();
+    }, 1500);
 
     btn_1.addEventListener( "click", () => {
       collapse_2.classList.remove("show")
@@ -99,5 +96,24 @@ export class CarrerasComponent implements OnInit {
     this.iniciarAnimacion();
   }
 
+  cargarContaduria() {
+    const contaduria = document.getElementById('Contaduria') as HTMLInputElement
+    const contaduriaModal = document.getElementById('contaduria') as HTMLInputElement
+    
+    var myModal = new Modal(contaduriaModal);
+
+    contaduria.addEventListener( "click", () => {
+      myModal.show();
+    })
+  }
+  
+  buscar() {
+    // Filtrar las carreras según el término de búsqueda
+    this.resultadoBusqueda = this.Carreras_FULL.filter((carrera: { nombre: string; }) =>
+      carrera.nombre.toLowerCase().includes(this.terminoBusqueda.toLowerCase())
+    );
+
+    this.busqueda = true;
+  }
 
 }
