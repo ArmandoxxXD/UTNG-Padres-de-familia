@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { ModoOscuroService } from 'src/app/services/modo-oscuro.service';
 
 import {LecturaService} from 'src/app/services/lectura.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ver-becas-internas',
@@ -12,7 +13,11 @@ export class VerBecasInternasComponent implements OnInit {
   esModoOscuro: boolean = false;
   title: string ='Becas Internas';
   typing: boolean  = true;
-  constructor(private modoOscuroService:ModoOscuroService, public lectura: LecturaService) { }
+  constructor(
+  private modoOscuroService:ModoOscuroService, 
+  public lectura: LecturaService,
+  private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.modoOscuroService.esModoOscuro$.subscribe((modoOscuro) => {
@@ -35,5 +40,10 @@ export class VerBecasInternasComponent implements OnInit {
       }
     }, 150); // Vel/* In the given code, there is no variable or function named `o`. Therefore, it is
    }
+
+   regresar(){
+    this.router.navigate(['/becas/tipos-becas']); 
+  }
+
 
 }
